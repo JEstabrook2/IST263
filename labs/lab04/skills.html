@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills and Contact</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        caption {
+            caption-side: top;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 8px;
+        }
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My Skills</h1>
+
+<table>
+    <caption>Skills Inventory</caption>
+    <tr>
+        <th>Skill</th>
+        <th>Proficiency</th>
+        <th>Years of Experience</th>
+    </tr>
+    <tr>
+        <td>HTML</td>
+        <td>Intermediate</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>CSS</td>
+        <td>Intermediate</td>
+        <td>2</td>
+    </tr>
+    <!-- Add more rows as needed -->
+</table>
+
+<!-- Add additional rows to meet the requirement of at least 10 rows including headers -->
+
+<h2>Contact Form</h2>
+
+<form>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="contactChoice">Contact Preference:</label><br>
+    <input type="radio" id="email" name="contact" value="email">
+    <label for="email">Email</label>
+    <input type="radio" id="phone" name="contact" value="phone">
+    <label for="phone">Phone</label><br><br>
+
+    <label for="feedback">Your Message:</label><br>
+    <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
