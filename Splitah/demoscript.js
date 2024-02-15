@@ -5,26 +5,21 @@ document.addEventListener('DOMContentLoaded', function() {
         sideMenu.style.display = sideMenu.style.display === "block" ? "none" : "block";
     });
 
-    // "Split My Bill" Button Event - Adjusted for functionality
+    // "Split My Bill" Button Event
     document.getElementById('startBtn').addEventListener('click', function() {
-        // Hide current sections to ensure user selection page is shown
         document.querySelectorAll('section').forEach(function(section) {
-            section.style.display = 'none'; // Optionally, hide all sections initially
+            section.style.display = 'none';
         });
-
-        // Directly display the user selection page
         document.getElementById('userSelectionPage').style.display = 'block';
     });
 
     // Host and Guest Selection
     document.getElementById('hostBtn').addEventListener('click', function() {
         console.log('Host selected');
-        // Here, implement any specific actions for host selection
     });
 
     document.getElementById('guestBtn').addEventListener('click', function() {
         console.log('Guest selected');
-        // Here, implement any specific actions for guest selection
     });
 
     // Submit Name and Proceed to Camera
@@ -36,54 +31,107 @@ document.addEventListener('DOMContentLoaded', function() {
         startCamera();
     });
 
-    // Back Button Functionality Corrected
+    // Back Button Functionality
     document.getElementById('backBtn').addEventListener('click', function() {
         document.getElementById('cameraFeed').style.display = 'none';
-        document.getElementById('userSelectionPage').style.display = 'block'; // Show the previous user selection page again
+        document.getElementById('userSelectionPage').style.display = 'block';
     });
 
     // Camera Start Function
     function startCamera() {
+        const videoElement = document.getElementById('videoElement');
         const constraints = { video: { facingMode: "environment" } };
         navigator.mediaDevices.getUserMedia(constraints)
         .then(function(stream) {
-            const videoElement = document.getElementById('videoElement');
             videoElement.srcObject = stream;
             videoElement.play();
-            console.log('Camera feed started with rear-facing camera.');
         })
         .catch(function(err) {
             console.error('Error accessing the camera:', err);
         });
     }
 
-    // Get the capture button element
-    const captureButton = document.getElementById('captureBtn');
-
-    // Event listener for entering full screen
-    videoElement.addEventListener('fullscreenchange', function() {
-        if (document.fullscreenElement) {
-            // Show the capture button when entering full screen
-            captureButton.style.display = 'block';
-        } else {
-            // Hide the capture button when exiting full screen
-            captureButton.style.display = 'none';
-        }
+    document.getElementById('captureBtn').addEventListener('click', function() {
+        const videoElement = document.getElementById('videoElement');
+        captureAndProcessImage(videoElement);
     });
 
-    // Event listener for the capture button
-    captureButton.addEventListener('click', function() {
-        // Capture the image and send it for processing
+    // Capture the image and process it with OCR
+    function captureAndProcessImage(videoElement) {
         const canvas = document.createElement('canvas');
         canvas.width = videoElement.videoWidth;
         canvas.height = videoElement.videoHeight;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-        const imageData = canvas.toDataURL('image/jpeg');
+        canvas.getContext('2d').drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+        
+        canvas.toBlob(function(blob) {
+            performOCR(blob);
+        }, 'image/jpeg');
+    }
 
-        // Here, you would send the imageData to your OCR reader for processing
-        // For demonstration purposes, we'll log the base64 image data to the console
-        console.log(imageData);
-    });
+    // Perform OCR on the captured image Blob
+    function performOCR(imageBlob) {
+        Tesseract.recognize(
+            imageBlob,
+            'eng',
+            { logger: m => console.log(m) }
+        ).then(({ data: { text } }) => {
+            console.log('Recognized Text:', text);
+            processReceiptText(text);
+        }).catch((err) => {
+            console.error('OCR Error:', err);
+        });
+    }
 
+    // Process recognized text to extract items and prices
+    function processReceiptText(text) {
+        const lines = text.split('\n');
+        const itemRegex = /(.+?)\s+(\d+\.\d{2})$/;
+        const items = lines.map(line => {
+            const match = line.match(itemRegex);
+            return match ? { item: match[1], price: match[2] } : null;
+        }).filter(item => item !== null);
+
+        console.log(items);
+        displayItemsForSelection(items);
+    }
+
+    // Display items for user selection
+    function displayItemsForSelection(items) {
+        const selectionContainer = document.getElementById('itemSelectionContainer');
+        selectionContainer.innerHTML = '';
+        selectionContainer.style.display = 'block'; // Make sure to display the container
+        
+        const list = document.createElement('ul');
+        items.forEach((item, index) => {
+            const listItem = document.createElement('li');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = 'item' + index;
+            checkbox.value = JSON.stringify(item);
+            
+            const label = document.createElement('label');
+            label.htmlFor = 'item' + index;
+            label.textContent = `${item.item}: $${item.price}`;
+            
+            listItem.appendChild(checkbox);
+            listItem.appendChild(label);
+            list.appendChild(listItem);
+        });
+        selectionContainer.appendChild(list);
+        
+        const submitButton = document.createElement('button');
+        submitButton.textContent = 'Add Selected to Cart';
+        submitButton.addEventListener('click', handleSelectedItems);
+        selectionContainer.appendChild(submitButton);
+    }
+
+    // Handle the selected items when user clicks "Add Selected to Cart"
+    function handleSelectedItems() {
+        const selectedItems = [];
+        document.querySelectorAll('#itemSelectionContainer input[type="checkbox"]:checked').forEach(checkbox => {
+            selectedItems.push(JSON.parse(checkbox.value));
+        });
+        
+        console.log(selectedItems); // For demonstration, replace with your cart handling logic
+    }
 });
