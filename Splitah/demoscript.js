@@ -10,6 +10,15 @@ document.getElementById('startBtn').addEventListener('click', function() {
     document.querySelectorAll('section').forEach(section => section.style.display = 'none');
     document.getElementById('userSelectionPage').style.display = 'block';
 });
+document.getElementById('startBtn').addEventListener('click', function() {
+    console.log('Split My Bill button clicked'); // This should appear in the console when the button is clicked
+    document.querySelectorAll('section').forEach(section => {
+        console.log('Hiding section: ', section);
+        section.style.display = 'none'; // Hide all sections
+    });
+    console.log('Showing user selection page');
+    document.getElementById('userSelectionPage').style.display = 'block'; // Show the user selection
+});
 
 
     // Host and Guest Selection
