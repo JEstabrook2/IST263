@@ -128,3 +128,37 @@ section {
         right: 15px; /* Ensure visibility on the edge */
     }
 }
+#captureBtn {
+    display: none;
+}
+#itemSelectionContainer {
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: none; /* Hidden by default, shown after OCR processing */
+    max-width: 600px; /* Consistent with #mainContent width */
+}
+
+#itemSelectionContainer ul {
+    list-style-type: none; /* Removes bullet points from the list */
+    padding: 0;
+}
+
+#itemSelectionContainer li {
+    padding: 10px;
+    border-bottom: 1px solid #eee; /* Adds a subtle line between items */
+}
+
+#itemSelectionContainer label {
+    margin-left: 8px;
+}
+#itemSelectionContainer input[type="checkbox"] {
+    cursor: pointer;
+}
+
+#itemSelectionContainer label {
+    cursor: pointer;
+    display: block; /* Makes the whole line clickable */
+}
