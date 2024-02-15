@@ -56,4 +56,34 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error accessing the camera:', err);
         });
     }
+
+    // Get the capture button element
+    const captureButton = document.getElementById('captureBtn');
+
+    // Event listener for entering full screen
+    videoElement.addEventListener('fullscreenchange', function() {
+        if (document.fullscreenElement) {
+            // Show the capture button when entering full screen
+            captureButton.style.display = 'block';
+        } else {
+            // Hide the capture button when exiting full screen
+            captureButton.style.display = 'none';
+        }
+    });
+
+    // Event listener for the capture button
+    captureButton.addEventListener('click', function() {
+        // Capture the image and send it for processing
+        const canvas = document.createElement('canvas');
+        canvas.width = videoElement.videoWidth;
+        canvas.height = videoElement.videoHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+        const imageData = canvas.toDataURL('image/jpeg');
+
+        // Here, you would send the imageData to your OCR reader for processing
+        // For demonstration purposes, we'll log the base64 image data to the console
+        console.log(imageData);
+    });
+
 });
