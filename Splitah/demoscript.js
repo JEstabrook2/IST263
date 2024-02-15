@@ -5,42 +5,44 @@ document.addEventListener('DOMContentLoaded', function() {
         sideMenu.style.display = sideMenu.style.display === "block" ? "none" : "block";
     });
 
-    // Adjusted "Split My Bill" Button Event to show User Selection Page
+    // "Split My Bill" Button Event - Adjusted for functionality
     document.getElementById('startBtn').addEventListener('click', function() {
-        // Hide sections you don't want to display and show the user selection page
-        document.getElementById('introduction').style.display = 'none'; // Hide introduction section
-        document.getElementById('how-it-works').style.display = 'none'; // Hide 'how-it-works' section
-        document.getElementById('userSelectionPage').style.display = 'block'; // Show user selection page
+        // Hide current sections to ensure user selection page is shown
+        document.querySelectorAll('section').forEach(function(section) {
+            section.style.display = 'none'; // Optionally, hide all sections initially
+        });
+
+        // Directly display the user selection page
+        document.getElementById('userSelectionPage').style.display = 'block';
     });
 
-    // Host and Guest Selection remains unchanged
+    // Host and Guest Selection
     document.getElementById('hostBtn').addEventListener('click', function() {
         console.log('Host selected');
-        // Implement any specific actions for host selection here
+        // Here, implement any specific actions for host selection
     });
 
     document.getElementById('guestBtn').addEventListener('click', function() {
         console.log('Guest selected');
-        // Implement any specific actions for guest selection here
+        // Here, implement any specific actions for guest selection
     });
 
     // Submit Name and Proceed to Camera
     document.getElementById('submitName').addEventListener('click', function() {
         var userName = document.getElementById('nameInput').value;
-        console.log('Name submitted:', userName);
+        console.log('Name submitted: ', userName);
         document.getElementById('userSelectionPage').style.display = 'none';
         document.getElementById('cameraFeed').style.display = 'block';
         startCamera();
     });
 
-    // Back Button Functionality
+    // Back Button Functionality Corrected
     document.getElementById('backBtn').addEventListener('click', function() {
-        document.getElementById('userSelectionPage').style.display = 'none';
-        // Show whichever section is appropriate for "Back" action; adjust as needed
-        document.getElementById('introduction').style.display = 'block';
+        document.getElementById('cameraFeed').style.display = 'none';
+        document.getElementById('userSelectionPage').style.display = 'block'; // Show the previous user selection page again
     });
 
-    // Camera Start Function remains unchanged
+    // Camera Start Function
     function startCamera() {
         const constraints = { video: { facingMode: "environment" } };
         navigator.mediaDevices.getUserMedia(constraints)
@@ -53,16 +55,5 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(function(err) {
             console.error('Error accessing the camera:', err);
         });
-    }
-
-    // Adjusted Capture Button Event to include the captureImageFromVideo function definition
-    document.getElementById('captureBtn').addEventListener('click', function() {
-        captureImageFromVideo();
-    });
-
-    // Define the captureImageFromVideo function if not already defined
-    function captureImageFromVideo() {
-        // Placeholder function for capturing video; implement as required
-        console.log('Capture image functionality goes here.');
     }
 });
