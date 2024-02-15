@@ -196,6 +196,7 @@ section {
     bottom: 20px; /* Position at the bottom of the video feed */
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
+    z-index: 9998;
 }
 
 .overlay-text {
