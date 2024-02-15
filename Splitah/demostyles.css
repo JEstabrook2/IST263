@@ -19,7 +19,7 @@ body {
     background-color: #f4f4f4; /* Light gray for the sticky banner */
     z-index: 1000;
     text-align: center;
-    padding: 3px 0; /* Adjust padding to make the banner smaller */
+    padding: 5px 0; /* Adjust padding to make the banner smaller */
 }
 
 #logo {
