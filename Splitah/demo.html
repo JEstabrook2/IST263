@@ -7,28 +7,35 @@
     <link rel="stylesheet" href="demostyles.css">
 </head>
 <body>
-    <div id="landingPage">
-        <header>
-            <img src="SplitahLogoFinal.png" alt="Splitah logo" id="logo">
-            <h1>Welcome to Bill Splitter</h1>
-            <p>Split your bill easily with friends and family.</p>
-            <button id="startBtn">Split My Bill</button>
-        </header>
+    <!-- Sticky Logo Container -->
+    <div class="logo-container">
+        <img src="SplitahLogoFinal.png" alt="Splitah logo" id="logo">
     </div>
 
-    <!-- User Selection Page (initially hidden) -->
-    <div id="userSelectionPage" style="display: none;">
-        <h2>Are you a Host or Guest?</h2>
-        <button id="hostBtn">Host</button>
-        <button id="guestBtn">Guest</button>
-        <div>
-            <label for="nameInput">Enter your name:</label>
-            <input type="text" id="nameInput">
-            <button id="submitName">Submit</button>
+    <!-- Main Content Container -->
+    <div id="mainContent">
+        <!-- Landing Page Content -->
+        <div id="landingPage">
+            <header>
+                <h1>Welcome to Bill Splitter</h1>
+                <p>Split your bill easily with friends and family.</p>
+                <button id="startBtn">Split My Bill</button>
+            </header>
+        </div>
+
+        <!-- User Selection Page (initially hidden) -->
+        <div id="userSelectionPage" style="display: none;">
+            <h2>Are you a Host or Guest?</h2>
+            <button id="hostBtn">Host</button>
+            <button id="guestBtn">Guest</button>
+            <div>
+                <label for="nameInput">Enter your name:</label>
+                <input type="text" id="nameInput">
+                <button id="submitName">Submit</button>
+            </div>
         </div>
     </div>
 
     <script src="demoscript.js"></script>
 </body>
 </html>
-
