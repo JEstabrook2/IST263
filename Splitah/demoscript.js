@@ -32,11 +32,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function startCamera() {
         const videoElement = document.getElementById('videoElement');
         const constraints = { video: { facingMode: "environment" } };
+        document.getElementById('captureBtn').style.display = 'block';
+
         navigator.mediaDevices.getUserMedia(constraints)
             .then(stream => {
                 videoElement.srcObject = stream;
                 videoElement.play();
-                enterFullScreen(document.querySelector('.video-container')); // Adjusted for full-screen
+                document.getElementById('captureBtn').style.display = 'block'; // Make button visible
+                document.querySelector('.overlay-text').style.visibility = 'visible'; // Make instructional text visible
+                enterFullScreen(document.querySelector('.video-container')); // Go full-screen
             })
             .catch(err => console.error('Error accessing the camera:', err));
     }
@@ -130,5 +134,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         console.log(selectedItems); // Ideally, integrate with your cart system or further processing here
+    }
+});
+document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement) {
+        console.log('Exited full-screen mode.');
+        // Adjust UI as needed. For example:
+        document.getElementById('captureBtn').style.visibility = 'hidden';
+        document.querySelector('.overlay-text').style.visibility = 'hidden';
+        // Optionally, you might want to resume or reset the video feed here.
+    } else {
+        // Full-screen mode entered
+        document.getElementById('captureBtn').style.visibility = 'visible';
+        document.querySelector('.overlay-text').style.visibility = 'visible';
     }
 });
