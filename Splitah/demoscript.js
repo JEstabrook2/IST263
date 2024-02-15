@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
         sideMenu.style.display = sideMenu.style.display === "block" ? "none" : "block";
     });
 
-    // "Split My Bill" Button Event
-    document.getElementById('startBtn').addEventListener('click', function() {
-        document.querySelectorAll('section').forEach(section => section.style.display = 'none');
-        document.getElementById('userSelectionPage').style.display = 'block';
-    });
+// "Split My Bill" Button Event
+document.getElementById('startBtn').addEventListener('click', function() {
+    document.querySelectorAll('section').forEach(section => section.style.display = 'none');
+    document.getElementById('userSelectionPage').style.display = 'block';
+});
+
 
     // Host and Guest Selection
     document.getElementById('hostBtn').addEventListener('click', () => console.log('Host selected'));
