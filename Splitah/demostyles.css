@@ -1,67 +1,103 @@
-/* Base styles */
+/* Base styles and global adjustments */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding-top: 60px; /* Adjusted to avoid content being hidden by the sticky logo container */
-    background-color: #ffffff; /* White background for the page */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center; /* Ensures text is centered */
+    padding: 0; /* Removed top padding to allow full-width header */
+    background-color: #ffffff;
+    text-align: center;
+    color: #333; /* Improved text readability */
 }
 
-/* Sticky logo container */
+/* Sticky Logo Container */
 .logo-container {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #f4f4f4; /* Light gray for the sticky banner */
+    background-color: #007bff; /* A vibrant color for the header */
     z-index: 1000;
-    text-align: center;
-    padding: 5px 0; /* Adjust padding to make the banner smaller */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
 #logo {
-    width: 60%; /* Adjust this to control the logo size */
-    max-width: 250px; /* Prevents the logo from being too large on bigger screens */
+    width: auto;
+    max-width: 180px; /* Adjusted for a balanced look */
     height: auto;
 }
 
-button {
-    background-color: #1c5b84;
+/* Navigation Styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between nav items */
+}
+
+nav ul li a {
     color: white;
-    padding: 10px 20px;
-    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Introduction and Main Content Styles */
+#introduction, #mainContent {
+    padding: 60px 20px 20px; /* Compensate for fixed header */
+    max-width: 800px; /* Max width for content readability */
+    margin: 0 auto; /* Center align the content */
+}
+
+/* How It Works Section */
+#how-it-works {
+    background: #f8f9fa; /* Lighter background for contrast */
+    padding: 40px 20px;
+    margin-top: 20px; /* Space from previous content */
+    border-radius: 8px; /* Soften edges */
+}
+
+.step {
+    margin: 30px 0;
+}
+
+.step img {
+    width: 80px; /* Adjust based on icon size */
+    margin-bottom: 15px; /* Space between icon and text */
+}
+
+/* Action Button Enhancements */
+#action-button button {
+    font-size: 20px; /* Larger text for better interaction */
+    padding: 15px 30px;
+    background-color: #28a745; /* Green color for call-to-action */
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    width: auto; /* Adjust if needed */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-button:hover {
-    background-color: #4c5e6b;
+#action-button button:hover {
+    background-color: #218838; /* Darker shade on hover */
 }
 
-/* Adjustments for body and header not directly inside the sticky container */
-header {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 2rem auto 0; /* Adjust margin to ensure some space below the sticky logo container */
-    width: 90%;
-    max-width: 600px; /* Limits the width on larger screens */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+/* Adjustments for smaller sections */
+header, #cameraFeed, #userSelectionPage, #ocrResults {
+    border-radius: 8px;
+    margin-top: 20px; /* Consistent spacing */
+    width: calc(100% - 40px); /* Responsive width with padding */
+    max-width: 600px; /* Limiting max width for larger screens */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Media query for tablets and desktops */
+/* Responsive Design Adjustments */
 @media (min-width: 768px) {
-    body {
-        padding: 40px 20px; /* Adjusted padding to ensure consistent spacing around the content */
+    nav ul li a {
+        padding: 10px; /* Larger clickable area */
     }
     
-    button, input[type="text"] {
-        width: auto; /* Allows for adjustment on desktop */
-        margin: 10px;
+    /* Enhancements for larger screens */
+    .step img {
+        width: 100px; /* Larger icons for desktop */
     }
 }
