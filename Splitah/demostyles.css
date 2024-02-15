@@ -14,7 +14,7 @@ body, html {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #007bff; /* Vibrant color for the header */
+    background-color: ##F3F6F9; /* Vibrant color for the header */
     z-index: 1000;
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
@@ -56,7 +56,7 @@ body, html {
 .side-menu ul li a {
     display: block;
     padding: 10px;
-    color: #007bff;
+    color: #01c5b84;
     text-decoration: none;
     font-weight: bold;
 }
@@ -78,7 +78,7 @@ header {
 
 /* Button and Section Styling */
 button {
-    background-color: #28a745; /* Enhancing button visibility */
+    background-color: #1c5b84; /* Enhancing button visibility */
     color: white;
     padding: 10px 15px;
     border: none;
@@ -88,7 +88,7 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #4c5e6b;
 }
 
 /* Content Section Styling */
@@ -121,7 +121,7 @@ section {
 
 header h1, #introduction h2 {
     margin: 16px 0;
-    color: #007bff;
+    color: #01c5b84;
 }
 
 #introduction, #how-it-works, #userSelectionPage, #cameraFeed {
@@ -132,7 +132,7 @@ header h1, #introduction h2 {
 
 /* Buttons */
 button {
-    background-color: #28a745;
+    background-color: #01c5b84;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -142,7 +142,7 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #4c5e6b;
 }
 
 /* How It Works Section */
