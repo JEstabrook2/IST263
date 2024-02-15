@@ -28,81 +28,52 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('cameraFeed').style.display = 'none';
         document.getElementById('userSelectionPage').style.display = 'block';
     });
-
     function startCamera() {
         const videoElement = document.getElementById('videoElement');
         const constraints = { video: { facingMode: "environment" } };
-
+    
         navigator.mediaDevices.getUserMedia(constraints)
             .then(stream => {
                 videoElement.srcObject = stream;
                 videoElement.play();
-                document.getElementById('captureBtn').classList.add('visible'); // Make button visible using class
-                document.querySelector('.overlay-text').classList.add('visible'); // Make instructional text visible using class
-                enterFullScreen(document.querySelector('.video-container')); // Go full-screen
+                // Add visible class after ensuring the video is playing
+                document.getElementById('captureBtn').classList.add('visible');
+                document.querySelector('.overlay-text').classList.add('visible');
+                // Move the call to enterFullScreen here to be part of the successful callback
+                enterFullScreen(document.querySelector('.video-container'));
             })
             .catch(err => console.error('Error accessing the camera:', err));
     }
-
+    
     function enterFullScreen(element) {
         if (element.requestFullscreen) {
-            element.requestFullscreen();
+            element.requestFullscreen().then(() => {
+                // Fullscreen was entered successfully
+                console.log('Entered fullscreen mode.');
+            }).catch((err) => {
+                console.error('Error attempting to enter fullscreen mode:', err);
+            });
         } else if (element.webkitRequestFullscreen) { // Safari
             element.webkitRequestFullscreen();
         } else if (element.msRequestFullscreen) { // IE11
             element.msRequestFullscreen();
         }
     }
-
-    document.getElementById('captureBtn').addEventListener('click', function() {
-        captureAndProcessImage(document.getElementById('videoElement'));
+    
+    document.addEventListener('fullscreenchange', () => {
+        const isFullScreen = !!document.fullscreenElement;
+        const captureBtn = document.getElementById('captureBtn');
+        const overlayText = document.querySelector('.overlay-text');
+    
+        if (isFullScreen) {
+            captureBtn.classList.add('visible');
+            overlayText.classList.add('visible');
+        } else {
+            captureBtn.classList.remove('visible');
+            overlayText.classList.remove('visible');
+            // Consider stopping the video when exiting fullscreen
+            // videoElement.pause();
+            // videoElement.srcObject.getTracks().forEach(track => track.stop());
+        }
     });
-
-    function captureAndProcessImage(videoElement) {
-        const canvas = document.createElement('canvas');
-        canvas.width = videoElement.videoWidth;
-        canvas.height = videoElement.videoHeight;
-        canvas.getContext('2d').drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-
-        canvas.toBlob(blob => performOCR(blob), 'image/jpeg');
-    }
-
-    function performOCR(imageBlob) {
-        document.querySelector('.overlay-text').textContent = 'Processing...';
-        Tesseract.recognize(imageBlob, 'eng', { logger: m => console.log(m) })
-            .then(({ data: { text } }) => {
-                console.log('Recognized Text:', text);
-                processReceiptText(text);
-            })
-            .catch(err => {
-                console.error('OCR Error:', err);
-                document.querySelector('.overlay-text').textContent = 'Error processing image. Please try again.';
-            });
-    }
-
-    function processReceiptText(text) {
-        // Existing function remains unchanged
-    }
-
-    function displayItemsForSelection(items) {
-        // Existing function remains unchanged
-    }
-
-    function handleSelectedItems() {
-        // Existing function remains unchanged
-    }
-});
-
-document.addEventListener('fullscreenchange', () => {
-    const isFullScreen = !!document.fullscreenElement;
-    const captureBtn = document.getElementById('captureBtn');
-    const overlayText = document.querySelector('.overlay-text');
-
-    if (isFullScreen) {
-        captureBtn.classList.add('visible');
-        overlayText.classList.add('visible');
-    } else {
-        captureBtn.classList.remove('visible');
-        overlayText.classList.remove('visible');
-    }
-});
+    
