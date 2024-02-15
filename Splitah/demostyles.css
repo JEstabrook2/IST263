@@ -1,0 +1,55 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center; /* Ensures text is centered */
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    width: 90%;
+    max-width: 600px; /* Limits the width on larger screens */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+}
+
+#logo {
+    width: 50%; /* Adjust this to control the logo size */
+    max-width: 200px; /* Prevents the logo from being too large on bigger screens */
+    height: auto;
+    margin: 0 auto; /* Centers the logo */
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto; /* Adjust if needed */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Media query for tablets and desktops */
+@media (min-width: 768px) {
+    body {
+        padding: 40px;
+    }
+    
+    button, input[type="text"] {
+        width: auto; /* Allows for adjustment on desktop */
+        margin: 10px;
+    }
+}
