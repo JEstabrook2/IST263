@@ -162,3 +162,36 @@ section {
     cursor: pointer;
     display: block; /* Makes the whole line clickable */
 }
+.video-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#videoElement {
+    width: 100%; /* Adjust this as needed to fill the container */
+    height: auto; /* Adjust this as needed for correct aspect ratio */
+}
+
+#captureBtn, .overlay-text {
+    position: absolute;
+    z-index: 10;
+    color: #FFF; /* Ensure text is visible against any background */
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent background for readability */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#captureBtn {
+    bottom: 20px; /* Position the button at the bottom of the video feed */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+}
+
+.overlay-text {
+    top: 20px; /* Position the text at the top of the video feed */
+    left: 50%;
+    transform: translateX(-50%); /* Center the text horizontally */
+}
