@@ -127,10 +127,16 @@ section {
     .menu-trigger {
         right: 15px; /* Ensure visibility on the edge */
     }
-}
-#captureBtn {
-    display: none;
-}
+    #captureBtn, .overlay-text {
+        /* Other styles remain unchanged */
+        display: none; /* Start with them hidden */
+    }
+    
+    /* Add styles to ensure visibility when active */
+    .visible {
+        display: block; /* Show elements when they should be visible */
+    }
+    
 #itemSelectionContainer {
     margin: 20px auto;
     padding: 15px;
@@ -167,7 +173,10 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Make sure the container is on top of other content */
+    z-index: 10;
 }
+
 
 #videoElement {
     width: 100%; /* Adjust this as needed to fill the container */
@@ -176,7 +185,7 @@ section {
 
 #captureBtn, .overlay-text {
     position: absolute;
-    z-index: 10;
+    z-index: 20;
     color: #FFF; /* Ensure text is visible against any background */
     background-color: rgba(0,0,0,0.5); /* Semi-transparent background for readability */
     padding: 10px;
@@ -194,4 +203,18 @@ section {
     top: 20px; /* Position the text at the top of the video feed */
     left: 50%;
     transform: translateX(-50%); /* Center the text horizontally */
+}
+:-webkit-full-screen .visible {
+    display: block;
+    z-index: 9999;
+}
+
+:-moz-full-screen .visible {
+    display: block;
+    z-index: 9999;
+}
+
+:fullscreen .visible {
+    display: block;
+    z-index: 9999;
 }
