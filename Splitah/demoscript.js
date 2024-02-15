@@ -31,13 +31,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function startCamera() {
         const videoElement = document.getElementById('videoElement');
-        const constraints = { video: { facingMode: "environment" } }; // Rear camera
+        const constraints = { video: { facingMode: "environment" } };
         navigator.mediaDevices.getUserMedia(constraints)
             .then(stream => {
                 videoElement.srcObject = stream;
                 videoElement.play();
+                enterFullScreen(document.querySelector('.video-container')); // Adjusted for full-screen
             })
             .catch(err => console.error('Error accessing the camera:', err));
+    }
+
+    // Adjusted for entering and managing full-screen mode
+    function enterFullScreen(element) {
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.webkitRequestFullscreen) { // Safari
+            element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) { // IE11
+            element.msRequestFullscreen();
+        }
+        // Adjust styling for visibility of overlay elements
+        setTimeout(() => { // Ensure elements are visible after entering full screen
+            document.getElementById('captureBtn').style.visibility = 'visible';
+            document.querySelector('.overlay-text').style.visibility = 'visible';
+        }, 100);
     }
 
     document.getElementById('captureBtn').addEventListener('click', function() {
@@ -59,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(({ data: { text } }) => {
                 console.log('Recognized Text:', text);
                 processReceiptText(text);
-                document.querySelector('.overlay-text').textContent = 'Position the receipt within the view of the camera.';
             })
             .catch(err => {
                 console.error('OCR Error:', err);
