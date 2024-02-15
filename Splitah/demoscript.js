@@ -38,6 +38,14 @@ document.getElementById('backBtn').addEventListener('click', function() {
     document.getElementById('userSelectionPage').style.display = 'block';
     console.log('Navigate back to the user selection page');
 });
+document.getElementById('submitName').addEventListener('click', function() {
+    // Hide current content and show the camera feed container
+    document.getElementById('userSelectionPage').style.display = 'none';
+    document.getElementById('cameraFeed').style.display = 'block';
+
+    // Start the camera
+    startCamera();
+});
 
 // Function to start the camera and show the camera feed
 function startCamera() {
@@ -52,3 +60,34 @@ function startCamera() {
         console.error('Error accessing the camera: ', err);
     });
 }
+// All previous event listeners remain the same
+
+// Capture Button logic (Assuming you've added a button with id="captureBtn" in your HTML)
+document.getElementById('captureBtn').addEventListener('click', function() {
+    // Assume this function captures the image from the video feed
+    captureImageFromVideo();
+});
+
+// Placeholder function for capturing the image from the video feed
+function captureImageFromVideo() {
+    // Logic to draw video feed to a canvas and capture an image
+    // This is where you'd then call Tesseract.js to process the image
+    console.log('Capture image logic goes here');
+}
+
+// Example function to process the captured image with Tesseract.js
+function processImageWithTesseract() {
+    const canvas = document.createElement('canvas');
+    // Assuming you've set canvas dimensions to match the video feed
+    Tesseract.recognize(
+        canvas,
+        'eng', // Or any other language you're targeting
+        { logger: m => console.log(m) } // Optional: log progress
+    ).then(({ data: { text } }) => {
+        console.log(text); // Output recognized text
+        // Here you would display the recognized text for item selection
+    });
+}
+
+// You'll need to implement the logic for displaying OCR results and managing item selection...
+
