@@ -47,47 +47,70 @@ document.getElementById('submitName').addEventListener('click', function() {
     startCamera();
 });
 
-// Function to start the camera and show the camera feed
+// Function to start the camera and show the camera feed, using the rear camera if available
 function startCamera() {
-    navigator.mediaDevices.getUserMedia({ video: true })
+    const constraints = {
+        video: { facingMode: "environment" }  // Attempts to use the rear camera on devices
+    };
+
+    navigator.mediaDevices.getUserMedia(constraints)
     .then(function(stream) {
         const videoElement = document.getElementById('videoElement');
         videoElement.srcObject = stream;
         videoElement.play();
-        console.log('Camera feed started');
+        console.log('Camera feed started with rear-facing camera.');
     })
     .catch(function(err) {
-        console.error('Error accessing the camera: ', err);
+        console.error('Error accessing the camera:', err);
     });
 }
-// All previous event listeners remain the same
+document.getElementById('startBtn').addEventListener('click', function() {
+    // Example of scrolling to the "How It Works" section
+    document.getElementById('how-it-works').scrollIntoView({ behavior: 'smooth' });
 
-// Capture Button logic (Assuming you've added a button with id="captureBtn" in your HTML)
+    // Or, if proceeding directly to another action:
+    // document.getElementById('userSelectionPage').style.display = 'block';
+    // Hide or adjust visibility of other sections as necessary
+});
+
+// Adjusted event listener for the "Capture" button
 document.getElementById('captureBtn').addEventListener('click', function() {
-    // Assume this function captures the image from the video feed
     captureImageFromVideo();
 });
 
-// Placeholder function for capturing the image from the video feed
+// Function to capture the image from the video feed and process it with Tesseract.js
 function captureImageFromVideo() {
-    // Logic to draw video feed to a canvas and capture an image
-    // This is where you'd then call Tesseract.js to process the image
-    console.log('Capture image logic goes here');
+    const video = document.getElementById('videoElement');
+    const canvas = document.createElement('canvas');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    // Now that we have the image on the canvas, we can process it with Tesseract.js
+    processImageWithTesseract(canvas);
 }
 
-// Example function to process the captured image with Tesseract.js
-function processImageWithTesseract() {
-    const canvas = document.createElement('canvas');
-    // Assuming you've set canvas dimensions to match the video feed
+// Function to process the captured image with Tesseract.js
+function processImageWithTesseract(canvas) {
     Tesseract.recognize(
         canvas,
-        'eng', // Or any other language you're targeting
-        { logger: m => console.log(m) } // Optional: log progress
+        'eng', // Change to the appropriate language as needed
+        { logger: m => console.log(m) } // Log OCR progress
     ).then(({ data: { text } }) => {
-        console.log(text); // Output recognized text
-        // Here you would display the recognized text for item selection
+        console.log('Recognized text:', text);
+        // Display the recognized text for item selection or further processing
+        displayOCRResults(text);
+    }).catch(error => {
+        console.error('OCR error:', error);
     });
 }
 
-// You'll need to implement the logic for displaying OCR results and managing item selection...
+// Function to display OCR results and enable item selection (this needs to be implemented)
+function displayOCRResults(text) {
+    // Split the text into lines or items, and display them in a way that users can select
+    console.log('Display and select items logic goes here');
+}
+
+// Additional logic for displaying OCR results and managing item selections goes here
 
