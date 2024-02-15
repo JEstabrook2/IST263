@@ -114,3 +114,11 @@ function displayOCRResults(text) {
 
 // Additional logic for displaying OCR results and managing item selections goes here
 
+document.querySelector('.menu-trigger').addEventListener('click', function() {
+    const sideMenu = document.querySelector('.side-menu');
+    if (sideMenu.style.display === "none") {
+        sideMenu.style.display = "block";
+    } else {
+        sideMenu.style.display = "none";
+    }
+});

@@ -7,58 +7,44 @@
     <link rel="stylesheet" href="demostyles.css">
 </head>
 <body>
-    <!-- Sticky Logo Container -->
+    <!-- Sticky Logo Container & Side Menu Trigger -->
     <div class="logo-container">
         <img src="SplitahLogoFinal.png" alt="Splitah logo" id="logo">
+        <!-- Side Menu Trigger -->
+        <div class="menu-trigger">☰</div>
     </div>
 
-    <!-- Header and Navigation -->
-    <header>
-        <h1>Split Bills, Not Friendships</h1>
-        <nav>
-            <ul>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#support">Support</a></li>
-                <li><a href="#download-app">Download App</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Side Menu (Initially Hidden) -->
+    <nav class="side-menu" style="display: none;">
+        <ul>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="#download-app">Download App</a></li>
+        </ul>
+    </nav>
 
-    <!-- Main Content Container -->
+    <!-- Main Content -->
     <div id="mainContent">
-        <!-- Landing Page Content -->
-        <div id="landingPage">
-            <header>
-                <h1>With Splitah, You Pay for You</h1>
-                <h2>Easily split restaurant bills and pay your share with our download-free bill splitting software.</h2>
-                <button id="startBtn">Split My Bill</button>
-            </header>
-        </div>
-    </div>
-    
-    <!-- How It Works Section -->
-    <section id="how-it-works">
-        <h2>How It Works</h2>
-        <!-- Step 1 -->
-        <div class="step">
-            <img src="qr-code-icon.png" alt="Scan QR Code">
-            <p>Scan the QR code provided by your waitstaff or upload a photo of your receipt.</p>
-        </div>
-        <!-- Step 2 -->
-        <div class="step">
-            <img src="select-items-icon.png" alt="Select Items">
-            <p>Tap to select the items you ordered. Shared items can be easily split.</p>
-        </div>
-        <!-- Step 3 -->
-        <div class="step">
-            <img src="payment-method-icon.png" alt="Choose Payment Method">
-            <p>Choose your preferred payment method from our partners to settle your portion of the bill.</p>
-        </div>
-        <!-- Action Button -->
-        <div id="action-button" style="text-align: center;">
-            <button>Split My Check</button>
-        </div>
-    </section>
+        <!-- Slogan -->
+        <header>
+            <h1>Split Bills, Not Friendships</h1>
+        </header>
+
+        <!-- Introduction -->
+        <section id="introduction">
+            <h2>Welcome to Splitah</h2>
+            <p>The hassle-free way to split your bill directly from your table.</p>
+            <button id="startBtn">Split My Bill</button>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works">
+            <h2>How It Works</h2>
+            <div class="step">
+                <!-- Steps Content -->
+            </div>
+            <!-- Other steps -->
+        </section>
 
 
         <!-- User Selection Page (Initially Hidden) -->
