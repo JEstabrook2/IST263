@@ -29,10 +29,16 @@ body, html {
 }
 
 .menu-trigger {
+    color: #4c5e6b; /* Sets the color of the menu icon */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 24px;
-    color: white;
     cursor: pointer;
 }
+
+
 
 /* Side Menu */
 .side-menu {
@@ -152,17 +158,15 @@ button:hover {
     display: block;
 }
 
-/* Adjustments for Fixed Elements on Small Screens */
 @media (max-width: 768px) {
-    .logo-container, .side-menu {
-        padding: 10px;
-    }
-
     #logo {
-        max-width: 100px;
+        max-width: 80px; /* Reduce logo size on smaller screens */
+        height: auto;
     }
-
+    .logo-container {
+        padding: 5px 10px; /* Reduce padding to save space */
+    }
     .menu-trigger {
-        font-size: 20px;
+        font-size: 20px; /* Slightly reduce for smaller screens if necessary */
     }
 }
