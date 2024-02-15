@@ -14,16 +14,17 @@
 
     <!-- Main Content Container -->
     <div id="mainContent">
+        <header>
+            <h1>With Splitah, You Pay for You</h1>
+            <h2>Easily split restaurant bills and pay your share with our download-free bill splitting software.</h2>
+        </header>
+        
         <!-- Landing Page Content -->
         <div id="landingPage">
-            <header>
-                <h1>Welcome to Bill Splitter</h1>
-                <p>Split your bill easily with friends and family.</p>
-                <button id="startBtn">Split My Bill</button>
-            </header>
+            <button id="startBtn">Split My Bill</button>
         </div>
 
-        <!-- User Selection Page (initially hidden) -->
+        <!-- User Selection Page (Initially Hidden) -->
         <div id="userSelectionPage" style="display: none;">
             <h2>Are you a Host or Guest?</h2>
             <button id="hostBtn">Host</button>
@@ -33,17 +34,27 @@
                 <input type="text" id="nameInput">
                 <button id="submitName">Submit</button>
             </div>
-            <div id="phoneNumberDiv" style="display: none;">
-                <label for="phoneInput">Enter your phone number:</label>
-                <input type="tel" id="phoneInput" required>
-            </div>
             <button id="backBtn" style="position: fixed; bottom: 10px; left: 10px;">Back</button>
         </div>
 
-        <!-- Camera Feed Container (initially hidden) -->
+        <!-- Camera Feed Container (Initially Hidden) -->
         <div id="cameraFeed" style="display: none;">
             <video id="videoElement" autoplay></video>
+            <button id="captureBtn">Capture</button>
+            <p> Position the reciept within camera </p>
         </div>
+
+        <!-- OCR Results and Item Selection (Initially Hidden) -->
+        <div id="ocrResults" style="display: none;">
+            <h2>OCR Results</h2>
+            <ul id="itemsList"></ul> <!-- OCR items will be listed here -->
+        </div>
+
+        <div id="cameraFeed" style="display: none;">
+    <video id="videoElement" autoplay></video>
+    <p id="instructionText">Position the receipt within the view of the camera.</p>
+</div>
+
     </div>
 
     <script src="demoscript.js"></script>
