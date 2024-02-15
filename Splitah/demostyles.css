@@ -10,18 +10,19 @@ body, html {
 
 /* Sticky Logo Container */
 .logo-container {
+    display: flex;
+    justify-content: center; /* Centers the logo horizontally */
+    align-items: center; /* Aligns the logo vertically */
+    padding: 10px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: ##F3F6F9; /* Vibrant color for the header */
     z-index: 1000;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #F3F6F9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
 
 #logo {
     max-width: 120px; /* Adjusted for a balanced look */
