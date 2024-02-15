@@ -9,7 +9,7 @@
 <body>
     <!-- Sticky Logo Container -->
     <div class="logo-container">
-        <img src="SplitahLogoFinal.png" alt="Splitah logo" id="logo">
+        <img src="SplittahSmallS.png" alt="Splitah logo" id="logo">
     </div>
 
     <!-- Main Content Container -->
@@ -33,6 +33,16 @@
                 <input type="text" id="nameInput">
                 <button id="submitName">Submit</button>
             </div>
+            <div id="phoneNumberDiv" style="display: none;">
+                <label for="phoneInput">Enter your phone number:</label>
+                <input type="tel" id="phoneInput" required>
+            </div>
+            <button id="backBtn" style="position: fixed; bottom: 10px; left: 10px;">Back</button>
+        </div>
+
+        <!-- Camera Feed Container (initially hidden) -->
+        <div id="cameraFeed" style="display: none;">
+            <video id="videoElement" autoplay></video>
         </div>
     </div>
 
