@@ -22,13 +22,6 @@ body, html {
     background-color: #F3F6F9;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-
-
-#logo {
-    max-width: 120px; /* Adjusted for a balanced look */
-    height: auto;
-}
-
 .menu-trigger {
     color: #4c5e6b; /* Sets the color of the menu icon */
     position: absolute;
@@ -37,9 +30,13 @@ body, html {
     transform: translateY(-50%);
     font-size: 24px;
     cursor: pointer;
+    z-index: 1001;
 }
 
-
+#logo {
+    max-width: 120px; /* Adjusted for a balanced look */
+    height: auto;
+}
 
 /* Side Menu */
 .side-menu {
@@ -63,7 +60,7 @@ body, html {
 .side-menu ul li a {
     display: block;
     padding: 10px;
-    color: #01c5b84;
+    color: #01c5b8; /* Corrected color code */
     text-decoration: none;
     font-weight: bold;
 }
@@ -83,7 +80,7 @@ header {
     margin-top: 100px; /* Additional space for the slogan to be visible */
 }
 
-/* Button and Section Styling */
+/* Button Styling */
 button {
     background-color: #1c5b84; /* Enhancing button visibility */
     color: white;
@@ -120,54 +117,14 @@ section {
         width: 100%; /* Full width for the side menu on smaller screens */
     }
 }
- 
-/* Main Content */
-#mainContent {
-    padding-top: 80px; /* Make space for fixed header */
-}
 
-header h1, #introduction h2 {
-    margin: 16px 0;
-    color: #01c5b84;
-}
-
-#introduction, #how-it-works, #userSelectionPage, #cameraFeed {
-    padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
-}
-
-/* Buttons */
-button {
-    background-color: #01c5b84;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #4c5e6b;
-}
-
-/* How It Works Section */
-.step img {
-    width: 80px;
-    margin: 10px auto;
-    display: block;
-}
-
-@media (max-width: 768px) {
+/* Adjustments for iPhone 15 Pro and similar devices */
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
     #logo {
-        max-width: 80px; /* Reduce logo size on smaller screens */
-        height: auto;
+        max-width: 180px; /* Increase logo size */
     }
-    .logo-container {
-        padding: 5px 10px; /* Reduce padding to save space */
-    }
+
     .menu-trigger {
-        font-size: 20px; /* Slightly reduce for smaller screens if necessary */
+        right: 15px; /* Ensure visibility on the edge */
     }
 }
