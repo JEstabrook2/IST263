@@ -2,7 +2,8 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding-top: 60px; /* Adjusted to avoid content being hidden by the sticky logo container */
+    background-color: #ffffff; /* White background for the page */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,21 +11,21 @@ body {
     text-align: center; /* Ensures text is centered */
 }
 
-header {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    margin: auto;
-    width: 90%;
-    max-width: 600px; /* Limits the width on larger screens */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+/* Sticky logo container */
+.logo-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f4f4f4; /* Light gray for the sticky banner */
+    z-index: 1000;
+    text-align: center;
+    padding: 10px 0;
 }
 
 #logo {
     width: 50%; /* Adjust this to control the logo size */
     max-width: 200px; /* Prevents the logo from being too large on bigger screens */
     height: auto;
-    margin: 0 auto; /* Centers the logo */
 }
 
 button {
@@ -42,10 +43,21 @@ button:hover {
     background-color: #4c5e6b;
 }
 
+/* Adjustments for body and header not directly inside the sticky container */
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 2rem auto 0; /* Adjust margin to ensure some space below the sticky logo container */
+    width: 90%;
+    max-width: 600px; /* Limits the width on larger screens */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+}
+
 /* Media query for tablets and desktops */
 @media (min-width: 768px) {
     body {
-        padding: 40px;
+        padding: 40px 20px; /* Adjusted padding to ensure consistent spacing around the content */
     }
     
     button, input[type="text"] {
