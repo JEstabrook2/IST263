@@ -28,7 +28,7 @@ header {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #;
     color: white;
     padding: 10px 20px;
     margin-top: 20px;
@@ -39,7 +39,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #4c5e6b;
 }
 
 /* Media query for tablets and desktops */
