@@ -25,27 +25,35 @@
 
     <!-- Main Content -->
     <div id="mainContent">
-        <!-- Slogan -->
+        <!-- Slogan and Introduction -->
         <header>
             <h1>Split Bills, Not Friendships</h1>
+            <section id="introduction">
+                <h2>Welcome to Splitah</h2>
+                <p>The hassle-free way to split your bill directly from your table.</p>
+                
+            </section>
         </header>
-
-        <!-- Introduction -->
-        <section id="introduction">
-            <h2>Welcome to Splitah</h2>
-            <p>The hassle-free way to split your bill directly from your table.</p>
-            <button id="startBtn">Split My Bill</button>
-        </section>
 
         <!-- How It Works Section -->
         <section id="how-it-works">
             <h2>How It Works</h2>
             <div class="step">
-                <!-- Steps Content -->
+                <img src="qr-code-icon.png" alt="Scan QR Code">
+                <p>Scan the QR code provided by your waitstaff or upload a photo of your receipt.</p>
             </div>
-            <!-- Other steps -->
+            <div class="step">
+                <img src="select-items-icon.png" alt="Select Items">
+                <p>Tap to select the items you ordered. Shared items can be easily split.</p>
+            </div>
+            <div class="step">
+                <img src="payment-method-icon.png" alt="Choose Payment Method">
+                <p>Choose your preferred payment method from our partners to settle your portion of the bill.</p>
+            </div>
+            <div id="action-button" style="text-align: center;">
+                <button>Split My Bill</button> <!-- Ensured consistency with the action text -->
+            </div>
         </section>
-
 
         <!-- User Selection Page (Initially Hidden) -->
         <div id="userSelectionPage" style="display: none;">
@@ -60,13 +68,12 @@
             <button id="backBtn" style="position: fixed; bottom: 10px; left: 10px;">Back</button>
         </div>
 
-               <!-- Camera Feed Container (Initially Hidden) -->
-               <div id="cameraFeed" style="display: none;">
-                <video id="videoElement" autoplay></video>
-                <button id="captureBtn">Capture</button>
-                <p id="instructionText">Position the receipt within the view of the camera.</p>
-            </div>
-    
+        <!-- Camera Feed Container (Initially Hidden) -->
+        <div id="cameraFeed" style="display: none;">
+            <video id="videoElement" autoplay></video>
+            <button id="captureBtn">Capture</button>
+            <p id="instructionText">Position the receipt within the view of the camera.</p>
+        </div>
 
     </div>
 
