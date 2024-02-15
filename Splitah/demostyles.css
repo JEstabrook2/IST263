@@ -19,12 +19,12 @@ body {
     background-color: #f4f4f4; /* Light gray for the sticky banner */
     z-index: 1000;
     text-align: center;
-    padding: 5px 0;
+    padding: 3px 0; /* Adjust padding to make the banner smaller */
 }
 
 #logo {
-    width: 50%; /* Adjust this to control the logo size */
-    max-width: 200px; /* Prevents the logo from being too large on bigger screens */
+    width: 60%; /* Adjust this to control the logo size */
+    max-width: 250px; /* Prevents the logo from being too large on bigger screens */
     height: auto;
 }
 
