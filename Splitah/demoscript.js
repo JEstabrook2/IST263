@@ -26,4 +26,29 @@ document.getElementById('submitName').addEventListener('click', function() {
     console.log('Name submitted:', userName);
     // Here you can hide the user selection page and proceed to camera access and receipt scanning
     // This might involve displaying another page or section for the camera interaction
+    document.getElementById('userSelectionPage').style.display = 'none';
+    document.getElementById('cameraFeed').style.display = 'block';
+    startCamera();
 });
+
+// Event listener for the "Back" button
+document.getElementById('backBtn').addEventListener('click', function() {
+    // Hide the camera feed and show the user selection page
+    document.getElementById('cameraFeed').style.display = 'none';
+    document.getElementById('userSelectionPage').style.display = 'block';
+    console.log('Navigate back to the user selection page');
+});
+
+// Function to start the camera and show the camera feed
+function startCamera() {
+    navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function(stream) {
+        const videoElement = document.getElementById('videoElement');
+        videoElement.srcObject = stream;
+        videoElement.play();
+        console.log('Camera feed started');
+    })
+    .catch(function(err) {
+        console.error('Error accessing the camera: ', err);
+    });
+}
