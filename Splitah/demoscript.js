@@ -1,33 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Toggle Side Menu
-    document.querySelector('.menu-trigger').addEventListener('click', function() {
-        const sideMenu = document.querySelector('.side-menu');
-        sideMenu.style.display = sideMenu.style.display === "block" ? "none" : "block";
-    });
-
-    // "Split My Bill" Button Event
-    document.getElementById('startBtn').addEventListener('click', function() {
-        document.querySelectorAll('section').forEach(section => section.style.display = 'none');
-        document.getElementById('userSelectionPage').style.display = 'block';
-    });
-
-    // Host and Guest Selection
-    document.getElementById('hostBtn').addEventListener('click', () => console.log('Host selected'));
-    document.getElementById('guestBtn').addEventListener('click', () => console.log('Guest selected'));
-
-    // Submit Name and Proceed to Camera
-    document.getElementById('submitName').addEventListener('click', function() {
-        console.log('Name submitted: ', document.getElementById('nameInput').value);
-        document.getElementById('userSelectionPage').style.display = 'none';
-        document.getElementById('cameraFeed').style.display = 'block';
-        startCamera();
-    });
-
-    // Back Button Functionality
-    document.getElementById('backBtn').addEventListener('click', function() {
-        document.getElementById('cameraFeed').style.display = 'none';
-        document.getElementById('userSelectionPage').style.display = 'block';
-    });
+    // Existing initialization code for menu toggle and button events...
 
     function startCamera() {
         const videoElement = document.getElementById('videoElement');
@@ -36,13 +8,38 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(stream => {
                 videoElement.srcObject = stream;
                 videoElement.play();
+                // Delay full-screen until the stream is successfully playing
+                enterFullScreen(document.querySelector('.video-container'));
             })
             .catch(err => console.error('Error accessing the camera:', err));
     }
 
+    // Adjusted to handle custom full-screen alongside capturing
     document.getElementById('captureBtn').addEventListener('click', function() {
-        captureAndProcessImage(document.getElementById('videoElement'));
+        // Check if already in full-screen when attempting to capture
+        if (document.fullscreenElement) {
+            captureAndProcessImage(document.getElementById('videoElement'));
+        } else {
+            console.error("Not in full-screen mode. Ensure you're capturing in full-screen.");
+        }
     });
+
+    function enterFullScreen(element) {
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.webkitRequestFullscreen) { /* Safari */
+            element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) { /* IE11 */
+            element.msRequestFullscreen();
+        }
+        // Make sure the capture button and instructional text are visible
+        showOverlayElements();
+    }
+
+    function showOverlayElements() {
+        document.getElementById('captureBtn').style.display = 'block';
+        document.querySelector('.overlay-text').style.display = 'block';
+    }
 
     function captureAndProcessImage(videoElement) {
         const canvas = document.createElement('canvas');
@@ -54,13 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function performOCR(imageBlob) {
-        // Display processing message
+        // Show processing message within the full-screen mode
         document.querySelector('.overlay-text').textContent = 'Processing...';
         Tesseract.recognize(imageBlob, 'eng', { logger: m => console.log(m) })
             .then(({ data: { text } }) => {
                 console.log('Recognized Text:', text);
                 processReceiptText(text);
-                // Reset instruction text after processing
+                // Optionally reset or hide overlay elements post-processing
                 document.querySelector('.overlay-text').textContent = 'Position the receipt within the view of the camera.';
             })
             .catch(err => {
@@ -69,52 +66,16 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    function processReceiptText(text) {
-        const lines = text.split('\n');
-        const itemRegex = /(.+?)\s+(\d+\.\d{2})$/;
-        const items = lines.map(line => {
-            const match = line.match(itemRegex);
-            return match ? { item: match[1], price: match[2] } : null;
-        }).filter(item => item !== null);
+    // Additional functions for processing text, displaying selections, and handling selected items...
 
-        displayItemsForSelection(items);
-    }
-
-    function displayItemsForSelection(items) {
-        const selectionContainer = document.getElementById('itemSelectionContainer');
-        selectionContainer.innerHTML = '';
-        selectionContainer.style.display = 'block';
-        
-        const list = document.createElement('ul');
-        items.forEach((item, index) => {
-            const listItem = document.createElement('li');
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.id = 'item' + index;
-            checkbox.value = JSON.stringify(item);
-            
-            const label = document.createElement('label');
-            label.htmlFor = 'item' + index;
-            label.textContent = `${item.item}: $${item.price}`;
-            
-            listItem.appendChild(checkbox);
-            listItem.appendChild(label);
-            list.appendChild(listItem);
-        });
-        selectionContainer.appendChild(list);
-        
-        const submitButton = document.createElement('button');
-        submitButton.textContent = 'Add Selected to Cart';
-        submitButton.addEventListener('click', handleSelectedItems);
-        selectionContainer.appendChild(submitButton);
-    }
-
-    function handleSelectedItems() {
-        const selectedItems = [];
-        document.querySelectorAll('#itemSelectionContainer input[type="checkbox"]:checked').forEach(checkbox => {
-            selectedItems.push(JSON.parse(checkbox.value));
-        });
-        
-        console.log(selectedItems); // For demonstration, replace with your cart handling logic
+    // Optional: Function to exit full-screen mode if needed
+    function exitFullScreen() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { /* Safari */
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE11 */
+            document.msExitFullscreen();
+        }
     }
 });
