@@ -5,19 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
         sideMenu.style.display = sideMenu.style.display === "block" ? "none" : "block";
     });
 
-// "Split My Bill" Button Event
-document.getElementById('startBtn').addEventListener('click', function() {
-    // Hide the How It Works section
-    document.getElementById('how-it-works').style.display = 'none';
-    
-    // Show the User Selection Page
-    document.getElementById('userSelectionPage').style.display = 'block';
-    
-    // Log for debugging
-    console.log('How It Works section hidden, User Selection Page shown');
-});
-
-
+    // "Split My Bill" Button Event
+    document.getElementById('startBtn').addEventListener('click', function() {
+        document.querySelectorAll('section').forEach(section => section.style.display = 'none');
+        document.getElementById('userSelectionPage').style.display = 'block';
+    });
 
     // Host and Guest Selection
     document.getElementById('hostBtn').addEventListener('click', () => console.log('Host selected'));
@@ -36,52 +28,116 @@ document.getElementById('startBtn').addEventListener('click', function() {
         document.getElementById('cameraFeed').style.display = 'none';
         document.getElementById('userSelectionPage').style.display = 'block';
     });
+
     function startCamera() {
         const videoElement = document.getElementById('videoElement');
         const constraints = { video: { facingMode: "environment" } };
-    
         navigator.mediaDevices.getUserMedia(constraints)
             .then(stream => {
                 videoElement.srcObject = stream;
                 videoElement.play();
-                // Add visible class after ensuring the video is playing
-                document.getElementById('captureBtn').classList.add('visible');
-                document.querySelector('.overlay-text').classList.add('visible');
-                // Move the call to enterFullScreen here to be part of the successful callback
                 enterFullScreen(document.querySelector('.video-container'));
             })
             .catch(err => console.error('Error accessing the camera:', err));
     }
-    
+
+    // Adjusted for entering and managing full-screen mode
     function enterFullScreen(element) {
         if (element.requestFullscreen) {
-            element.requestFullscreen().then(() => {
-                // Fullscreen was entered successfully
-                console.log('Entered fullscreen mode.');
-            }).catch((err) => {
-                console.error('Error attempting to enter fullscreen mode:', err);
-            });
+            element.requestFullscreen();
         } else if (element.webkitRequestFullscreen) { // Safari
             element.webkitRequestFullscreen();
         } else if (element.msRequestFullscreen) { // IE11
             element.msRequestFullscreen();
         }
+        setTimeout(() => {
+            document.getElementById('captureBtn').style.visibility = 'visible';
+            document.querySelector('.overlay-text').style.visibility = 'visible';
+        }, 100);
     }
-    
+
+    document.getElementById('captureBtn').addEventListener('click', function() {
+        captureAndProcessImage(document.getElementById('videoElement'));
+    });
+
+    function captureAndProcessImage(videoElement) {
+        const canvas = document.createElement('canvas');
+        canvas.width = videoElement.videoWidth;
+        canvas.height = videoElement.videoHeight;
+        canvas.getContext('2d').drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+        canvas.toBlob(blob => performOCR(blob), 'image/jpeg');
+    }
+
+    function performOCR(imageBlob) {
+        document.querySelector('.overlay-text').textContent = 'Processing...';
+        Tesseract.recognize(imageBlob, 'eng', { logger: m => console.log(m) })
+            .then(({ data: { text } }) => {
+                console.log('Recognized Text:', text);
+                processReceiptText(text);
+                document.querySelector('.overlay-text').textContent = 'Position the receipt within the view of the camera.';
+            })
+            .catch(err => {
+                console.error('OCR Error:', err);
+                document.querySelector('.overlay-text').textContent = 'Error processing image. Please try again.';
+            });
+    }
+
+    function processReceiptText(text) {
+        const lines = text.split('\n');
+        const itemRegex = /(.+?)\s+(\d+\.\d{2})$/;
+        const items = lines.map(line => {
+            const match = line.match(itemRegex);
+            return match ? { item: match[1], price: match[2] } : null;
+        }).filter(item => item !== null);
+        displayItemsForSelection(items);
+    }
+
+    function displayItemsForSelection(items) {
+        const selectionContainer = document.getElementById('itemSelectionContainer');
+        selectionContainer.innerHTML = '';
+        selectionContainer.style.display = 'block';
+        
+        const list = document.createElement('ul');
+        items.forEach((item, index) => {
+            const listItem = document.createElement('li');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = 'item' + index;
+            checkbox.value = JSON.stringify(item);
+            
+            const label = document.createElement('label');
+            label.htmlFor = 'item' + index;
+            label.textContent = `${item.item}: $${item.price}`;
+            
+            listItem.appendChild(checkbox);
+            listItem.appendChild(label);
+            list.appendChild(listItem);
+        });
+        selectionContainer.appendChild(list);
+        
+        const submitButton = document.createElement('button');
+        submitButton.textContent = 'Add Selected to Cart';
+        submitButton.addEventListener('click', handleSelectedItems);
+        selectionContainer.appendChild(submitButton);
+    }
+
+    function handleSelectedItems() {
+        const selectedItems = [];
+        document.querySelectorAll('#itemSelectionContainer input[type="checkbox"]:checked').forEach(checkbox => {
+            selectedItems.push(JSON.parse(checkbox.value));
+        });
+        console.log(selectedItems); // For further processing or integration
+    }
+
+    // Handling full-screen mode changes
     document.addEventListener('fullscreenchange', () => {
-        const isFullScreen = !!document.fullscreenElement;
-        const captureBtn = document.getElementById('captureBtn');
-        const overlayText = document.querySelector('.overlay-text');
-    
-        if (isFullScreen) {
-            captureBtn.classList.add('visible');
-            overlayText.classList.add('visible');
+        if (!document.fullscreenElement) {
+            console.log('Exited full-screen mode.');
+            document.getElementById('captureBtn').style.visibility = 'hidden';
+            document.querySelector('.overlay-text').style.visibility = 'hidden';
         } else {
-            captureBtn.classList.remove('visible');
-            overlayText.classList.remove('visible');
-            // Consider stopping the video when exiting fullscreen
-            // videoElement.pause();
-            // videoElement.srcObject.getTracks().forEach(track => track.stop());
+            document.getElementById('captureBtn').style.visibility = 'visible';
+            document.querySelector('.overlay-text').style.visibility = 'visible';
         }
     });
-    
+});
