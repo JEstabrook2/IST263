@@ -25,6 +25,9 @@
 
     <!-- Main Content -->
     <div id="mainContent">
+        <!-- Add this inside your mainContent div or where it fits best -->
+<div id="itemSelectionContainer" style="display: none;"></div>
+
         <!-- Slogan and Introduction -->
         <header>
             <h1>Split Bills, Not Friendships</h1>
@@ -68,14 +71,18 @@
             <button id="backBtn" style="position: fixed; bottom: 10px; left: 10px;">Back</button>
         </div>
 
-        <!-- Camera Feed Container (Initially Hidden) -->
-        <div id="cameraFeed" style="display: none;">
-            <video id="videoElement" autoplay></video>
-            <button id="captureBtn">Capture</button>
-            <p id="instructionText">Position the receipt within the view of the camera.</p>
-        </div>
+       <!-- Camera Feed Container (Initially Hidden) -->
+<div id="cameraFeed" style="display: none;">
+    <div class="video-container">
+        <video id="videoElement" autoplay></video>
+        <button id="captureBtn">Capture</button>
+        <p class="overlay-text">Position the receipt within the view of the camera.</p>
+    </div>
+</div>
+
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2"></script>
 
     <script src="demoscript.js"></script>
 </body>
