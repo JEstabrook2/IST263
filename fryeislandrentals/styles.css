@@ -216,3 +216,16 @@ body {
 @media (max-width: 768px) {
     /* ... responsive styles ... */
 }
+.footer {
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text color */
+    padding: 20px; /* Add some padding */
+    text-align: center; /* Center the text */
+    position: fixed; /* Fixed at the bottom */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Full width */
+  }
+  
+  /* If you have a lot of content and don't want the footer to always stick to the bottom, replace 'position: fixed;' with 'position: relative;' */
+  
