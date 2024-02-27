@@ -7,7 +7,7 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: auto; /* Center the content */
-
+}
 
 .header {
     background-color: #02435F; /* Your main color */
@@ -45,46 +45,103 @@ body {
 }
 
 .banner {
-    /* Add your banner image here */
-    height: 300px;
-    background-color: #ddd; /* Placeholder if no image */
-    margin-bottom: 20px;
+    background-color: #A9A9A9; /* Dark grey for the banner */
+    text-align: center;
+    color: white; /* White text color */
+    padding: 20px 0; /* Padding for the banner text */
 }
 
-.side-banner, .form-container {
-    border: 1px solid #ccc;
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.split {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.split:nth-child(odd) {
+    flex-direction: row;
+}
+
+.split:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.split img {
+    width: 50%;
+    height: auto;
+    margin: 20px;
+}
+
+.split div {
+    width: 50%;
     padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
 }
 
 .form-container {
-    background-color: #f0f0f0; /* Light grey background for forms */
+    width: 100%;
+    max-width: 800px; /* Wider form container */
+    padding: 20px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 
-/* Form input styles */
-.form-container input[type='text'],
-.form-container input[type='email'],
-.form-container input[type='tel'],
-.form-container input[type='date'],
-.form-container select,
-.form-container button {
-    padding: 10px;
+.form-group {
+    flex-basis: 48%;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 10px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.form-container button {
-    background-color: #02435F; /* Your main color */
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.form-group.comments {
+    flex-basis: 100%;
+    margin-top: 20px;
 }
 
-.form-container button:hover {
+.form-group.comments textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.form-container button,
+.download-link {
+    padding: 10px 20px;
+    background-color: #02435F; /* Your main color */
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+.form-container button:hover,
+.download-link:hover {
     background-color: #022d4c; /* A darker shade of your main color */
+}
+
+.download-link {
+    margin-left: 10px; /* Space from the submit button */
 }
 
 /* Footer style */
@@ -92,8 +149,8 @@ body {
     background-color: #000000; /* Black background */
     color: white;
     text-align: center;
-    padding: 10px;
-    position: absolute;
+    padding: 20px;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -109,148 +166,24 @@ body {
         padding: 10px 0;
     }
 
-    .form-container {
-        width: 90%;
-    }
-}
-/* Add your existing styles here, and then include the following: */
-
-.banner {
-    background: url('path-to-banner-image.jpg') no-repeat center center/cover;
-    position: relative;
-    height: 400px; /* Adjust height as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white; /* Text color */
-}
-
-.banner-text {
-    text-align: center;
-    background: rgba(0, 67, 95, 0.7); /* Main color with opacity */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.content {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-}
-
-.golf-cart-info, .additional-info {
-    flex-basis: 48%; /* Adjust the width of columns */
-}
-
-.golf-cart-info img, .additional-info img {
-    width: 100%; /* Make images responsive */
-    height: auto;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.form-container {
-    background-color: #f0f0f0; /* Light grey background */
-    padding: 20px;
-    max-width: 600px; /* Adjust as needed */
-    margin: 20px auto;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border-radius: 8px;
-}
-
-/* Update form styles as needed */
-
-.base-bar {
-    background-color: #000; /* Black footer */
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-/* ... other styles ... */
-
-/* Logo styles */
-.logo {
-    width: 150px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: auto; /* Push all other flex items to the right */
-}
-
-/* Header styles */
-.main-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* This will position the logo to the left and the menu to the right */
-    padding: 10px 20px;
-    background-color: #acbdc4; /* Your main color */
-}
-
-/* Menu styles */
-.menu {
-    display: flex;
-    justify-content: center; /* This centers the menu items horizontally */
-    width: 100%; /* Take up the full width */
-    /* ... other menu styles ... */
-}
-
-/* Button styles */
-.form-container button {
-    background-color: #02435F; /* Main color */
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px; /* Rounded edges */
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.form-container button:hover {
-    background-color: darken(#02435F, 10%); /* Slightly darker on hover */
-}
-
-/* ... other styles ... */
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    /* ... responsive styles ... */
-}
-.footer {
-    background-color: #000000; /* Black background */
-    color: #ffffff; /* White text color */
-    padding: 20px; /* Add some padding */
-    text-align: center; /* Center the text */
-    position: fixed; /* Fixed at the bottom */
-    left: 0;
-    bottom: 0;
-    width: 100%; /* Full width */
-  }
-  
-  /* If you have a lot of content and don't want the footer to always stick to the bottom, replace 'position: fixed;' with 'position: relative;' */
-  @media (max-width: 768px) {
-    /* Styles for screens that are 768px wide or less */
-    .menu ul {
-        flex-direction: column;
-    }
-
-    .menu li {
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    /* Make images and other content stack vertically or adjust sizes as needed */
     .split {
         flex-direction: column;
     }
 
-    /* Adjust the logo size for smaller screens */
-    .logo {
-        width: 120px; /* Smaller logo for mobile */
+    .split img,
+    .split div {
+        width: 100%;
     }
 
-    /* Adjust padding and margins for smaller screens */
-    body {
-        padding: 10px;
+    .form-group {
+        flex-basis: 100%;
+    }
+
+    .form-container {
+        width: 90%;
+    }
+
+    .logo {
+        width: 120px; /* Adjust logo size for smaller screens */
     }
 }
