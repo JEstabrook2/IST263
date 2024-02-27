@@ -1,0 +1,115 @@
+/* style.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0; /* Light grey */
+}
+
+.menu {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff; /* White */
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin: 0 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.banner {
+    background-size: cover;
+    height: 300px;
+    position: relative;
+}
+
+.side-banner {
+    display: flex;
+    margin: 20px 0;
+}
+
+.side-banner img {
+    width: 50%;
+}
+
+.side-banner div {
+    padding: 20px;
+}
+
+.form-container {
+    padding: 20px;
+    background-color: #f0f0f0; /* Light grey */
+}
+
+label, input, textarea, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button {
+    width: auto;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Base bar styling */
+.base-bar {
+    background-color: #000000; /* Black */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+a.download-link {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+/* Existing styles remain unchanged */
+
+/* Enhancements for better form presentation */
+.form-container {
+    max-width: 600px; /* Restricts form width for better readability */
+    margin: auto; /* Centers the form in the page */
+    background-color: #f0f0f0; /* Light grey, as before */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+    border-radius: 8px; /* Softens the corners for a modern look */
+}
+
+/* Improved styling for the download link to match the form's appearance */
+a[href$=".pdf"] {
+    display: inline-block;
+    background-color: #333; /* Dark background for contrast */
+    color: white; /* White text for readability */
+    padding: 10px 15px;
+    margin-top: 15px; /* Ensures spacing from the form */
+    border-radius: 5px; /* Matches the form's rounded corners */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Emphasizes the action */
+}
+
+a[href$=".pdf"]:hover {
+    background-color: #555; /* Slightly darker on hover for feedback */
+}
