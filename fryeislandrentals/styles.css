@@ -207,3 +207,46 @@ body {
         padding: 10px;
     }
 }
+.menu {
+    display: flex;
+    justify-content: center; /* This centers the menu items horizontally */
+    align-items: center; /* This centers the menu items vertically */
+    background-color: #ffffff; /* Or any color you prefer */
+    padding: 10px 0; /* Add some padding top and bottom */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a shadow for depth */
+}
+
+.menu ul {
+    list-style-type: none; /* Removes bullet points from list items */
+    padding: 0;
+    margin: 0;
+    display: flex; /* This will display your menu items in a row */
+}
+
+.menu li {
+    padding: 0 15px; /* This adds space between your menu items */
+}
+
+.menu a {
+    text-decoration: none; /* Removes underline from links */
+    color: #333; /* Sets the text color for the links */
+    font-weight: bold; /* Makes the menu text bold */
+}
+
+.menu a:hover {
+    color: #000; /* Changes text color on hover */
+}
+
+/* Responsive menu for smaller screens */
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu li {
+        text-align: center; /* Aligns the text of menu items to center */
+        padding: 10px 0; /* Adds more padding to each menu item */
+    }
+}
+
