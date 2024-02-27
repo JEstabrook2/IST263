@@ -1,173 +1,68 @@
-/* style.css */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: white;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f0f0f0; /* Light grey */
-}
-
-.menu {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #ffffff; /* White */
-}
-
-.menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.menu li {
-    margin: 0 10px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #333333;
-}
-
-.banner {
-    background-size: cover;
-    height: 300px;
-    position: relative;
-}
-
-.side-banner {
-    display: flex;
-    margin: 20px 0;
-}
-
-.side-banner img {
-    width: 50%;
-}
-
-.side-banner div {
-    padding: 20px;
-}
-
-.form-container {
-    padding: 20px;
-    background-color: #f0f0f0; /* Light grey */
-}
-
-label, input, textarea, button {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-button {
-    width: auto;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-/* Base bar styling */
-.base-bar {
-    background-color: #000000; /* Black */
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-}
-
-a.download-link {
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-}
-/* Existing styles remain unchanged */
-
-/* Enhancements for better form presentation */
-.form-container {
-    max-width: 600px; /* Restricts form width for better readability */
-    margin: auto; /* Centers the form in the page */
-    background-color: #f0f0f0; /* Light grey, as before */
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
-    border-radius: 8px; /* Softens the corners for a modern look */
-}
-
-/* Improved styling for the download link to match the form's appearance */
-a[href$=".pdf"] {
-    display: inline-block;
-    background-color: #333; /* Dark background for contrast */
-    color: white; /* White text for readability */
-    padding: 10px 15px;
-    margin-top: 15px; /* Ensures spacing from the form */
-    border-radius: 5px; /* Matches the form's rounded corners */
-    text-decoration: none; /* Removes underline */
-    font-weight: bold; /* Emphasizes the action */
-}
-
-a[href$=".pdf"]:hover {
-    background-color: #555; /* Slightly darker on hover for feedback */
-}
-.menu a.active {
-    color: #4CAF50; /* Change the color to signify active page */
-}
+/* Base styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #fff;
+    background-color: #fff; /* white background */
     padding: 20px;
     max-width: 1200px;
-    margin: 0 auto; /* Center the content */
-}
+    margin: auto; /* Center the content */
 
-.header img {
-    /* Assuming your logo is already well-styled */
+
+.header {
+    background-color: #02435F; /* Your main color */
+    color: white; /* Logo text color if applicable */
+    padding: 10px 20px;
 }
 
 .menu {
-    background-color: #333;
-    border-radius: 5px;
-    margin-bottom: 20px; /* Adds spacing between menu and content */
+    display: flex;
+    justify-content: center; /* Centers the menu */
+    background-color: #02435F; /* Your main color */
+    padding: 10px 0;
 }
 
 .menu ul {
+    list-style-type: none;
     padding: 0;
+    margin: 0;
+    display: flex;
 }
 
 .menu li {
-    display: inline; /* Align menu items in a row */
-    margin-right: 20px;
+    padding: 0 20px;
 }
 
 .menu a {
-    color: #fff;
     text-decoration: none;
-    padding: 10px 15px; /* Larger click area */
+    color: white; /* Text color in menu */
+    font-weight: bold;
 }
 
 .menu a:hover, .menu a.active {
-    background-color: #555; /* Hover and active state */
+    background-color: #f0f0f0; /* Light grey for hover and active state */
+    color: #02435F; /* Text color for hover and active state */
 }
 
 .banner {
-    /* Add a placeholder or actual image here */
-    background-color: #ddd; /* Placeholder color */
-    margin-bottom: 20px; /* Adds spacing between banner and content */
+    /* Add your banner image here */
+    height: 300px;
+    background-color: #ddd; /* Placeholder if no image */
+    margin-bottom: 20px;
 }
 
 .side-banner, .form-container {
-    border: 1px solid #ccc; /* Adds a border */
+    border: 1px solid #ccc;
     padding: 20px;
-    border-radius: 5px; /* Rounds the corners */
-    margin-bottom: 20px; /* Adds spacing between elements */
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
+.form-container {
+    background-color: #f0f0f0; /* Light grey background for forms */
+}
+
+/* Form input styles */
 .form-container input[type='text'],
 .form-container input[type='email'],
 .form-container input[type='tel'],
@@ -177,76 +72,147 @@ body {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 .form-container button {
-    background-color: #333;
-    color: #fff;
+    background-color: #02435F; /* Your main color */
+    color: white;
     border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.form-container button:hover {
+    background-color: #022d4c; /* A darker shade of your main color */
+}
+
+/* Footer style */
 .base-bar {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+    background-color: #000000; /* Black background */
+    color: white;
     text-align: center;
-    position: fixed;
+    padding: 10px;
+    position: absolute;
     bottom: 0;
-    width: calc(100% - 40px); /* Adjust for padding */
+    width: 100%;
 }
 
-/* Responsive layout */
-@media (max-width: 768px) {
-    .menu li {
-        display: block; /* Stack menu items vertically on small screens */
-        text-align: center;
-    }
-
-    .side-banner, .form-container {
-        padding: 10px;
-    }
-}
-.menu {
-    display: flex;
-    justify-content: center; /* This centers the menu items horizontally */
-    align-items: center; /* This centers the menu items vertically */
-    background-color: #ffffff; /* Or any color you prefer */
-    padding: 10px 0; /* Add some padding top and bottom */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a shadow for depth */
-}
-
-.menu ul {
-    list-style-type: none; /* Removes bullet points from list items */
-    padding: 0;
-    margin: 0;
-    display: flex; /* This will display your menu items in a row */
-}
-
-.menu li {
-    padding: 0 15px; /* This adds space between your menu items */
-}
-
-.menu a {
-    text-decoration: none; /* Removes underline from links */
-    color: #333; /* Sets the text color for the links */
-    font-weight: bold; /* Makes the menu text bold */
-}
-
-.menu a:hover {
-    color: #000; /* Changes text color on hover */
-}
-
-/* Responsive menu for smaller screens */
+/* Responsive design adjustments */
 @media (max-width: 768px) {
     .menu ul {
         flex-direction: column;
-        width: 100%;
     }
 
     .menu li {
-        text-align: center; /* Aligns the text of menu items to center */
-        padding: 10px 0; /* Adds more padding to each menu item */
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .form-container {
+        width: 90%;
     }
 }
+/* Add your existing styles here, and then include the following: */
 
+.banner {
+    background: url('path-to-banner-image.jpg') no-repeat center center/cover;
+    position: relative;
+    height: 400px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Text color */
+}
+
+.banner-text {
+    text-align: center;
+    background: rgba(0, 67, 95, 0.7); /* Main color with opacity */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.golf-cart-info, .additional-info {
+    flex-basis: 48%; /* Adjust the width of columns */
+}
+
+.golf-cart-info img, .additional-info img {
+    width: 100%; /* Make images responsive */
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 20px;
+    max-width: 600px; /* Adjust as needed */
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Update form styles as needed */
+
+.base-bar {
+    background-color: #000; /* Black footer */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+/* ... other styles ... */
+
+/* Logo styles */
+.logo {
+    width: 150px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: auto; /* Push all other flex items to the right */
+}
+
+/* Header styles */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This will position the logo to the left and the menu to the right */
+    padding: 10px 20px;
+    background-color: #02435F; /* Your main color */
+}
+
+/* Menu styles */
+.menu {
+    display: flex;
+    justify-content: center; /* This centers the menu items horizontally */
+    width: 100%; /* Take up the full width */
+    /* ... other menu styles ... */
+}
+
+/* Button styles */
+.form-container button {
+    background-color: #02435F; /* Main color */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px; /* Rounded edges */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: darken(#02435F, 10%); /* Slightly darker on hover */
+}
+
+/* ... other styles ... */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* ... responsive styles ... */
+}
