@@ -228,4 +228,29 @@ body {
   }
   
   /* If you have a lot of content and don't want the footer to always stick to the bottom, replace 'position: fixed;' with 'position: relative;' */
-  
+  @media (max-width: 768px) {
+    /* Styles for screens that are 768px wide or less */
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Make images and other content stack vertically or adjust sizes as needed */
+    .split {
+        flex-direction: column;
+    }
+
+    /* Adjust the logo size for smaller screens */
+    .logo {
+        width: 120px; /* Smaller logo for mobile */
+    }
+
+    /* Adjust padding and margins for smaller screens */
+    body {
+        padding: 10px;
+    }
+}
