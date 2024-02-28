@@ -185,6 +185,7 @@ body {
     justify-content: space-between; /* This will position the logo to the left and the menu to the right */
     padding: 10px 20px;
     background-color: #acbdc4; /* Your main color */
+    width: 100%;
 }
 
 /* Menu styles */
