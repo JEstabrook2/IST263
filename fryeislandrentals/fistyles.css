@@ -42,19 +42,19 @@ ul {
 
 .logo {
     max-height: 135px;
-    filter: drop-shadow(2px 2px 0 #000) drop-shadow(-2px -2px 0 #000);
-    margin-right: 20px; /* Adjust margin as needed to position logo closer to the navigation */
+    
+    margin-right: 60px; /* Adjust margin as needed to position logo closer to the navigation */
 }
 
 .menu {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-grow: 1;
 }
 
 .menu ul {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     padding: 0;
     margin-left: auto; /* This will push the menu to the right */
