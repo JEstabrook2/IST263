@@ -85,46 +85,38 @@ ul {
     width: 100%;
     height: 100vh;
     background: url('fryeislandbanner.jpg') no-repeat center center/cover;
-    background-attachment: fixed; /* This keeps the background image fixed during scroll */
     margin: 0;
     z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Added for vertical centering of the content */
-    text-align: center; /* Ensures text and inline elements are centered */
 }
 
 .banner-content {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column; /* Stack children vertically */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 3; /* Ensure content is above the background */
-    width: 100%; /* Ensure it spans the width of the banner */
 }
 
 .banner-logo {
-    max-width: 60%; /* Example max-width, adjust as needed for your logo */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Additional horizontal centering, if needed */
-    z-index: 2; /* Ensures logo is above the background */
-
-    /* Consider removing max-width: 200%; or adjusting it to fit your design */
+    max-width: 200%; /* Adjust based on preference, ensures visibility and size */
+    max-height: auto; /* Adjust for proper scaling */
+    margin: 0 auto; /* Center horizontally */
+    z-index: 2; /* Ensures logo is above the background but under the content for better layering */
 }
 
-/* Ensure the CTA button (.rental-btn) styling is consistent with your design goals */
+/* Added styles for the button within .banner-content for clarity and reusability */
 .rental-btn {
+    display: inline-block;
+    background-color: #007bff; /* Button color */
+    color: white; /* Button text color */
     padding: 10px 20px;
-    background-color: #007bff; /* Example button color */
-    color: white;
     text-decoration: none;
+    font-weight: bold;
     border-radius: 5px;
-    /* Add any additional styles for your CTA button here */
+    margin-top: 20px; /* Space from the logo */
+    z-index: 3;
+    transition: background-color 0.3s ease;
 }
 
 .rental-btn:hover {
