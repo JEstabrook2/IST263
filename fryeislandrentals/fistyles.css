@@ -86,6 +86,7 @@ ul {
     height: 100vh;
     background: url('fryeislandbanner.jpg') no-repeat center center/cover;
     margin:0;
+    z-index:1;
 }
 
 .banner-content {
@@ -97,9 +98,14 @@ ul {
 }
 
 .banner-logo {
-    max-width: 80%;
-    max-height: 100px;
-    margin: 0 auto;
+    position: absolute; /* Position it absolutely within .banner which is relative */
+    top: 50%; /* Center it vertically */
+    left: 50%; /* Center it horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the exact center */
+    z-index: 2; /* Higher z-index to ensure it's on top */
+    max-width: 80%; /* Adjust as necessary for your logo */
+    max-height: 100px; /* Adjust as necessary for your logo */
+    margin: 0 auto; /* Center horizontally if not using absolute positioning */
 }
 
 .banner-background {
