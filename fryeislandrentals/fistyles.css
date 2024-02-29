@@ -85,38 +85,36 @@ ul {
     width: 100%;
     height: 100vh;
     background: url('fryeislandbanner.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* This keeps the background image fixed during scroll */
     margin: 0;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Added for vertical centering of the content */
+    text-align: center; /* Ensures text and inline elements are centered */
 }
 
 .banner-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    /* Adjustments may not be necessary if it looks as intended */
     z-index: 3; /* Ensure content is above the background */
 }
 
 .banner-logo {
-    max-width: 200%; /* Adjust based on preference, ensures visibility and size */
-    max-height: auto; /* Adjust for proper scaling */
-    margin: 0 auto; /* Center horizontally */
-    z-index: 2; /* Ensures logo is above the background but under the content for better layering */
+    max-width: 100%; /* Adjust to ensure the logo fits well within the banner */
+    max-height: auto; /* Keeps the logo's aspect ratio */
+    margin: 0 auto; /* Center the logo horizontally */
+    z-index: 2; /* Ensures logo is above the background */
+    /* Consider removing max-width: 200%; or adjusting it to fit your design */
 }
 
-/* Added styles for the button within .banner-content for clarity and reusability */
+/* Ensure the CTA button (.rental-btn) styling is consistent with your design goals */
 .rental-btn {
-    display: inline-block;
-    background-color: #007bff; /* Button color */
-    color: white; /* Button text color */
     padding: 10px 20px;
+    background-color: #007bff; /* Example button color */
+    color: white;
     text-decoration: none;
-    font-weight: bold;
     border-radius: 5px;
-    margin-top: 20px; /* Space from the logo */
-    z-index: 3;
-    transition: background-color 0.3s ease;
+    /* Add any additional styles for your CTA button here */
 }
 
 .rental-btn:hover {
