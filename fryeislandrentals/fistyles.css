@@ -19,43 +19,50 @@ body {
     background-color: #fff;
 }
 
-/* Header */
 /* Header Styles */
 .main-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #02435F; /* Adjust the color as per your design */
+    background-color: #02435F; /* Your main color */
 }
 
 .logo {
-    height: auto; /* Maintain aspect ratio */
-    max-width: 150px; /* Adjust based on your logo size */
+    flex: 0 1 auto; /* Allows the logo to shrink but not grow */
+    max-height: 100px; /* Adjust the height as necessary */
+    padding-right: 20px; /* Adjust the padding as necessary */
 }
 
 .menu {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-around; /* Distributes space evenly between menu items */
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
 }
 
 .menu ul {
     display: flex;
-    justify-content: space-around; /* This will spread the menu items evenly */
+    justify-content: space-around;
     width: 100%;
     padding: 0;
+    margin: 0;
 }
 
 .menu li {
-    list-style: none;
+    padding: 0 10px; /* Adds some space between the menu items */
 }
 
 .menu a {
     text-decoration: none;
-    color: white; /* Adjust the color as per your design */
+    color: white;
     font-weight: bold;
-    padding: 0 10px; /* Add padding to increase the clickable area */
+}
+
+.menu a:hover, .menu a.active {
+    background-color: #f0f0f0;
+    color: #02435F;
 }
 
 /* Banner */
