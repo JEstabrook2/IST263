@@ -1,57 +1,61 @@
-/* Global Resets */
-html, body {
-    margin: 0;
-    padding: 0;
+/* Global Resets and Box-Sizing */
+*, *::before, *::after {
     box-sizing: border-box;
-}
-
-ul {
-    list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-/* Body and Typography */
+/* Base HTML elements */
+html {
+    font-size: 16px; /* Base font size */
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #fff;
+    padding: 10px; /* Padding for body to ensure some space around the website on small screens */
+}
+
+ul {
+    list-style-type: none;
 }
 
 /* Global Container */
 .container {
-    max-width: 1200px; /* or whatever max-width you prefer */
-    margin: 0 auto; /* Centers the container */
-    padding: 0 20px; /* Padding inside the container */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Header Styles */
 .main-header {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* This will place logo on the left and menu on the right */
+    justify-content: space-between; /* Updated to space-between for logo and nav */
     padding: 10px 20px;
     background-color: #777;
 }
 
 .logo {
-    margin-right: auto; /* Pushes all the items to the right */
-    max-height: 100px; /* Adjust to your logo's aspect ratio */
+    flex: 0 1 auto; /* Flex grow, shrink, and basis */
+    max-height: 100px;
+    margin-right: auto;
 }
 
 .menu {
     display: flex;
-    justify-content: flex-end; /* Align menu items to the end */
+    justify-content: center;
     flex-grow: 1;
 }
 
 .menu ul {
     display: flex;
-    justify-content: center; /* Center menu items */
+    justify-content: center;
     width: 100%;
     padding: 0;
-    margin: 0 20px; /* Give some space from the logo */
+    margin: 0 20px;
 }
 
 .menu li {
@@ -62,9 +66,10 @@ body {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    transition: color 0.3s ease-in-out;
 }
 
-.menu a:hover, .menu a.active {
+.menu a:hover, .menu a:focus, .menu a.active {
     background-color: #f0f0f0;
     color: #02435F;
 }
@@ -73,7 +78,7 @@ body {
 .banner {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full height of the viewport */
+    height: 100vh;
     background: url('fryeislandbanner.jpg') no-repeat center center/cover;
 }
 
@@ -86,22 +91,18 @@ body {
 }
 
 .banner-logo {
-    max-width: 80%; /* Adjust the width of the logo as needed */
-    max-height: 100px; /* Or any other size */
-    margin: 0 auto; /* This centers the logo horizontally */
+    max-width: 80%;
+    max-height: 100px;
+    margin: 0 auto;
 }
 
-
-/* Side Banner and Form Container */
-.side-banner, .form-container {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
+/* Form Container */
 .form-container {
-    background-color: #f0f0f0;
+    background-color: var(--background-color, #f0f0f0);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 /* Form Inputs and Button */
@@ -115,17 +116,18 @@ body {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 100%; /* Ensures inputs take full width of the form container */
 }
 
 .form-container button {
-    background-color: #02435F;
+    background-color: var(--primary-color, #02435F);
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.form-container button:hover {
+.form-container button:hover, .form-container button:focus {
     background-color: #022d4c;
 }
 
@@ -135,11 +137,11 @@ body {
     color: white;
     text-align: center;
     padding: 10px;
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    position: relative; /* Changed to relative for natural document flow */
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .menu ul {
         flex-direction: column;
@@ -151,45 +153,19 @@ body {
     }
 
     .banner {
-        background: url('path-to-banner-image.jpg') no-repeat center center/cover;
-        position: relative;
-        min-height: 250px; /* Adjust based on content */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-    }
-
-    .banner-text {
-        text-align: center;
-        background: rgba(0, 67, 95, 0.7);
-        padding: 20px;
-        border-radius: 10px;
-    }
-
-    .content, .split {
-        flex-direction: column;
+        min-height: 250px;
     }
 
     .logo {
-        width: 100px; /* adjust to fit content */
-        margin-bottom: 10px; /* Add space below logo when stacked */
-    }
-
-    body {
-        padding: 10px;
+        width: 100px;
+        margin: 0 auto 10px; /* Adjust logo sizing and spacing on smaller screens */
     }
 
     .form-container {
-        max-width: 100%; /* Allows the form to be responsive within its container */
-        margin: 10px auto; /* Reduced vertical margin */
+        max-width: 100%;
+        margin: 10px auto;
+        padding: 20px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         border-radius: 8px;
-        padding: 20px; /* Increase padding for form elements */
-    }
-
-    .footer {
-        position: static; /* Let footer flow naturally */
-        padding: 10px 0; /* Adjust padding for smaller screens */
     }
 }
