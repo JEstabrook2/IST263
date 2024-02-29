@@ -19,39 +19,43 @@ body {
     background-color: #fff;
 }
 
+/* Global Container */
+.container {
+    max-width: 1200px; /* or whatever max-width you prefer */
+    margin: 0 auto; /* Centers the container */
+    padding: 0 20px; /* Padding inside the container */
+}
+
 /* Header Styles */
 .main-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Center items in the header */
     padding: 10px 20px;
-    background-color: #02435F; /* Your main color */
+    background-color: #02435F;
 }
 
 .logo {
-    flex: 0 1 auto; /* Allows the logo to shrink but not grow */
-    max-height: 100px; /* Adjust the height as necessary */
-    padding-right: 20px; /* Adjust the padding as necessary */
+    flex: 0 0 auto; /* Don't grow, don't shrink, auto basis */
+    max-height: 100px;
 }
 
 .menu {
     display: flex;
-    justify-content: space-around; /* Distributes space evenly between menu items */
-    flex-grow: 1;
-    padding: 0;
-    margin: 0;
+    justify-content: space-around;
+    flex-grow: 1; /* Allow menu to grow as needed */
 }
 
 .menu ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Center menu items */
     width: 100%;
     padding: 0;
-    margin: 0;
+    margin: 0 20px; /* Give some space from the logo */
 }
 
 .menu li {
-    padding: 0 10px; /* Adds some space between the menu items */
+    padding: 0 10px;
 }
 
 .menu a {
