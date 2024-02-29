@@ -30,20 +30,20 @@ body {
 .main-header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* This will place logo on the left and menu on the right */
+    justify-content: flex-start; /* This will place logo on the left and menu on the right */
     padding: 10px 20px;
     background-color: #777;
 }
 
 .logo {
-    flex: 0 0 auto; /* Don't grow, don't shrink, auto basis */
-    max-height: 100px;
+    margin-right: auto; /* Pushes all the items to the right */
+    max-height: 100px; /* Adjust to your logo's aspect ratio */
 }
 
 .menu {
     display: flex;
-    justify-content: space-around;
-    flex-grow: 1; /* Allow menu to grow as needed */
+    justify-content: flex-end; /* Align menu items to the end */
+    flex-grow: 1;
 }
 
 .menu ul {
@@ -124,7 +124,6 @@ body {
     width: 100%;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     .menu ul {
         flex-direction: column;
@@ -138,7 +137,7 @@ body {
     .banner {
         background: url('path-to-banner-image.jpg') no-repeat center center/cover;
         position: relative;
-        height: 400px;
+        min-height: 250px; /* Adjust based on content */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -157,7 +156,8 @@ body {
     }
 
     .logo {
-        width: 120px;
+        width: 100px; /* adjust to fit content */
+        margin-bottom: 10px; /* Add space below logo when stacked */
     }
 
     body {
@@ -165,13 +165,15 @@ body {
     }
 
     .form-container {
-        max-width: 600px;
-        margin: 20px auto;
+        max-width: 100%; /* Allows the form to be responsive within its container */
+        margin: 10px auto; /* Reduced vertical margin */
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         border-radius: 8px;
+        padding: 20px; /* Increase padding for form elements */
     }
 
     .footer {
-        position: fixed;
+        position: static; /* Let footer flow naturally */
+        padding: 10px 0; /* Adjust padding for smaller screens */
     }
 }
