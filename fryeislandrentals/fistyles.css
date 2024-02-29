@@ -20,30 +20,42 @@ body {
 }
 
 /* Header */
-.header {
-    background-color: #02435F;
-    color: white;
+/* Header Styles */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
-    width: 100%;
+    background-color: #02435F; /* Adjust the color as per your design */
 }
 
-/* Navigation Menu */
+.logo {
+    height: auto; /* Maintain aspect ratio */
+    max-width: 150px; /* Adjust based on your logo size */
+}
+
 .menu {
     display: flex;
     justify-content: center;
-    background-color: #02435F;
-    padding: 10px 0;
+    width: 100%;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-around; /* This will spread the menu items evenly */
+    width: 100%;
+    padding: 0;
+}
+
+.menu li {
+    list-style: none;
 }
 
 .menu a {
     text-decoration: none;
-    color: white;
+    color: white; /* Adjust the color as per your design */
     font-weight: bold;
-}
-
-.menu a:hover, .menu a.active {
-    background-color: #f0f0f0;
-    color: #02435F;
+    padding: 0 10px; /* Add padding to increase the clickable area */
 }
 
 /* Banner */
