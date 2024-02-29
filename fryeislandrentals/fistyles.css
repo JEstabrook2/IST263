@@ -85,8 +85,8 @@ ul {
     width: 100%;
     height: 100vh;
     background: url('fryeislandbanner.jpg') no-repeat center center/cover;
-    margin:0;
-    z-index:1;
+    margin: 0;
+    z-index: 1;
 }
 
 .banner-content {
@@ -95,23 +95,33 @@ ul {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 3; /* Ensure content is above the background */
 }
 
 .banner-logo {
-    position: absolute; /* Position it absolutely within .banner which is relative */
-    top: 50%; /* Center it vertically */
-    left: 50%; /* Center it horizontally */
-    transform: translate(-50%, -50%); /* Adjust for the exact center */
-    z-index: 2; /* Higher z-index to ensure it's on top */
-    max-width: 80%; /* Adjust as necessary for your logo */
-    max-height: 100px; /* Adjust as necessary for your logo */
-    margin: 0 auto; /* Center horizontally if not using absolute positioning */
+    max-width: 50%; /* Adjust based on preference, ensures visibility and size */
+    max-height: auto; /* Adjust for proper scaling */
+    margin: 0 auto; /* Center horizontally */
+    z-index: 2; /* Ensures logo is above the background but under the content for better layering */
 }
 
-.banner-background {
-    width: 100%;
-    height: auto;
+/* Added styles for the button within .banner-content for clarity and reusability */
+.rental-btn {
+    display: inline-block;
+    background-color: #007bff; /* Button color */
+    color: white; /* Button text color */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px; /* Space from the logo */
+    transition: background-color 0.3s ease;
 }
+
+.rental-btn:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
 /* Form Container */
 .form-container {
     background-color: #f7f7f7; /* A lighter shade than #f0f0f0 for a modern look */
@@ -155,13 +165,6 @@ ul {
     box-shadow: 0 3px 6px rgba(0,0,0,0.3); /* Enhanced shadow for hover state */
 }
 
-/* Responsive adjustments for form */
-@media (max-width: 768px) {
-    .form-container {
-        width: 90%; /* Slightly more width for smaller screens */
-        padding: 20px; /* Less padding on smaller screens */
-    }
-}
 
 /* Footer */
 .base-bar {
@@ -194,7 +197,7 @@ ul {
     }
 
     .form-container {
-        max-width: 100%;
+        max-width: 90%;
         margin: 10px auto;
         padding: 20px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);

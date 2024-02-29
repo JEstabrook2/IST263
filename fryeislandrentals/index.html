@@ -3,82 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frye Islands First and only Golf Cart Rental Company. Choose from our array of golf carts, kyacks, canoes, and more!">
     <title>Golf Cart Rentals - Frye Island</title>
     <link rel="stylesheet" href="fistyles.css">
 </head>
+
 <body>
-    <header class="main-header">
-        <img src="fryeislandrentals.png" alt="Frye Island Rentals Logo" class="logo">
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="golf-cart-rentals.html">Golf Cart Rentals</a></li>
-                <li><a href="more-rentals.html">More Rentals</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="about-frye-island.html">About Frye Island</a></li>
-                <li><a href="https://yourspotifylink.com" target="_blank">Merchandise</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="banner">
-        <div class="banner-text">
-            <h1>Golf Cart Rentals</h1>
-            <p>Explore Frye Island</p>
-        </div>
-    </section>
-    
+<!-- Header Section -->
+<header class="main-header">
+    <img src="fryeislandrentals.png" alt="Frye Island Rentals Logo" class="logo">
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="golf-cart-rentals.html">Golf Cart Rentals</a></li>
+            <li><a href="more-rentals.html">More Rentals</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="https://yourspotifylink.com" target="_blank" rel="noopener noreferrer">Merchandise</a></li>
+            <li><a href="about-frye-island.html">About Frye Island</a></li>
+        </ul>
+    </nav>
+</header>
 
+<!-- Banner Section -->
+<section class="banner">
+    <img src="fryeislandrentals.png" alt="Frye Island Rentals Logo" class="banner-logo">
+    <img src="fryeislandbanner.jpg" alt="Frye Island Rentals Beach" class="banner-background">
+    <div class="banner-content">
+       
+        <!-- You can include additional text here if needed -->
+    </div>
+</section>
 
+<!-- Main Content Section -->
+<main class="container">
     <section class="content">
-        <div class="split">
-            <img src="imageholder.png" alt="image description">
-            <div>
-                <p>Information about the golf carts we offer...</p>
-            </div>
+        <div>
+            <img src="imageholder.png" alt="Golf cart overview">
+            <p>Information about the golf carts we offer...</p>
         </div>
-        <div class="split">
-            <div>
-                <p>Another paragraph about services...</p>
-            </div>
-            <img src="imageholder.png" alt="image description">
+
+        <div>
+            <img src="imageholder.png" alt="Additional services offered">
+            <p>Another paragraph about services...</p>
         </div>
     </section>
+</main>
 
-    <section class="form-container">
-        <form action="https://formspree.io/f/yourFormID" method="POST">
-            <div class="form-group">
-                <label for="duration">Rental Duration:</label>
-                <select id="duration" name="duration" required>
-                    <option value="weekend">Weekend</option>
-                    <option value="week">Week</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="date-start">Rental Start Date:</label>
-                <input type="date" id="date-start" name="date-start" required>
-                <label for="date-end">Rental End Date:</label>
-                <input type="date" id="date-end" name="date-end" required>
-            </div>
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number format: 123-456-7890">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="_replyto" required>
-            </div>
-            a:visited {color: #00ff00; }
-            a:hover {backround-color: #efefef;}
-            /*pseudo selector, you need the : */ 
-        
-            <button type="submit">Submit Inquiry</button>
-        </form>
-        <a href="path-to-liability-waiver.pdf" class="download-link" download="Liability_Waiver.pdf">Download Liability Waiver</a>
-    </section>
+<!-- Form Section -->
+<section class="form-container">
+    <form action="https://formspree.io/f/yourFormID" method="POST">
+        <div class="form-group">
+            <label for="duration">Rental Duration:</label>
+            <select id="duration" name="duration" required>
+                <option value="weekend">Weekend</option>
+                <option value="week">Week</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date-start">Rental Start Date:</label>
+            <input type="date" id="date-start" name="date-start" required>
+            <label for="date-end">Rental End Date:</label>
+            <input type="date" id="date-end" name="date-end" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number format: 123-456-7890">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="_replyto" required>
+        </div>
+        <button type="submit">Submit Inquiry</button>
+    </form>
+    <a href="path-to-liability-waiver.pdf" class="download-link" download="Liability_Waiver.pdf">Download Liability Waiver</a>
+</section>
 
-    <footer class="base-bar">
-        Your contact info here. For example, email: contact@yourdomain.com
-    </footer>
+<!-- Footer Section -->
+<footer class="base-bar">
+    Your contact info here. For example, email: contact@yourdomain.com
+</footer>
 </body>
 </html>
