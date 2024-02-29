@@ -30,9 +30,9 @@ body {
 .main-header {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center items in the header */
+    justify-content: space-between; /* This will place logo on the left and menu on the right */
     padding: 10px 20px;
-    background-color: #02435F;
+    background-color: #777;
 }
 
 .logo {
