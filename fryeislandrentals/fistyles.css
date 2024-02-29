@@ -99,7 +99,7 @@ ul {
 }
 
 .banner-logo {
-    max-width: 50%; /* Adjust based on preference, ensures visibility and size */
+    max-width: 200%; /* Adjust based on preference, ensures visibility and size */
     max-height: auto; /* Adjust for proper scaling */
     margin: 0 auto; /* Center horizontally */
     z-index: 2; /* Ensures logo is above the background but under the content for better layering */
