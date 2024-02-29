@@ -95,15 +95,25 @@ ul {
 }
 
 .banner-content {
-    /* Adjustments may not be necessary if it looks as intended */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack children vertically */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     z-index: 3; /* Ensure content is above the background */
+    width: 100%; /* Ensure it spans the width of the banner */
 }
 
 .banner-logo {
-    max-width: 100%; /* Adjust to ensure the logo fits well within the banner */
-    max-height: auto; /* Keeps the logo's aspect ratio */
-    margin: 0 auto; /* Center the logo horizontally */
+    max-width: 60%; /* Example max-width, adjust as needed for your logo */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Additional horizontal centering, if needed */
     z-index: 2; /* Ensures logo is above the background */
+
     /* Consider removing max-width: 200%; or adjusting it to fit your design */
 }
 
