@@ -34,3 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
         nav a:hover {#f3f6f9;}
 
+/*Main Logo */ 
+.mainlogo { height: auto;
+    max: width 150px;;
+}
