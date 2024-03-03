@@ -30,7 +30,10 @@ h1, h2, h3, h4, h5, h6 {
     justify-content:center ;
     align-items: center;
 }
-    nav a { color: 030404; }
+    nav a { 
+        text-decoration: none;
+        color: 030404; 
+    }
 
         nav a:hover {#f3f6f9;}
 
