@@ -24,6 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Site Navigation  */
 .nav {
     display: flex;
+    list-style-type: none;
     background-color: #9bacb5; 
     padding: 10px;
     margin: 30px;
@@ -33,12 +34,13 @@ h1, h2, h3, h4, h5, h6 {
 }
     nav a { 
         text-decoration: none;
-        color: 030404; 
+        color: #030404; 
     }
 
         nav a:hover {#f3f6f9;}
 
 /*Main Logo */ 
 .mainlogo { height: auto;
-    max: width 85px;;
+    max-width: 85px;
+    
 }
