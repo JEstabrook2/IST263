@@ -1,0 +1,36 @@
+/* Body Background Color */
+body {
+    background-color: #f3f6f9; /* Soft and neutral light blue */
+}
+
+/* Text Color */
+body {
+    color: #030404; /* Near-black color for maximum readability */
+}
+
+/* Link Color */
+a {
+    color: #1c5b84; /* Primary brand color for links */
+    text-decoration: none; /* Optional: Removes underline from links */
+}
+
+a:hover {
+    text-decoration: underline; /* Optional: Underline on hover for better user experience */
+}
+
+/* Heading Color */
+h1, h2, h3, h4, h5, h6 {
+    color: #4c5e6b; /* Complementary blue-gray for headings */
+}
+
+/* Site Navigation Background */
+.nav {
+    background-color: #9bacb5; /* Greenish-gray accent color */
+}
+
+/* Site Navigation Highlight Color */
+.nav-item.active, .nav-item:hover {
+    background-color: #1c5b84; /* Primary brand color for highlighting */
+}
+
+nav a { color: 030404; }
