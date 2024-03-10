@@ -64,11 +64,5 @@ h1, h2, h3, h4, h5, h6 {
     min-width: 0; /* Allows shrinking below content size if necessary */
 }
 
-/* Ensuring iframe takes full width of its container */
-.column iframe {
-    width: 100%; /* Adjust iframe width to be 100% of its parent */
-    height: auto; /* Adjust height to maintain aspect ratio, if desired */
-    border: 0; /* Removing default border */
-}
 
 
