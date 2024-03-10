@@ -44,3 +44,18 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 85px;
     
 }
+
+/*Contact*/
+.row {
+    display: flex;
+    justify-content: space-between; /* Space between columns */
+    margin-bottom: 20px; /* Space between rows */
+}
+
+.column {
+    flex: 1; /* Makes columns take up equal space */
+    padding: 20px; /* Space inside columns */
+    background-color: #f0f0f0; /* Background color for columns */
+    border-radius: 10px; /* Rounded corners */
+    box-sizing: border-box; /* Ensures padding does not affect overall width */
+}
