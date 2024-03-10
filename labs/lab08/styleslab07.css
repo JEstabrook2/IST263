@@ -46,16 +46,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*Contact*/
+/* Contact */
 .row {
     display: flex;
     justify-content: space-between; /* Space between columns */
     margin-bottom: 20px; /* Space between rows */
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .column {
     flex: 1; /* Makes columns take up equal space */
     padding: 20px; /* Space inside columns */
+    margin: 10px; /* Space between columns */
     background-color: #f0f0f0; /* Background color for columns */
     border-radius: 10px; /* Rounded corners */
     box-sizing: border-box; /* Ensures padding does not affect overall width */
+    min-width: 0; /* Allows shrinking below content size if necessary */
+}
+
+/* Ensuring iframe takes full width of its container */
+.column iframe {
+    width: 100%; /* Adjust iframe width to be 100% of its parent */
+    height: auto; /* Adjust height to maintain aspect ratio, if desired */
+    border: 0; /* Removing default border */
+}
+
+/* Ensure form elements do not overflow their container */
+input[type="text"],
+textarea,
+input[type="submit"] {
+    width: 100%; /* Full width of the form */
+    box-sizing: border-box; /* Include padding and border in the element's width */
 }
