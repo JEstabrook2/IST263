@@ -15,33 +15,48 @@
         </ul>
       </nav>
       
-</nav>
-
-    <h1>James Estabrook</h1>
-    <!--Email Link-->
-    <p> <a href="mailto:jdestabr@syr.edu">jdestabr@syr.edu</a></p>
-    <h2>711 Comstock Ave,
-        <br> Syracuse, New York, 13244</h2>
-    <div>    
-    <h3>Find My Linked In Below</h3>
-    <a href="https://www.linkedin.com/in/james-estabrook/">
-        Click Here or the Image to visit my linked in  
-        <br>
-        <br>
-        <br>
-        <img src="../../photos/LI-Logo.png" alt="LinkedIn Logo" style="width:165px; height:auto;"> 
-    </a>
+      <div class="row">
+        <div class="column">
+            <!-- Address -->
+            <h1>James Estabrook</h1>
+            <h2>711 Comstock Ave, <br> Syracuse, New York, 13244</h2>
+        </div>
+        <div class="column">
+            <!-- Email and LinkedIn -->
+            <p><a href="mailto:jdestabr@syr.edu">jdestabr@syr.edu</a></p>
+            <h3>Find My Linked In Below</h3>
+            <a href="https://www.linkedin.com/in/james-estabrook/">
+                Click Here or the Image to visit my linked in  
+                <br><br>
+                <img src="../../photos/LI-Logo.png" alt="LinkedIn Logo" style="width:165px; height:auto;"> 
+            </a>
+        </div>
     </div>
-<br>
 
+    <div class="row">
+        <div class="column">
+            <h2>Contact Form</h2>
 
+    <form action="https://formspree.io/f/xvoekyvy" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
 
+        <p>Contact Preference:</p> 
+        <input type="radio" id="email" name="contact" value="email">
+        <label for="email">Email</label>
+        <input type="radio" id="phone" name="contact" value="phone">
+        <label for="phone">Phone</label><br><br>
 
+        <label for="feedback">Your Message:</label><br>
+        <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br><br>
 
+        <input type="submit" value="Submit">
+    </form>
 
-<br>
-    <!-- embedded google map -->
+        </div>
+        <div class="column">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2916.1282136084214!2d-76.13209642382583!3d43.038733791955444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f37522103745%3A0x81782b17d77de31a!2sTheta%20Chi%2C%20711%20Comstock%20Ave%2C%20Syracuse%2C%20NY%2013210!5e0!3m2!1sen!2sus!4v1706805949882!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+    </div>
+</div>
 </body>
 </html>
