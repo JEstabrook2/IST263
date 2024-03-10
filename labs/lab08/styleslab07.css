@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 
-/*Contact*/
+
 /* Contact */
 .row {
     display: flex;
@@ -71,10 +71,4 @@ h1, h2, h3, h4, h5, h6 {
     border: 0; /* Removing default border */
 }
 
-/* Ensure form elements do not overflow their container */
-input[type="text"],
-textarea,
-input[type="submit"] {
-    width: 100%; /* Full width of the form */
-    box-sizing: border-box; /* Include padding and border in the element's width */
-}
+
