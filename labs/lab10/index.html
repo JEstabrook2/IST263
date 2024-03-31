@@ -3,92 +3,102 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Estabrook</title>
+    <meta name="description" content="Affordable and convenient golf cart rentals on Frye Island. Explore our selection of golf carts perfect for your island vacation needs.">
+    <meta name="keywords" content="Frye Island, Golf Cart Rentals, Vacation, Transportation">
+    <meta name="author" content="James Estabrook">
+    <title>Frye Island Golf Cart Rentals - Explore with Ease</title>
     <link rel="stylesheet" type="text/css" href="styleslab07.css">
-    <link rel="icon" type="image/png" href="../../photos/fryeislandrentals.png">
+    <link rel="icon" type="image/png" href="photos/fryeislandrentals.png">
 </head>
 <body>
     <header>
-    <nav>
-        <div class="navlogo">
-            <img src="../../photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage">
+        <div class="header-container">
+            <img src="photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage">
+            <h1>Frye Island Golf Cart Rentals</h1>
         </div>
-        <ul class="nav">
-            <li><a class="nav-link" href="index.html">Home</a></li>
-            <li><a class="nav-link" href="skills.html">Skills</a></li>
-            <li><a class="nav-link" href="contact.html">Contact</a></li>
-            <li><a class="nav-link" href="golf-cart-rentals.html">Golf Cart Rentals</a></li>
-            <li><a class="nav-link" href="more-rentals.html">More Rentals</a></li>
-            <li><a class="nav-link" href="faq.html">FAQ</a></li>
-            <li><a class="nav-link" href="roadmap.html">Roadmap</a></li>
-            <li><a class="nav-link" href="about-frye-island.html">About Frye Island</a></li>
-        </ul>
-    </nav>
-
-   
-    
-        <h1>James Estabrook Website</h1>
-        <h2>Current Progress Lab</h2>
+        <nav>
+            <ul class="nav">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="golf-cart-rentals.html">Golf Cart Rentals</a></li>
+                <li><a class="nav-link" href="more-rentals.html">More Rentals</a></li>
+                <li><a class="nav-link" href="faq.html">FAQ</a></li>
+                <li><a class="nav-link" href="about-frye-island.html">About Frye Island</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <p>
-            Hi, my name is <strong>James Estabrook</strong>. I am a senior EEE student within Whitman as well as having an IDS minor.
-            <br>
-            I am from Middleboro, Massachusetts, about 45 minutes south of Boston, Massachusetts. I have gotten into the coding world through my work with a company called Best.Day.Ever., which focuses on corporate hospitality, and I handle analytics for us. Very excited to be taking this class.
-        </p>
+        <section class="Hero">
+            <p>
+               Image of Beach 6 TrailMap Overlayed Large White Text "Explore Frye Island Me" Logo Below under that Book Today CTA  
+            </p>
+            <p>We're developing a premier golf cart rental service for your island adventures.</p>
+        </section>
 
-        <p>I am hoping to develop a golf cart rental site throughout this class.</p>
-        
-        <h2>Top 5 Favorite Foods</h2>
-        <ol>
-            <li>Pizza</li>
-            <li>Sushi</li>
-            <li>Pasta</li>
-            <li>Burritos</li>
-            <li>Ice Cream</li>
-        </ol>
+        <section class="Introduction"
+              <p> 
+            Introduction to Frye Island Golf Carts 
+             </p>
+    </section> 
+
+        <section class="Offerings">
+            <h2>Our Rental Offerings Include </h2>
+            <ol>
+                <li> 2 Seat Gas Golf Carts</li>
+                <li> 4 Seat Gas Golf Carts</li>
+                <li>Kyacks</li>
+                <li>Canoes</li>
+                <li>Bikes</li>
+                <li>Ebikes</li>
+            </ol>
+        </section>
+
+        <section class="Times">
+            <h2>Rental Options Include</h2>
+            <ul>
+                <li>Weekend Rental</li>
+                <li>Weeklong Rental</li>
+                <li>Long Term Rental</li>
+            </ul>
+        </section>
+
+        <!-- Form Section -->
+        <section class="rental-form">
+            <h2>Rental Inquiry Form</h2>
+            <form action="https://formspree.io/f/yourFormID" method="POST">
+                <div class="form-group">
+                    <label for="duration">Rental Duration:</label>
+                    <select id="duration" name="duration" required>
+                        <option value="weekend">Weekend</option>
+                        <option value="week">Week</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date-start">Rental Start Date:</label>
+                    <input type="date" id="date-start" name="date-start" required>
+                    <label for="date-end">Rental End Date:</label>
+                    <input type="date" id="date-end" name="date-end" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number format: 123-456-7890" placeholder="123-456-7890">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="jane.doe@example.com">
+                </div>
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+            <a href="path-to-liability-waiver.pdf" class="download-link" download="Liability_Waiver.pdf">Download Liability Waiver</a>
+        </section>
     </main>
 
-    <section>
-        <h2>Top 3 Favorite Colors</h2>
-        <ul>
-            <li>Blue</li>
-            <li>Green</li>
-            <li>Purple</li>
-        </ul>
-    </section>
-    <!-- Form Section -->
-<section class="form-container">
-    <form action="https://formspree.io/f/yourFormID" method="POST">
-        <div class="form-group">
-            <label for="duration">Rental Duration:</label>
-            <select id="duration" name="duration" required>
-                <option value="weekend">Weekend</option>
-                <option value="week">Week</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="date-start">Rental Start Date:</label>
-            <input type="date" id="date-start" name="date-start" required>
-            <label for="date-end">Rental End Date:</label>
-            <input type="date" id="date-end" name="date-end" required>
-        </div>
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number format: 123-456-7890">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="_replyto" required>
-        </div>
-        <button type="submit">Submit Inquiry</button>
-    </form>
-    <a href="path-to-liability-waiver.pdf" class="download-link" download="Liability_Waiver.pdf">Download Liability Waiver</a>
-</section>
-
     <footer>
-        &copy; Frye Island Rentals 2024
+        <div class="footer-content">
+            <p>&copy; 2024 Frye Island Rentals. All rights reserved.</p>
+            <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms and Conditions</a></p>
+        </div>
     </footer>
 </body>
 </html>
