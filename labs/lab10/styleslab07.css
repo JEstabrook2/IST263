@@ -242,32 +242,20 @@ footer {
 }
 
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
+/* Media Queries  */
+@media screen and (max-width: 800px) {
     .nav {
-        flex-direction: column;
-        align-items: center;
+        /* Adjust navigation styles for stacking if necessary */
     }
-
-    .hero-text {
-        position: static;
-        background: none;
+    
+    .nav span {
+        display: none; /* Hides the pipe characters */
     }
-
-    .hero {
-        padding: 20px;
-    }
-
-    .offerings-list {
-        flex-direction: column;
-    }
-
-    .cta-button {
-        width: 100%; 
+    
+    .nav .nav-link {
+        display: block; /* Makes each link take up full width */
+        width: 100%; /* Ensures each link takes up 100% of the nav width */
+        padding: 10px 0; /* Adds space around the links */
+        /* Additional styles to ensure proper display and spacing */
     }
 }
