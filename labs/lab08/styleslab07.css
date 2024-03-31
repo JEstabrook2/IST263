@@ -1,10 +1,11 @@
 /* Body Background Color */
 body {
     background-color: #f3f6f9; /* Soft and neutral light blue */
-    color: #030404; /*  Text Color */
-    
+    color: #030404; /* Text Color */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
 }
-
 
 /* Link Color */
 a {
@@ -19,50 +20,176 @@ a:hover {
 /* Heading Color */
 h1, h2, h3, h4, h5, h6 {
     color: #4c5e6b; /* Complementary blue-gray for headings */
+    margin: 0;
+    padding: 0;
 }
 
-/* Site Navigation  */
-.nav, nav li {
+/* Header and Navigation */
+.header-container {
     display: flex;
-    list-style-type: none;
-    background-color: #9bacb5; 
-    padding: 10px;
-    margin: 30px;
-    justify-content:center ;
     align-items: center;
-  
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #9bacb5; /* Matches nav background */
 }
-    nav a { 
-        text-decoration: none;
-        color: #030404; 
+
+.navlogoimage {
+    height: 60px; /* Adjust the size of the logo */
+    width: auto;
+    margin-right: 15px; /* Space between logo and h1 */
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav li {
+    padding: 10px 0;
+}
+
+.nav a { 
+    color: #030404; 
+    padding: 10px 15px;
+}
+
+.nav a:hover {
+    background-color: #f3f6f9; /* Light hover effect for links */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    color: white;
+}
+
+.cta-button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase; /* Stylistic choice for CTA buttons */
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #e2564b;
+}
+
+/* Offerings Section */
+.offerings-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.offering {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.offering img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Form Section */
+.rental-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.rental-form fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+.rental-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.rental-form input,
+.rental-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #030404;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-content a {
+    color: white;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design for Smaller Devices */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
     }
 
-        nav a:hover {#f3f6f9;}
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
 
-/*Main Logo */ 
-.mainlogo { height: auto;
-    max-width: 85px;
-    
+    .offerings-list {
+        flex-direction: column;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
+    .hero-text {
+        position: static;
+    }
+
+    .cta-button {
+        width: 100%; /* Full-width on small devices */
+    }
+
+    .rental-form {
+        margin: 20px 10px; /* Adjusted margin for small devices */
+    }
 }
-
-
-/* Contact */
-.row {
-    display: flex;
-    justify-content: space-between; /* Space between columns */
-    margin-bottom: 20px; /* Space between rows */
-    flex-wrap: nowrap; /* Prevent wrapping */
-}
-
-.column {
-    flex: 1; /* Makes columns take up equal space */
-    padding: 20px; /* Space inside columns */
-    margin: 10px; /* Space between columns */
-    background-color: #f0f0f0; /* Background color for columns */
-    border-radius: 10px; /* Rounded corners */
-    box-sizing: border-box; /* Ensures padding does not affect overall width */
-    min-width: 0; /* Allows shrinking below content size if necessary */
-}
-
-
-
