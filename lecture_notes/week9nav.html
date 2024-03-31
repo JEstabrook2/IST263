@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Layout</title>
+    
+    <style>
+        .nav{ 
+            background-color: black;
+            padding: 10px;
+            color: white;
+            display: flex; /*display flex alkways on row not column */
+        }
+
+        .nav div {padding: 5px;}
+            .flexend {justify-content: flex-end;} /*justify content goes on row */ 
+   
+    </style>
+</head>
+<body>
+    <h1> Navigation 4 Ways </h1>
+    <h2> Right Side</h2>
+
+    <nav> 
+            <div> Home</div>
+            <div> About Us</div>
+            <div> Rentals</div>
+            <div> Contact</div>
+    </nav>
+
+    <nav class="between" >
+        <div> Home</div>
+        <div> About Us</div>
+        <div> Rentals</div>
+        <div> Contact</div>
+    </nav>
+
+    <nav class="flexend"> 
+        <div> Home</div>
+        <div> About Us</div>
+        <div> Rentals</div>
+        <div> Contact</div>
+    </nav>  
+     <!-- Elements on Left and right -->
+
+    <nav class="split">
+        <div> Home</div>
+        <div> About Us</div>
+        <div> Rentals</div>
+        <div> Contact</div>
+
+        <div> Facebook</div>
+        <div> X </div>
+    </nav>
+
+
+
+
+</body>
+</html>

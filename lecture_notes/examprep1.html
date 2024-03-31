@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Layout</title>
+    
+    <style>
+        div {
+            border: 1px solid black; 
+        }
+
+        .top {
+            display: flex; 
+        }
+
+        .next {
+            flex: 3;
+        }
+
+        .last {
+            flex: 1; 
+        }
+        .inline {text text-align: center;}
+
+        .block{ 
+            margin:0 auto
+        }
+        
+    </style>
+</head>
+<body>
+    <h1> Centering Two Ways</h1>
+        <h2> Inline</h2>
+            <p class="inline"> Hello World</p>
+        <h2> Block </h2>
+            <p class="block">Hello World</p>
+
+
+
+<div class="top">
+    <div class="next">Hello</div>
+    <div class="last">World</div> <!-- Added to match your CSS -->
+</div>
+
+</body>
+</html>
