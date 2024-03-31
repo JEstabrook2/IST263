@@ -69,6 +69,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     padding: 50px 20px;
     margin: 0 auto; /* Centers the section */
+    max-width: 100%;
 }
 
 .hero-image {
@@ -80,7 +81,8 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     color: #291992;
     padding: 1em;
-    background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for text readability */
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 10;
 }
 
 .cta-button {
