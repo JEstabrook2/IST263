@@ -1,66 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <meta name="description" content="Affordable and convenient golf cart rentals on Frye Island. Explore our selection of golf carts and other rental options!">
+    <meta name="keywords" content="Frye Island, Golf Cart Rentals, Vacation, Transportation">
+    <meta name="author" content="Frye Island Golf Cart Rentals">
+    <title>Contact Frye Island Golf Cart Rentals</title>
     <link rel="stylesheet" type="text/css" href="styleslab07.css">
+    <link rel="icon" type="image/png" href="../../photos/fryeislandrentals.png">
 </head>
 <body>
-    <nav>
-        <ul class="nav">
-          <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a  href="skills.html">Skills</a></li>
-          <li class="nav-item"><a  href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      
-      <div class="row">
-        <div class="column">
-            <!-- Address -->
-            <h1>Frye Island Golf Cart Rentals</h1>
-            <br> <h2>Frye Island, ME</h2> 
-        </div>
-        <div class="column">
-            <!-- Email and LinkedIn -->
-            <p><a href="mailto:jdestabr@syr.edu">jdestabr@syr.edu</a></p>
-            <h3>Find My Linked In Below</h3>
-            <a href="https://www.linkedin.com/in/james-estabrook/">
-                Click Here or the Image to visit my linked in  
-                <br><br>
-                <img src="../../photos/LI-Logo.png" alt="LinkedIn Logo" style="width:165px; height:auto;"> 
-            </a>
-        </div>
-    </div>
+    <header>
+        <nav class="navigation">
+            <ul class="nav-list">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="golf-cart-rentals.html">Golf Cart Rentals</a></li>
+                <li><a class="nav-link" href="more-rentals.html">More Rentals</a></li>
+                <li><a class="nav-link" href="faq.html">FAQ</a></li>
+                <li><a class="nav-link" href="about-frye-island.html">About Frye Island</a></li>
+                <li><a class="nav-link active" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="contact-info">
+            <h1>Contact Us</h1>
+            <p>Frye Island, ME</p> 
+            <p>Email: <a href="mailto:jdestabr@syr.edu">jdestabr@syr.edu</a></p>
+            <p>LinkedIn: 
+                <a href="https://www.linkedin.com/in/james-estabrook/">
+                    James Estabrook on LinkedIn
+                </a>
+            </p>
+            <img src="../../photos/LI-Logo.png" alt="LinkedIn Logo" class="social-media-logo"> 
+        </section>
+        
+        <section class="rental-form">
+            <h2>Rental Inquiry Form</h2>
+            <p>Fill out the form below to inquire about our rental options. Our team will get back to you shortly with availability and booking details.</p>
+            <form action="https://formspree.io/f/mayrppyk" method="POST">
+                <fieldset>
+                    <legend>Select Rental Dates</legend>
+                    <label for="date-start">Rental Start Date:</label>
+                    <input type="date" id="date-start" name="date-start" required>
+                    <label for="date-end">Rental End Date:</label>
+                    <input type="date" id="date-end" name="date-end" required>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="duration">Rental Duration:</label>
+                    <select id="duration" name="duration" required>
+                        <option value="">Please select...</option>
+                        <option value="weekend">Weekend</option>
+                        <option value="week">Week</option>
+                    </select>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number format: 123-456-7890" placeholder="123-456-7890">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="jane.doe@example.com">
+                </fieldset>
+                
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+            <a href="path-to-liability-waiver.pdf" class="download-link" download="Liability_Waiver.pdf">Download Liability Waiver</a>
+        </section>
+        
+        <section class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </main>
 
-    <div class="row">
-        <div class="column">
-            <h2>Contact Form</h2>
-
-    <form action="https://formspree.io/f/xvoekyvy" method="POST">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
-
-        <p>Contact Preference:</p> 
-        <input type="radio" id="email" name="contact" value="email">
-        <label for="email">Email</label>
-        <input type="radio" id="phone" name="contact" value="phone">
-        <label for="phone">Phone</label><br><br>
-
-        <label for="feedback">Your Message:</label><br>
-        <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br><br>
-
-        <input type="submit" value="Submit">
-    </form>
-
-        </div>
-        <div class="column">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2916.1282136084214!2d-76.13209642382583!3d43.038733791955444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f37522103745%3A0x81782b17d77de31a!2sTheta%20Chi%2C%20711%20Comstock%20Ave%2C%20Syracuse%2C%20NY%2013210!5e0!3m2!1sen!2sus!4v1706805949882!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-</div>
-
-<footer> 
-    &copy; Frye Island Rentals 2024 
+    <footer> 
+        <p>&copy; Frye Island Rentals 2024</p> 
     </footer> 
 
 </body>
