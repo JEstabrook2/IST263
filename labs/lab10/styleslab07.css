@@ -39,19 +39,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navlogoimage {
-    height: 80px; /* Adjust size accordingly */
+    height: 135px; 
 }
 
 .nav {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 15px;
-    margin: 0;
-    padding: 0;
+    margin: 10;
+    padding: 10;
 }
 
 .nav li {
-    padding: 5px 10px;
+    padding: 10px 20px;
 }
 
 .nav-link {
@@ -77,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-text {
     position: absolute;
-    color: #fff;
+    color: #291992;
     padding: 1em;
     background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for text readability */
 }
@@ -96,6 +97,16 @@ h1, h2, h3, h4, h5, h6 {
 .cta-button:hover {
     background-color: #27dee4;
 }
+
+
+.introduction {
+    background-color: #ffffff; 
+    padding: 20px; /* Adds space inside the section */
+    margin: 20px 0; /* Adds space above and below the section */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow for depth */
+    border-radius: 10px; 
+}
+
 
 /* Offerings section */
 .offerings {
