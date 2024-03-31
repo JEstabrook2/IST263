@@ -1,68 +1,189 @@
-/* Body Background Color */
+/* General styles */
 body {
-    background-color: #f3f6f9; /* Soft and neutral light blue */
-    color: #030404; /*  Text Color */
-    
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-
-/* Link Color */
 a {
-    color: #1c5b84; 
-    text-decoration: none; 
+    color: #1c5b84;
+    text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
-/* Heading Color */
 h1, h2, h3, h4, h5, h6 {
-    color: #4c5e6b; /* Complementary blue-gray for headings */
+    color: #4c5e6b;
 }
 
-/* Site Navigation  */
-.nav, nav li {
+/* Header styles */
+.header-container {
     display: flex;
-    list-style-type: none;
-    background-color: #9bacb5; 
-    padding: 10px;
-    margin: 30px;
-    justify-content:center ;
     align-items: center;
-  
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
 }
-    nav a { 
-        text-decoration: none;
-        color: #030404; 
+
+.navlogoimage {
+    height: 60px; /* Adjust size accordingly */
+    width: auto;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    padding: 5px 10px;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hero section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    color: #fff;
+}
+
+.cta-button {
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #e2564b;
+}
+
+/* Offerings section */
+.offerings {
+    padding: 20px;
+}
+
+.offerings-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.offering {
+    text-align: center;
+    width: 200px; /* Adjust width accordingly */
+}
+
+.offering img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Rental Options */
+.times {
+    background-color: #e8eef1;
+    padding: 20px;
+}
+
+.times ul {
+    list-style: none;
+    padding: 0;
+}
+
+.times li {
+    padding: 5px 0;
+}
+
+/* Form Section */
+.rental-form {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.rental-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.rental-form input[type="text"],
+.rental-form input[type="email"],
+.rental-form input[type="tel"],
+.rental-form select,
+.rental-form input[type="date"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #2a2a2a;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content a {
+    color: #fff;
+    padding: 5px;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
     }
 
-        nav a:hover {#f3f6f9;}
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
 
-/*Main Logo */ 
-.mainlogo { height: auto;
-    max-width: 85px;
-    
+    .offerings-list {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        position: static; /* Reset position for small screens */
+        padding: 20px;
+        background-color: rgba(0,0,0,0.5); /* Optional: Overlay for text readability */
+    }
 }
-
-
-/* Contact */
-.row {
-    display: flex;
-    justify-content: space-between; /* Space between columns */
-    margin-bottom: 20px; /* Space between rows */
-    flex-wrap: nowrap; /* Prevent wrapping */
-}
-
-.column {
-    flex: 1; /* Makes columns take up equal space */
-    padding: 20px; /* Space inside columns */
-    margin: 10px; /* Space between columns */
-    background-color: #f0f0f0; /* Background color for columns */
-    border-radius: 10px; /* Rounded corners */
-    box-sizing: border-box; /* Ensures padding does not affect overall width */
-    min-width: 0; /* Allows shrinking below content size if necessary */
-}
-
-
-
