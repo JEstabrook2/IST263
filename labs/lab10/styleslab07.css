@@ -18,6 +18,8 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
     color: #4c5e6b;
+    margin: 0; /* Removes default margin */
+    padding: 0.5em 0; /* Adds some vertical space */
 }
 
 /* Header styles */
@@ -31,8 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navlogoimage {
-    height: 60px; /* Adjust size accordingly */
-    width: auto;
+    height: 80px; /* Adjust size accordingly */
 }
 
 .nav {
@@ -60,6 +61,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     text-align: center;
     padding: 50px 20px;
+    margin: 0 auto; /* Centers the section */
 }
 
 .hero-image {
@@ -70,37 +72,36 @@ h1, h2, h3, h4, h5, h6 {
 .hero-text {
     position: absolute;
     color: #fff;
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for text readability */
 }
 
 .cta-button {
-    background-color: #ff6f61;
+    background-color: #4517b8;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    font-size: 1.1em;
 }
 
 .cta-button:hover {
-    background-color: #e2564b;
+    background-color: #27dee4;
 }
 
 /* Offerings section */
 .offerings {
     padding: 20px;
+    text-align: center;
 }
 
 .offerings-list {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
-}
-
-.offering {
-    text-align: center;
-    width: 200px; /* Adjust width accordingly */
 }
 
 .offering img {
@@ -131,6 +132,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 10px;
     margin: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 100%; /* Ensures form section fills its parent */
 }
 
 .rental-form form {
@@ -143,6 +145,7 @@ h1, h2, h3, h4, h5, h6 {
 .rental-form input[type="tel"],
 .rental-form select,
 .rental-form input[type="date"] {
+    width: 100%; /* Ensures inputs take full width */
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -155,6 +158,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px 0;
+    margin-top: 20px; /* Adds space above footer */
 }
 
 .footer-content a {
@@ -170,6 +174,7 @@ footer {
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
+        align-items: center;
     }
 
     .nav {
@@ -177,13 +182,20 @@ footer {
         align-items: center;
     }
 
+    .hero-text {
+        position: static;
+        background: none;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
     .offerings-list {
         flex-direction: column;
     }
 
-    .hero-text {
-        position: static; /* Reset position for small screens */
-        padding: 20px;
-        background-color: rgba(0,0,0,0.5); /* Optional: Overlay for text readability */
+    .cta-button {
+        width: 100%; /* Makes button full-width on mobile */
     }
 }
