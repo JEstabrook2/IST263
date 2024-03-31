@@ -223,19 +223,6 @@ footer {
     margin-top: 10px; /* Space above the LinkedIn logo */
 }
 
-/* Contact Form Section Styles */
-.contact-form-section {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-bottom: 20px; /* Space between form and map */
-    border-radius: 8px; /* Optional rounded corners */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional box shadow for depth */
-}
-
-.contact-form {
-    max-width: 600px; /* Maximum width of form */
-    margin: auto; /* Centers the form */
-}
 
 /* Google Map Container Styles */
 .map-container iframe {
