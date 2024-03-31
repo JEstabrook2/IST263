@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="../../photos/fryeislandrentals.png">
 </head>
 <body>
+    <header>
     <nav>
         <div class="navlogo">
             <img src="../../photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage">
@@ -24,7 +25,7 @@
         </ul>
     </nav>
 
-    <header>
+   
     
         <h1>James Estabrook Website</h1>
         <h2>Current Progress Lab</h2>
@@ -57,6 +58,34 @@
             <li>Purple</li>
         </ul>
     </section>
+    <!-- Form Section -->
+<section class="form-container">
+    <form action="https://formspree.io/f/yourFormID" method="POST">
+        <div class="form-group">
+            <label for="duration">Rental Duration:</label>
+            <select id="duration" name="duration" required>
+                <option value="weekend">Weekend</option>
+                <option value="week">Week</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date-start">Rental Start Date:</label>
+            <input type="date" id="date-start" name="date-start" required>
+            <label for="date-end">Rental End Date:</label>
+            <input type="date" id="date-end" name="date-end" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number format: 123-456-7890">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="_replyto" required>
+        </div>
+        <button type="submit">Submit Inquiry</button>
+    </form>
+    <a href="path-to-liability-waiver.pdf" class="download-link" download="Liability_Waiver.pdf">Download Liability Waiver</a>
+</section>
 
     <footer>
         &copy; Frye Island Rentals 2024
