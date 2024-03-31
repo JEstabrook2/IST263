@@ -146,6 +146,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Form Section */
 .rental-form {
+    flex-wrap: wrap;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -190,8 +191,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Contact Page
-/* Contact Info Styles */
+/*contact info */ 
 .contact-info {
     background-color: #ffffff;
     padding: 20px;
@@ -226,6 +226,7 @@ footer {
 
 /* Google Map Container Styles */
 .map-container iframe {
+    flex-wrap: wrap;
     width: 100%; /* Full width */
     height: 450px; /* Height of the map */
     border: none; /* Removes iframe border */
