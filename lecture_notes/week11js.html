@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Program</title>
+    <style> 
+        h1 { cursor: pointer; }
+    </style>
+    <script> 
+        function clicky() { 
+            alert("Hello Clicker!");
+        }
+        function hovery() {
+            alert("Hello Hoverer!");
+        }
+        function loady() {
+            alert("Hello Loader!"); 
+        }
+        function clickForMessage() {
+            alert("This is a message!");
+        }
+
+        function mouseRollOut() {
+            alert("Mouse rolled out!");
+        }
+    </script>
+</head>
+<body onload="loady();">
+    <h1 onclick="clicky();">Classic First JavaScript Program</h1>
+    <p onmouseover="hovery();">Hover over me!</p>
+    <a href="https://www.nike.com" onclick="clickForMessage();" onmouseout="mouseRollOut();">Click for Message</a>
+</body>
+</html>
