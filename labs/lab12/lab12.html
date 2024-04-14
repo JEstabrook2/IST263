@@ -32,24 +32,45 @@
 #venusinfo, #earthinfo, #marsinfo, #jupiterinfo, #saturninfo, #uranusinfo, #neptuneinfo {
     display: none;
 }
-
-
      </style>
      <script>
+<script>
+    function PlanetsOff() {
+        // Hide all the planet images
+        document.getElementById('mercury').style.display = 'none';
+        document.getElementById('venus').style.display = 'none';
+        document.getElementById('earth').style.display = 'none';
+        document.getElementById('mars').style.display = 'none';
+        document.getElementById('jupiter').style.display = 'none';
+        document.getElementById('saturn').style.display = 'none';
+        document.getElementById('uranus').style.display = 'none';
+        document.getElementById('neptune').style.display = 'none';
+        
+        // Hide all the planet information
+        document.getElementById('mercuryinfo').style.display = 'none';
+        document.getElementById('venusinfo').style.display = 'none';
+        document.getElementById('earthinfo').style.display = 'none';
+        document.getElementById('marsinfo').style.display = 'none';
+        document.getElementById('jupiterinfo').style.display = 'none';
+        document.getElementById('saturninfo').style.display = 'none';
+        document.getElementById('uranusinfo').style.display = 'none';
+        document.getElementById('neptuneinfo').style.display = 'none';
+    }
+</script>
 
      </script>
  </head>
  <body>
  <div id="slideshow-container">
      <div id="bigimages">
-         <img src="https://laferger.github.io/ist263/images/mecury.jpg" alt="mercury" id="mercury">
-         <img src="https://laferger.github.io/ist263/images/venus.jpg" alt="venus" id="venus">
-         <img src="https://laferger.github.io/ist263/images/earth.jpg" alt="earth" id="earth">
-         <img src="https://laferger.github.io/ist263/images/mars.jpg" alt="mars" id="mars">
-         <img src="https://laferger.github.io/ist263/images/jupiter.jpg" alt="jupiter" id="jupiter">
-         <img src="https://laferger.github.io/ist263/images/saturn.jpg" alt="saturn" id="saturn">
-         <img src="https://laferger.github.io/ist263/images/uranus.jpg" alt="uranus" id="uranus">
-         <img src="https://laferger.github.io/ist263/images/neptune.jpg" alt="neptune" id="neptune">
+         <img src="https://laferger.github.io/ist263/images/mecury.jpg" alt="mercury" id="mercury" onclick="PlanetsOff();">
+         <img src="https://laferger.github.io/ist263/images/venus.jpg" alt="venus" id="venus"onclick="PlanetsOff();">
+         <img src="https://laferger.github.io/ist263/images/earth.jpg" alt="earth" id="earth" onclick="PlanetsOff();">
+         <img src="https://laferger.github.io/ist263/images/mars.jpg" alt="mars" id="mars" onclick="PlanetsOff();">
+         <img src="https://laferger.github.io/ist263/images/jupiter.jpg" alt="jupiter" id="jupiter" onclick="PlanetsOff();">
+         <img src="https://laferger.github.io/ist263/images/saturn.jpg" alt="saturn" id="saturn" onclick="PlanetsOff();">
+         <img src="https://laferger.github.io/ist263/images/uranus.jpg" alt="uranus" id="uranus" onclick="PlanetsOff();">
+         <img src="https://laferger.github.io/ist263/images/neptune.jpg" alt="neptune" id="neptune" onclick="PlanetsOff();">
      </div>
      <div id="planetinfo">        
          <h1>Planets Slideshow</h1>
