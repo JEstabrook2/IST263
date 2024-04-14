@@ -31,6 +31,20 @@
 #venusinfo, #earthinfo, #marsinfo, #jupiterinfo, #saturninfo, #uranusinfo, #neptuneinfo {
     display: none;
 }
+#bigimages {
+    float: left; /* Float the big image to the left */
+    width: auto; /* Adjust width as needed or leave it at auto */
+}
+
+#planetinfo {
+    /* No need to float this; the text will wrap around the floated image. */
+    margin-left: 20px; /* Or your preferred spacing between the image and the text */
+}
+
+#thumbnails {
+    clear: both; /* Clear floats to ensure thumbnails appear below */
+    text-align: center; /* Center thumbnails if desired */
+}
 
      </style>
      <script>
