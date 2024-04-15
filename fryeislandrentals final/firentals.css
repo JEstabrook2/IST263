@@ -200,12 +200,17 @@ footer {
 }
 
 /*contact info */ 
-
-#fullScreenMap {
-    width: 100vw;   /* 100% of the viewport width */
+.maps-container {
+    display: flex;  /* Enables flexbox layout */
     height: 100vh;  /* 100% of the viewport height */
-    display: block; /* Remove extra space below the iframe */
 }
+
+.map {
+    flex: 1;  /* Each map will take an equal amount of space */
+    width: 50vw;  /* 50% of the viewport width */
+    border: none;  /* Optional: Removes the border */
+}
+
 .contact-info {
     background-color: #ffffff;
     padding: 20px;
