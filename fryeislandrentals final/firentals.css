@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 10px;
     margin: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    max-width: 100%; 
+    max-width: 70%; 
 }
 
 .rental-form form {
