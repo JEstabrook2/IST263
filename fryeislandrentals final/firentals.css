@@ -153,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 40px; /* More padding for a spacious layout */
     margin: 40px auto 20px; /* Center the form with automatic horizontal margins and more vertical spacing */
     width: 70%; /* Set the width to 70% */
-    max-width: 800px; /* Maximum width to avoid overly wide forms on large screens */
+    max-width: 1200px; /* Maximum width to avoid overly wide forms on large screens */
 }
 
 /* Form Inputs and Button */
