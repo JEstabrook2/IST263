@@ -215,6 +215,7 @@ footer {
 .map {
     flex: 1;  /* Each map will take an equal amount of space */
     border: none;  /* Optional: Removes the border */
+    min-height: 300px;
     height: 100%;
 }
 
