@@ -215,7 +215,6 @@ footer {
 
 .map {
     flex: 1;  /* Each map will take an equal amount of space */
-    width: 50vw;  /* 50% of the viewport width */
     border: none;  /* Optional: Removes the border */
 }
 
