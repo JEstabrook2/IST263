@@ -196,7 +196,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    position: bottom;
 }
 
 .footer-content a {
@@ -211,6 +210,7 @@ footer {
 /*contact info */ 
 .maps-container {
     display: flex;  /* Enables flexbox layout */
+    flex: 1;
 }
 
 .map {
