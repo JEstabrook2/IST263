@@ -211,7 +211,6 @@ footer {
 /*contact info */ 
 .maps-container {
     display: flex;  /* Enables flexbox layout */
-    height: 100vh;  /* 100% of the viewport height */
 }
 
 .map {
