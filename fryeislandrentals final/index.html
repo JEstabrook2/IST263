@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Affordable and convenient golf cart rentals on Frye Island. Explore our selection of golf carts and other rental options!">
+    <meta name="keywords" content="Frye Island, Golf Cart Rentals, Vacation, Transportation">
+    <meta name="author" content="Frye Island Golf Cart Rentals">
+    <title>Frye Island Golf Cart Rentals</title>
+    <link rel="stylesheet" type="text/css" href="firentals.css">
+    <link rel="icon" type="image/png" href="../photos/fryeislandrentals.png">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage">
+            <h1>Frye Island Golf Cart Rentals</h1>
+        </div>
+        <nav>
+            <ul class="nav">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="golf-cart-rentals.html">Golf Cart Rentals</a></li>
+                <li><a class="nav-link" href="more-rentals.html">More Rentals</a></li>
+                <li><a class="nav-link" href="faq.html">FAQ</a></li>
+                <li><a class="nav-link" href="about-frye-island.html">About Frye Island</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="photos/beach-trail-map.jpg" alt="Frye Island Beach 6" class="hero-image">
+            <div class="hero-text">
+                <h2>Explore Frye Island, ME</h2>
+                <p>Discover the beauty of Frye Island with our convenient golf cart rentals.</p>
+                <a href="golf-cart-rentals.html" class="cta-button">Book Today</a>
+            </div>
+        </section>
+        <br> 
+        
+        <section class="introduction">
+            <h2>Welcome to Frye Island Golf Cart Rentals</h2>
+            <p>Experience the freedom of exploring Frye Island at your own pace with our reliable and affordable golf cart rentals. Whether you're here for a weekend getaway or a longer vacation, we have the perfect rental options to suit your needs.</p>
+        </section>
+        <br>
+        <section class="offerings">
+            <h2>Our Rental Offerings</h2>
+            <div class="offerings-list">
+                <div class="offering">
+                    <img src="photos/2-seat-golf-cart.jpg" alt="2 Seat Gas Golf Cart">
+                    <h3>2 Seat Gas Golf Carts</h3>
+                </div>
+                <div class="offering">
+                    <img src="photos/4-seat-golf-cart.jpg" alt="4 Seat Gas Golf Cart">
+                    <h3>4 Seat Gas Golf Carts</h3>
+                </div>
+                <div class="offering">
+                    <img src="photos/kayak.jpg" alt="Kayaks">
+                    <h3>Kayaks</h3>
+                </div>
+                <!-- Add more offerings here -->
+            </div>
+        </section>
+        
+        <section class="times">
+            <h2>Rental Options Include</h2>
+            <ul>
+                <li>Weekend Rental</li>
+                <li>Weeklong Rental</li>
+                <li>Long Term Rental</li>
+            </ul>
+        </section>
+
+        <!-- Form Section -->
+        <section class="rental-form">
+            <h2>Rental Inquiry Form</h2>
+            <p>Fill out the form below to inquire about our rental options. Our team will get back to you shortly with availability and booking details.</p>
+            <form action="https://formspree.io/f/mayrppyk" method="POST">
+                <fieldset>
+                    <legend>Select Rental Dates</legend>
+                    <label for="date-start">Rental Start Date:</label>
+                    <input type="date" id="date-start" name="date-start" required>
+                    <label for="date-end">Rental End Date:</label>
+                    <input type="date" id="date-end" name="date-end" required>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="duration">Rental Duration:</label>
+                    <select id="duration" name="duration" required>
+                        <option value="weekend">Weekend</option>
+                        <option value="week">Week</option>
+                    </select>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number format: 123-456-7890" placeholder="123-456-7890">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="jane.doe@example.com">
+                </fieldset>
+                
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+            <a href="path-to-liability-waiver.pdf" class="download-link" download="Liability_Waiver.pdf">Download Liability Waiver</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Frye Island Rentals. All rights reserved.</p>
+            <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms and Conditions</a> | <a href="FAQ.html">FAQ</a></p>
+        </div>
+    </footer>
+</body>
+</html>
