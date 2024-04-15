@@ -200,6 +200,12 @@ footer {
 }
 
 /*contact info */ 
+
+#fullScreenMap {
+    width: 100vw;   /* 100% of the viewport width */
+    height: 100vh;  /* 100% of the viewport height */
+    display: block; /* Remove extra space below the iframe */
+}
 .contact-info {
     background-color: #ffffff;
     padding: 20px;
