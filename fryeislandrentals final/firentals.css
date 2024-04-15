@@ -1,6 +1,6 @@
 /* General styles */
 html, body {
-    height: 100%; /* Ensure the html and body are at least the height of the viewport */
+    height: 100%; 
     margin: 0;
     padding: 0;
 }
@@ -92,7 +92,17 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #27dee4;
 }
 
+.image-container {
+    height: calc(100vh - 60px);  /* Subtract the height of the navigation bar */
+    width: 100%;
+    overflow: hidden;  /* Optional, ensures no overflow of the image */
+}
 
+.image-container img {
+    width: 100%;  /* Makes image full width of the container */
+    height: 100%;  /* Makes image full height of the container */
+    object-fit: cover;  /* Ensures the image covers the area without distortion */
+}
 .introduction {
     background-color: #ffffff; 
     padding: 20px; 
