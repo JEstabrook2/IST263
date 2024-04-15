@@ -27,23 +27,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0; /* Removes default margin */
     padding: 0.5em 0; /* Adds some vertical space */
 }
-
-/* Header styles */
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-}
-
-.navlogoimage {
-    height: 135px; 
-}
-
 .nav {
-    list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,6 +36,9 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
+}
+.navlogoimage {
+    height: 135px; 
 }
 
 .nav li {
