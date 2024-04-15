@@ -23,20 +23,21 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
     color: #4c5e6b;
-    margin: 0; /* Removes default margin */
-    padding: 0.5em 0; /* Adds some vertical space */
+    margin: 0; 
+    padding: 0.5em 0; 
 }
 .nav {
-    list-style: none;
+    list-style: none;  
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    margin: 10;
-    padding: 10;
+    margin: 10px;  
+    padding: 10px; 
     background-color: #fff;
     border-bottom: 1px solid #ddd;
 }
+
 .navlogoimage {
     height: 135px; 
 }
