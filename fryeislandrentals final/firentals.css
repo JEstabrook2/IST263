@@ -190,7 +190,7 @@ a:hover {
     text-align: center; /* Text alignment for the text content */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     border-radius: 10px;
-    font
+    position: relative;
 }
 
 .text-content {
@@ -201,6 +201,24 @@ a:hover {
 .island-map-small {
     width: 50%; /* Adjust width as necessary */
     height: auto; /* Maintain aspect ratio */
+    position: relative;
+}
+#hover-info {
+    display: none;
+    position: absolute;
+    background-color:#02435F;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid #02435F;
+    border-radius: 6px;
+    z-index: 10;  /* Position the tooltip - adjust 'top' and 'left' as needed */
+    top: 0; /* Position at the top of the container */
+    right: 15%; /* Center horizontally */
+}
+
+.island-map-small:hover + #hover-info,
+#hover-info:hover {
+    display: block;
 }
 
 

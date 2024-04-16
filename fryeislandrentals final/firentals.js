@@ -1,3 +1,29 @@
+// index script//
+<script>
+  // Get the image and the hover-info element
+  const islandMap = document.querySelector('.island-map-small');
+  const hoverInfo = document.getElementById('hover-info');
+
+  // Function to show the hover-info
+  function showHoverInfo() {
+    hoverInfo.style.display = 'block';
+  }
+
+  // Function to hide the hover-info
+  function hideHoverInfo() {
+    hoverInfo.style.display = 'none';
+  }
+
+  // Event listeners for mouse enter and leave
+  islandMap.addEventListener('mouseenter', showHoverInfo);
+  islandMap.addEventListener('mouseleave', hideHoverInfo);
+</script>
+
+
+
+
+
+
 //golf cart rentals script//
 function PlanetsOff() {
     // Hide all the planet images
