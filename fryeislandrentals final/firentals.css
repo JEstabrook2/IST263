@@ -64,11 +64,14 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
 }
 
-.hero-image {
-    max-width: 100%;
-    height: auto;
-}
-
+.fullscreen-banner {
+    background-image: url('path-to-your-banner-image.jpg'); /* Replace with the path to your image */
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Cover the entire area */
+    background-repeat: no-repeat; /* Don't repeat the image */
+    height: 100vh; /* Full height of the viewport */
+    width: 100%; /* Full width of the viewport */
+  }
 .hero-text {
     position: absolute;
     color: #291992;
