@@ -12,6 +12,68 @@ body {
     margin: 0;
     padding: 0;
 }
+/* @font-face declarations */
+@font-face {
+    font-family: 'Extra Bold Italic';
+    src: url('fonts/prozalibre-extrabolditalic-webfont.woff') format('woff2');
+}
+
+@font-face {
+    font-family: 'Semi Bold Italic';
+    src: url('fonts/ProzaLibre-SemiBoldItalic.woff') format('woff2');
+}
+
+@font-face {
+    font-family: 'Medium';
+    src: url('fonts/ProzaLibre-Medium.woff') format('woff2');
+}
+
+/* Heading styles */
+h1, h2 {
+    font-family: 'Extra Bold Italic', sans-serif;
+    font-weight: bold; /* Extra bold style, assuming the font itself is extra bold */
+    font-style: italic;
+}
+
+h1 {
+    color: #02435F; /* White text for h1 */
+    -webkit-text-stroke: 0.25px white;  
+}
+
+
+h2 {
+    color: rgb(255, 255, 255); /* Black text for h2 */
+}
+
+h3, h4 {
+    font-family: 'Semi Bold Italic', sans-serif;
+    font-weight: bold; /* Semi bold style */
+    font-style: italic;
+}
+
+h3 {
+    color: #02435F; /* White text for h3 */
+}
+
+h4 {
+    color: rgb(255, 255, 255); /* Black text for h4 */
+}
+
+h5, h6 {
+    font-family: 'Medium', sans-serif;
+    font-weight: normal; /* Medium style */
+    font-style: normal;
+    padding: 10px;    
+}
+
+h5 {
+    color: #02435F; /* White text for h5 */
+}
+
+h6 {
+    color: rgb(255, 255, 255); /* Black text for h6 */
+}
+
 
 a {
     color: #1c5b84;
@@ -22,11 +84,8 @@ a:hover {
     text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #6cc2ff;
-    margin: 0; 
-    padding: 0.5em 0; 
-}
+
+
 .nav {
     list-style: none;  
     display: flex;
@@ -95,8 +154,8 @@ h1, h2, h3, h4, h5, h6 {
 .cta-button {
     background-color: #008CBA; /* Example button color, change as needed */
     color: white;
+    font-family: 'Extra Bold Italic';
     padding: 12px 24px;
-    text-decoration: none;
     display: inline-block;
     font-size: 18px;
     margin-top: 10px;
@@ -122,11 +181,26 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: cover;  /* Ensures the image covers the area without distortion */
 }
 .introduction {
-    background-color: #ffffff; 
-    padding: 20px; 
-    margin: 20px 0; /
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-    border-radius: 10px; 
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center; /* Text alignment for the text content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    font
+}
+
+.text-content {
+    flex: 1; /* Allows text content to fill the available space */
+    margin-right: 20px; /* Spacing between the text content and the image */
+}
+
+.island-map-small {
+    width: 50%; /* Adjust width as necessary */
+    height: auto; /* Maintain aspect ratio */
 }
 
 
@@ -151,6 +225,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Rental Options */
 .times {
+    text-align: center;
     background-color: #e8eef1;
     padding: 20px;
 }
@@ -164,47 +239,82 @@ h1, h2, h3, h4, h5, h6 {
     padding: 5px 0;
 }
 
-/* Form Container */
-.rental-form  {
-    background-color: #f7f7f7; /* A lighter shade than #f0f0f0 for a modern look */
-    border: 1px solid #e1e1e1; /* A lighter border color */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-    border-radius: 10px; /* More pronounced rounded corners */
-    padding: 40px; /* More padding for a spacious layout */
-    margin: 40px auto 20px; /* Center the form with automatic horizontal margins and more vertical spacing */
-    width: 70%; /* Set the width to 70% */
-    max-width: 1200px; /* Maximum width to avoid overly wide forms on large screens */
+
+.rental-form {
+    background-color: #f7f7f7; /* Existing background color */
+    font-family: "medium";
+    background-image: url(''); /* Path to the background image */
+    background-size: cover; /* Cover the entire area of the element */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    border: 1px solid #e1e1e1; /* Existing border properties */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Existing shadow */
+    border-radius: 10px; /* Existing border radius */
+    padding: 40px; /* Existing padding */
+    margin: 40px auto 20px; /* Existing margin */
+    width: 70%; /* Existing width */
+    max-width: 1200px; /* Existing maximum width */
+}
+.form-container {
+    background-color: #4c5e6b; /* Replace with your chosen color */
+    padding: 20px; /* Or any other value to create space around the form */
+    /* Add any additional styles to center or otherwise position the form */
 }
 
-/* Form Inputs and Button */
+/* Form Inputs, Button, and Textarea */
 .rental-form input[type='text'],
 .rental-form input[type='email'],
 .rental-form input[type='tel'],
 .rental-form input[type='date'],
-.rental-form select {
+.rental-form select,
+.rental-form textarea {
     width: calc(100% - 22px); /* Adjust width to account for padding and borders */
-    margin-bottom: 20px; /* More space between inputs */
+    margin-bottom: 30px; /* More space between inputs */
     padding: 15px; /* Larger padding for a touch-friendly design */
     border: 1px solid #d6d6d6; /* Lighter border color */
     border-radius: 5px; /* Slightly rounded corners for inputs */
     font-size: 1rem; /* Adjustable font size for better readability */
     box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Inner shadow for an inset effect */
 }
-
-.form-container button {
+.rental-form button {
+    font-family: "Extra Bold Italic";
+    background-color: #02435F;
+    color: white;
     padding: 15px 30px; /* Larger padding for a bigger button */
     margin-top: 10px; /* Space above the button */
+    margin-bottom: 10px; /* Space below the button, optional for balance */
     font-size: 1.1rem; /* Slightly larger font size for the button */
-    letter-spacing: 0.05em; /* Spacing out the letters for a refined look */
-    border-radius: 5px; /* Consistent border-radius with inputs */
-    width: auto; /* Auto width to fit content */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* More pronounced shadow for the button */
+    display: block; /* Make the button a block-level element */
+    margin-left: auto; /* Automatic margin on the left */
+    margin-right: auto; /* Automatic margin on the right */
+    /* The rest of your button styles */
+}
+.waiver-download {
+    font-family: Arial, sans-serif; /* Replace with your preferred font if needed */
+    font-weight: bold; /* Makes text bold */
+    font-style: italic; /* Makes text italic */
+    text-align: center; /* Centers the text inside the button */
+    color: #02435F; /* Text color */
+    background-color: white; /* Background color */
+    border: 2px solid #02435F; /* Blue border */
+    padding: 15px 30px; /* Padding inside the button */
+    margin-top: 10px; /* Space above the button */
+    margin-bottom: 10px; /* Space below the button for balance */
+    display: inline-block; /* Allows the button to have a width and margin */
+    text-decoration: none; /* Removes underline from links */
+    cursor: pointer; /* Changes cursor to the 'clickable' hand icon */
+    /* Add a width if you want to specify the button's width */
+    /* width: 200px; */
+    margin-left: auto; /* Centers the button by setting automatic left margin */
+    margin-right: auto; /* Centers the button by setting automatic right margin */
 }
 
-.form-container button:hover,
-.form-container button:focus {
-    background-color: #03396c; /* A darker color for hover state */
-    box-shadow: 0 3px 6px rgba(0,0,0,0.3); /* Enhanced shadow for hover state */
+.waiver-download:hover,
+.waiver-download:focus {
+    background-color: #e7f5ff; /* Light blue background on hover/focus for visual feedback */
+    border-color: #02435F; /* Darker blue border on hover/focus for visual feedback */
+    text-decoration: none; /* Ensures no underline appears on hover/focus */
+    outline: none; /* Removes the outline to maintain a clean look */
 }
 
 
@@ -279,11 +389,12 @@ footer {
 
 /* Footer Styles */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #f2f2f2;
+    color: #02435F;
     text-align: center;
     padding: 10px;
     margin-top: 20px; 
+    text-decoration: none;
 }
 
 
@@ -302,5 +413,12 @@ footer {
         width: 100%; /* Ensures each link takes up 100% of the nav width */
         padding: 10px 0; /* Adds space around the links */
         /* Additional styles to ensure proper display and spacing */
+    }
+    .introduction {
+        flex-direction: column; 
+    }
+    .island-map-small {
+        width: 100%;
+        margin-left: 0;
     }
 }

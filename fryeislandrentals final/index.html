@@ -27,19 +27,25 @@
 
         <section class="fullscreen-banner">
             <div class="banner-text">
-                <img src="../photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="bannerlogoimage">
-                <h2>Explore Frye Island, ME</h2>
-                <p>Whether you're visiting the island for the day, the weekend, or the week, there's no better way to explore the island than how the locals do!</p>
-                <a href="golf-cart-rentals.html" class="cta-button">Book A Golf Cart</a>
+                <img src="photos/fryeislandrentalswhitetext.png" alt="Frye Island Rentals Logo" class="bannerlogoimage">
+                <h1>Welcome to Island Time</h1>
+                <h4>Whether you're visiting the island for the day, the weekend, or the week, there's no better way to explore the island than how the locals do!</h4>
+                <a href="golf-cart-rentals.html" class="cta-button"> Book A Golf Cart</a>
             </div>
-        </section>        
-        <section class="introduction">
-            <h2>Welcome to Frye Island Golf Cart Rentals</h2>
-            <p>Experience the freedom of exploring Frye Island at your own pace with our reliable and affordable golf cart rentals. Whether you're here for a weekend getaway or a longer vacation, we have the perfect rental options to suit your needs.</p>
-        </section>
+        </section> 
+
+        <div class="introduction">
+            <div class="text-content">
+                <h1>Welcome to Frye Island Golf Cart Rentals</h1>
+                <p>Frye Island is one of the few communities where golf carts are the main method of transportation. Experience the freedom of exploring Frye Island at your own pace with our reliable and affordable golf cart rentals. Whether you're here for a weekend getaway or a longer vacation, we have the perfect rental options to suit your needs.</p>
+            </div>
+            <img src="photos/fryeislandmap.png" alt="Frye Island Rentals Road Map" class="island-map-small">
+        </div>
+         
+        
         <br>
         <section class="offerings">
-            <h2>Our Rental Offerings</h2>
+            <h1>Our Rental Offerings</h1>
             <div class="offerings-list">
                 <div class="offering">
                     <img src="photos/2seatcart.png" alt="2 Seat Gas Golf Cart">
@@ -62,18 +68,19 @@
         </section>
         
         <section class="times">
-            <h2>Rental Options Include</h2>
+            <h1>We Offer</h1>
             <ul>
-                <li>Weekend Rental</li>
-                <li>Weeklong Rental</li>
-                <li>Long Term Rental</li>
+                <li><h3>Weekend Rentals</h3></li>
+                <li><h3> Weeklong Rentals</h3></li>
+                <li><h3> Seasonal Rentals</h3></li>
             </ul>
         </section>
 
         <!-- Form Section -->
+        <div class="form-container">
         <section class="rental-form">
-            <h2>Rental Inquiry Form</h2>
-            <p>Fill out the form below to inquire about our rental options. Our team will get back to you shortly with availability and booking details.</p>
+            <h1>Rental Inquiry Form</h1>
+            <p>Fill out the form below to inquire about our rental options. We will get back to you shortly with availability as well as booking and payment details.</p>
             <form action="https://formspree.io/f/mayrppyk" method="POST">
                 <fieldset>
                     <legend>Select Rental Dates</legend>
@@ -81,33 +88,38 @@
                     <input type="date" id="date-start" name="date-start" required>
                     <label for="date-end">Rental End Date:</label>
                     <input type="date" id="date-end" name="date-end" required>
-                </fieldset>
-                
-                <fieldset>
-                    <legend>Personal Information</legend>
                     <label for="duration">Rental Duration:</label>
                     <select id="duration" name="duration" required>
                         <option value="weekend">Weekend</option>
                         <option value="week">Week</option>
                     </select>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Personal Information</legend>
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required placeholder="John Doe">
                     <label for="phone">Phone Number:</label>
                     <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number format: 123-456-7890" placeholder="123-456-7890">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="_replyto" required placeholder="jane.doe@example.com">
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Enter any additional comments here (optional)"></textarea>
+                    <button type="submit" class="submit-btn">Submit Inquiry</button>
+                    <a href="photos/waiver.pdf" class="waiver-download" download="Liability_Waiver.pdf">Download Liability Waiver</a>
                 </fieldset>
                 
-                <button type="submit" class="submit-btn">Submit Inquiry</button>
             </form>
-            <a href="path-to-liability-waiver.pdf" class="waiver-download" download="Liability_Waiver.pdf">Download Liability Waiver</a>
+            
         </section>
+    </div>
     </main>
 
     <footer>
-        <div class="footer-content">
+        <div class="Footer">
+            <img src="photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage">
             <p>&copy; 2024 Frye Island Rentals. All rights reserved.</p>
-            <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms and Conditions</a> | <a href="FAQ.html">FAQ</a></p>
+            <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms and Conditions</a> | <a href="FAQ.html">FAQ</a> | <a href="photos/waiver.pdf"> Waiver</a> </p>
         </div>
     </footer>
 </body>
