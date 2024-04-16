@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 15px;
+    gap: 3px;
     margin: 10px;  
     padding: 10px; 
     background-color: #fff;
@@ -215,7 +215,7 @@ footer {
 .map {
     flex: 1;  /* Each map will take an equal amount of space */
     border: none;  /* Optional: Removes the border */
-    min-height: 1200px;
+    min-height: 1400px;
     height: 100%;
 }
 
