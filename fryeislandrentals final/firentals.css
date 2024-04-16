@@ -31,26 +31,37 @@ h1, h2, h3, h4, h5, h6 {
     list-style: none;  
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 3px;
-    margin: 10px;  
-    padding: 10px; 
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
+    justify-content: space-around; /* Changed from 'space-between' to better distribute space */
+    margin: 0 auto; /* Center the navigation in the page */
+    padding: 10px 0; /* Top and bottom padding only */
+    background-color: #f2f2f2; /* Light grey background for a softer look */
+    border-bottom: 2px solid #ccc; /* Slightly thicker border with a softer color */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for some depth */
 }
 
 .navlogoimage {
-    height: 135px; 
+    height: auto;
+    width: 130px; /* Set a specific width for the logo */
+    margin-right: 20px; /* Adds spacing to the right of the logo */
 }
 
 .nav li {
-    padding: 10px 20px;
+    padding: 10px 10px; /* Uniform padding for better spacing */
+    transition: background-color 0.3s; /* Smooth transition for hover effects */
 }
 
 .nav-link {
     color: #333;
     font-weight: bold;
+    text-transform: uppercase; /* Make all letters uppercase for a more uniform look */
+    text-decoration: none; /* Remove underline */
 }
+
+.nav-link:hover, .nav-link:focus {
+    color: #0066cc; /* Change color on hover for better visibility */
+    background-color: #e6f0ff; /* Light background on hover */
+}
+
 
 
 .fullscreen-banner {
