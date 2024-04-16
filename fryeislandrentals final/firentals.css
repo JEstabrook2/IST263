@@ -23,7 +23,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #4c5e6b;
+    color: #6cc2ff;
     margin: 0; 
     padding: 0.5em 0; 
 }
@@ -62,7 +62,11 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #e6f0ff; /* Light background on hover */
 }
 
-
+.bannerlogoimage {
+    display: block;
+    margin: 0 auto;
+    max-width: 350px;
+}
 
 .fullscreen-banner {
     background-image: url('photos/fryeislandbanner.jpg');
