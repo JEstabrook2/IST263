@@ -458,6 +458,46 @@ footer {
     color: #666;
 }
 
+/*about frye island page */ 
+.intro, .wildlife, .activities, .accessibility {
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.intro p, .activities p, .accessibility p {
+    text-align: justify;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.image-gallery img.animal {
+    width: 45%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.activities ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.activities li {
+    background: url('icons/checkmark.png') no-repeat left center;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.activities li strong {
+    color: #004488;
+} 
+
+
+
 
 /* Media Queries  */
 @media screen and (max-width: 800px) {
