@@ -261,7 +261,6 @@ a:hover {
 .rental-form {
     background-color: #f7f7f7; /* Existing background color */
     font-family: "medium";
-    background-image: url(''); /* Path to the background image */
     background-size: cover; /* Cover the entire area of the element */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -272,13 +271,20 @@ a:hover {
     margin: 40px auto 20px; /* Existing margin */
     width: 70%; /* Existing width */
     max-width: 1200px; /* Existing maximum width */
+    .navlogoimage position: right;
 }
 .form-container {
     background-color: #4c5e6b; /* Replace with your chosen color */
-    padding: 20px; /* Or any other value to create space around the form */
+    padding: 20px;
+    text-align: center; /* Or any other value to create space around the form */
     /* Add any additional styles to center or otherwise position the form */
 }
+.formlogoimage {
+    float: right;
+    max-height: 100px;
+   padding: 5px;
 
+}
 /* Form Inputs, Button, and Textarea */
 .rental-form input[type='text'],
 .rental-form input[type='email'],
@@ -361,7 +367,7 @@ footer {
 .map {
     flex: 1;  /* Each map will take an equal amount of space */
     border: none;  /* Optional: Removes the border */
-    min-height: 1400px;
+    min-height: 800px;
     height: 100%;
 }
 
@@ -389,12 +395,6 @@ footer {
     text-decoration: underline; 
 }
 
-/* LinkedIn Logo Styles */
-.linkedin-logo {
-    width: 165px; 
-    height: auto; 
-    margin-top: 10px; 
-}
 
 
 /* Google Map Container Styles */
@@ -413,6 +413,49 @@ footer {
     padding: 10px;
     margin-top: 20px; 
     text-decoration: none;
+}
+
+/*FAQ*/ 
+.faq {
+    text-align: center;
+    background-color: #4c5e6b;
+    padding: 20px; /* Added padding for spacing around the content */
+}
+
+.faq h2 {
+    color: white; /* Make the heading color stand out against the background */
+}
+
+.faq-item {
+    margin: 15px auto; /* Center align the FAQ items */
+    padding: 5px;
+    border-radius: 8px;
+    width: 80%; /* Adjust width to be responsive */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: #ffffff; /* Set a background color for contrast */
+}
+
+.faq-question {
+    width: 100%; /* Ensure the button fills its container */
+    text-align: left;
+    font-family: "Medium";
+    padding: 10px;
+    background: #02435F;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    border-top: 2px solid #e2e2e2;
+}
+
+.faq-answer p {
+    color: #666;
 }
 
 
