@@ -52,48 +52,48 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-/* Hero section */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-    padding: 50px 20px;
-    margin: 0 auto; 
-    max-width: 100%;
-}
 
 .fullscreen-banner {
-    background-image: url('path-to-your-banner-image.jpg'); /* Replace with the path to your image */
-    background-position: center center; /* Center the image */
-    background-size: cover; /* Cover the entire area */
-    background-repeat: no-repeat; /* Don't repeat the image */
-    height: 100vh; /* Full height of the viewport */
-    width: 100%; /* Full width of the viewport */
-  }
-.hero-text {
+    background-image: url('photos/fryeislandbanner.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    width: 100%; 
+    position: relative; 
+}
+
+.banner-text {
     position: absolute;
-    color: #291992;
-    padding: 1em;
-    background: rgba(0, 0, 0, 0.5); 
-    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* This is just an example, change as needed */
+    text-align: center;
+    width: 90%; /* Adjust the width as needed */
+    max-width: 1200px; /* Optional: You can set a max width */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* A semi-transparent background for better readability */
+    border-radius: 10px;
 }
 
 .cta-button {
-    background-color: #4517b8;
-    color: #fff;
-    padding: 10px 20px;
+    background-color: #008CBA; /* Example button color, change as needed */
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    font-size: 1.1em;
 }
 
 .cta-button:hover {
-    background-color: #27dee4;
+    background-color: #005f73; /* Darker shade for hover effect */
 }
+
 
 .image-container {
     height: calc(100vh - 60px);  /* Subtract the height of the navigation bar */

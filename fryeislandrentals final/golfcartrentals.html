@@ -1,9 +1,14 @@
-
 <!DOCTYPE html>
- <html>
- <head>
-     <meta charset="utf-8">
-     <title>Lab 12 Slideshow</title>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Affordable and convenient golf cart rentals on Frye Island. Explore our selection of golf carts and other rental options!">
+    <meta name="keywords" content="Frye Island, Golf Cart Rentals, Vacation, Transportation">
+    <meta name="author" content="Frye Island Golf Cart Rentals">
+    <title>Golf Cart Rentals</title>
+    <link rel="stylesheet" type="text/css" href="firentals.css">
+    <link rel="icon" type="image/png" href="../photos/fryeislandrentals.png">
      <style>
          body {
              font-family: Verdana, Geneva, Tahoma, sans-serif; 
@@ -38,71 +43,24 @@
             display: none;
         }
      </style>
-     <script>
-        function PlanetsOff() {
-            // Hide all the planet images
-            document.getElementById('mercury').style.display = 'none';
-            document.getElementById('venus').style.display = 'none';
-            document.getElementById('earth').style.display = 'none';
-            document.getElementById('mars').style.display = 'none';
-            document.getElementById('jupiter').style.display = 'none';
-            document.getElementById('saturn').style.display = 'none';
-            document.getElementById('uranus').style.display = 'none';
-            document.getElementById('neptune').style.display = 'none';
-        
-            // Hide all the planet information
-            document.getElementById('mercuryinfo').style.display = 'none';
-            document.getElementById('venusinfo').style.display = 'none';
-            document.getElementById('earthinfo').style.display = 'none';
-            document.getElementById('marsinfo').style.display = 'none';
-            document.getElementById('jupiterinfo').style.display = 'none';
-            document.getElementById('saturninfo').style.display = 'none';
-            document.getElementById('uranusinfo').style.display = 'none';
-            document.getElementById('neptuneinfo').style.display = 'none';
-        }
-        function mercuryOn() {
-    document.getElementById('mercury').style.display = 'block';
-    document.getElementById('mercuryinfo').style.display = 'block';
-}
 
-function venusOn() {
-    document.getElementById('venus').style.display = 'block';
-    document.getElementById('venusinfo').style.display = 'block';
-}
-
-function earthOn() {
-    document.getElementById('earth').style.display = 'block';
-    document.getElementById('earthinfo').style.display = 'block';
-}
-
-function marsOn() {
-    document.getElementById('mars').style.display = 'block';
-    document.getElementById('marsinfo').style.display = 'block';
-}
-
-function jupiterOn() {
-    document.getElementById('jupiter').style.display = 'block';
-    document.getElementById('jupiterinfo').style.display = 'block';
-}
-
-function saturnOn() {
-    document.getElementById('saturn').style.display = 'block';
-    document.getElementById('saturninfo').style.display = 'block';
-}
-
-function uranusOn() {
-    document.getElementById('uranus').style.display = 'block';
-    document.getElementById('uranusinfo').style.display = 'block';
-}
-
-function neptuneOn() {
-    document.getElementById('neptune').style.display = 'block';
-    document.getElementById('neptuneinfo').style.display = 'block';
-}
 
     </script>
  </head>
+
  <body>
+    <nav>
+        <ul class="nav">
+            <li><img src="../photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage"></li>
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="golf-cart-rentals.html">Golf Cart Rentals</a></li>
+            <li><a class="nav-link" href="more-rentals.html">More Rentals</a></li>
+            <li><a class="nav-link" href="faq.html">FAQ</a></li>
+            <li><a class="nav-link" href="about-frye-island.html">About Frye Island</a></li>
+            <li><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
  <div id="slideshow-container">
      <div id="bigimages">
         <img src="https://laferger.github.io/ist263/images/mecury.jpg" alt="mercury" id="mercury">
@@ -161,6 +119,12 @@ function neptuneOn() {
      </div>
 
  </div>
-
+ <footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Frye Island Rentals. All rights reserved.</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms and Conditions</a> | <a href="FAQ.html">FAQ</a></p>
+    </div>
+</footer>
+ <script src="firentals.js"></script>
  </body>
  </html>
