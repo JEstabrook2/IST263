@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A11y</title>
+    <style>
+        .skip { 
+            background-color: #ffa500;
+            padding: 8px;
+            border: 2px solid black; /* Corrected spelling error and added missing semicolon */
+            text-decoration: none; /* Added missing semicolon */
+            position: absolute; /* Removed erroneous comment syntax */
+            top: 10px; 
+            left: -999px; /* Push the button off-screen and added missing semicolon */
+        }
+        .skip:focus {
+            left: 10px; /* Brings the button back on screen when focused */
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Removed incorrect comment syntax and applied 'skip' class to the correct link -->
+    <nav>
+        <a href="#skip" class="skip">Skip to content</a>
+        <a href="http://www.amazon.com" tabindex="4">Amazon</a><br>
+        <a href="http://www.google.com" tabindex="3">Google</a>
+        <a href="http://www.ebay.com" tabindex="2">eBay</a>
+    </nav>
+
+    <h1>All the Accessibility Techniques</h1>
+    <p id="skip">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus nisi illo aperiam molestias soluta eos modi illum atque, obcaecati nemo nam consectetur incidunt, quibusdam perferendis praesentium, ea beatae inventore cum.</p>
+
+</body>
+</html>
