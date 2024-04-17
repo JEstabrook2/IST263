@@ -1,5 +1,5 @@
 // index script//
-<script>
+
   // Get the image and the hover-info element
   const islandMap = document.querySelector('.island-map-small');
   const hoverInfo = document.getElementById('hover-info');
@@ -17,7 +17,7 @@
   // Event listeners for mouse enter and leave
   islandMap.addEventListener('mouseenter', showHoverInfo);
   islandMap.addEventListener('mouseleave', hideHoverInfo);
-</script>
+
 
 
 
