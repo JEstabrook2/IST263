@@ -3,6 +3,7 @@ html, body {
     height: 100%; 
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -502,32 +503,82 @@ footer {
 
 /* Media Queries  */
 @media screen and (max-width: 800px) {
-    .hamburger {
-        display: block;
-    }
-    .nav {
-       
-    }
-    .nav {
-        flex-direction: column;
-        display: none;
-        width: 100%;
+    @media screen and (max-width: 800px) {
+        .hamburger {
+            display: block;
+            position: absolute;
+            right: 10px; /* Adjust based on your design */
+            top: 10px;
+        }
+    
+        .nav {
+            flex-direction: column;
+            display: none;
+            width: 100%;
+            position: absolute;
+            background-color: #fff; /* Change to match your color scheme */
+            z-index: 1000;
+            top: 48px; /* Adjust based on the size of your hamburger icon */
+            left: 0;
+            border-bottom: 1px solid #ccc;
+        }
+    
+        .nav li {
+            display: block;
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+        }
+    
+        .navlogoimage {
+            width: 100%; /* Makes sure the logo image is responsive */
+            height: auto;
+            margin: 10px 0; /* Adds some spacing around the logo */
+        }
+    
+        .fullscreen-banner, .introduction, .offerings, .times, .form-container, .image-container {
+            padding: 10px; /* Reduces padding to better fit smaller screens */
+            margin: 0; /* Removes margin to utilize the space more efficiently */
+        }
+    
+        .fullscreen-banner {
+            height: auto; /* Adjusts banner height for mobile devices */
+            background-size: contain; /* Makes sure the background image fits the container */
+        }
+    
+        .banner-text {
+            width: 100%; /* Ensures text doesn't overflow off the screen */
+            padding: 20px; /* Increases padding for readability */
+            transform: none; /* Resets transformations applied on desktop */
+            position: relative; /* Keeps text within the banner */
+            top: auto;
+            left: auto;
+        }
+    
+        .introduction {
+            flex-direction: column; /* Stacks the elements vertically */
+        }
+    
+        .island-map-small {
+            width: 100%; /* Full width for the map on mobile */
+        }
+    
+        .offerings-list {
+            flex-direction: column; /* Stacks offerings vertically on mobile */
+        }
+    
+        .footer-content, .maps-container, .contact-info {
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        .map {
+            width: 100%; /* Adjust map width to prevent overflow */
+        }
     }
     
-    .nav li {
-        text-align: center;
-        padding: 12px;
+    /* Ensure form elements fit within the view */
+    input, textarea, select, button {
+        width: 100%; /* Makes form elements fully responsive */
+        box-sizing: border-box; /* Includes padding and border in the element's total width */
     }
-}
-    .nav span {
-        display: none; 
-    }
-    
-    .introduction {
-        flex-direction: column; 
-    }
-    .island-map-small {
-        width: 100%;
-        margin-left: 0;
-    }
-}
