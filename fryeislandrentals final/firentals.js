@@ -89,9 +89,5 @@ document.getElementById('neptuneinfo').style.display = 'block';
 //hamburger// 
 document.querySelector('.hamburger').addEventListener('click', function() {
     var nav = document.querySelector('.nav');
-    if (nav.style.display === "block") {
-        nav.style.display = "none";
-    } else {
-        nav.style.display = "block";
-    }
+    nav.classList.toggle('is-visible'); // This toggles a class that controls the display
 });

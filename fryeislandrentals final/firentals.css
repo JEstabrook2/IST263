@@ -499,6 +499,9 @@ footer {
     font-size: 30px;
     cursor: pointer;
 }
+.nav.is-visible {
+    display: block; // This makes the nav visible when the class is added
+}
 
 
 /* Media Queries  */
