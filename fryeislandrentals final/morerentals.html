@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Affordable golf cart rentals on Frye Island, Maine. Explore our wide selection of carts and book your rental today!">
+    <meta name="author" content="Frye Island Golf Cart Rentals">
+    <title>Frye Island Golf Cart Rentals</title>
+    <link rel="stylesheet" type="text/css" href="firentals.css">
+    <link rel="icon" type="image/png" href="../photos/fryeislandrentals.png">
+</head>
+<style>
+    #slideshow-container {
+        background-color: #000000;
+        width: 1200px;
+        margin: auto;        
+    }
+    #bigimages {
+       margin-right: 100px;
+       float: left;
+       max-width: 50%;
+    }
+    #cartinfo {
+       padding: 100px;
+       float: right;
+    }
+    #thumbnails {
+       width: 840px; 
+       margin: auto; 
+       padding-top: 20px;
+       clear: both;
+    }
+    .thumbnail-img {
+       width: 100px;
+       cursor: pointer;
+    }
+    #fourseatcart, #sixseatcart, #bike, #electricbike, #kayak, #canoe,
+    #fourseatcartinfo, #bikeinfo, #electricbikeinfo, #kayakinfo, #sixseatcartinfo, #canoeinfo {
+       display: none;
+    }
+    </style>
+<body>
+        <nav>
+            <span class="hamburger">&#9776;</span>
+            <ul class="nav">
+                <li><img src="../photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage"></li>
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="golfcartrentals.html">Golf Cart Rentals</a></li>
+                <li><a class="nav-link" href="morerentals.html">More Rentals</a></li>
+                <li><a class="nav-link" href="faq.html">FAQ</a></li>
+                <li><a class="nav-link" href="aboutfryeisland.html">About Frye Island</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    <div id="slideshow-container">
+        <div id="bigimages">
+            <img src="photos/2seatcart.png" alt="Two seat golf cart" id="twoseatcart">
+            <img src="photos/4seatcart.png" alt="Four seat golf cart" id="fourseatcart">
+            <img src="photos/6seatcart.png" alt="Six person cart" id="sixseatcart">
+            <img src="photos/bike.jpg" alt="Bike" id="bike">
+            <img src="photos/coming soon.png" alt="Electric bike" id="electricbike">
+            <img src="photos/coming soon.png" alt="Kayak" id="kayak">
+            <img src="photos/coming soon.png" alt="Canoe" id="canoe">
+        </div>
+        <div id="cartinfo">        
+            <h1>Our Offerings</h1>
+            <div id="twoseatcartinfo">
+                <h2>2 Person Golf Carts</h2>
+                <p>Our Most popular rental option with rates starting at $85 Per day, $250 Per weekend, and $550 per week.</p>
+            </div>
+            <div id="fourseatcartinfo">
+                <h2>4 Person Golf Carts</h2>
+                <p>More the merrier, our 4 seater golf carts fit an additional 2 passengers on the back with rates starting at $90 per day, $275 Per weekend and $580 per week.</p>
+            </div>
+            <div id="sixseatcartinfo">
+                <h2>6 Person Golf Carts</h2>
+                <p>Coming Soon!!</p>
+            </div>
+            <div id="bikeinfo">
+                <h2>Bikes</h2>
+                <p>Coming Soon!!</p>
+            </div>
+            <div id="electricbikeinfo">
+                <h2>Electric Bikes</h2>
+                <p>Coming Soon!!</p>
+            </div>
+            <div id="kayakinfo">
+                <h2>Kayaks</h2>
+                <p>Coming Soon!!</p>
+            </div>
+            <div id="canoeinfo">
+                <h2>Canoes</h2>
+                <p>Coming Soon!!</p>
+            </div>
+        </div>
+        <div id="thumbnails">
+            <img src="photos/2seatcart.png" alt="two seat golf cart" class="thumbnail-img" onclick="optionsOff(); twoseatcartOn();">
+            <img src="photos/2seatcart.png" alt="four seat golf cart" class="thumbnail-img" onclick="optionsOff(); fourseatcartOn();">
+            <img src="photos/2seatcart.png" alt="six person cart" class="thumbnail-img" onclick="optionsOff(); sixseatcartOn();">
+            <img src="photos/bike.jpg" alt="bike" class="thumbnail-img" onclick="optionsOff(); bikeOn();">
+            <img src="photos/coming soon.png" alt="electric bike" class="thumbnail-img" onclick="optionsOff(); electricbikeOn();">
+            <img src="photos/coming soon.png" alt="kayak" class="thumbnail-img" onclick="optionsOff(); kayakOn();">
+            <img src="photos/coming soon.png" alt="canoe" class="thumbnail-img" onclick="optionsOff(); canoeOn();">
+        </div>
+    </div>
+
+    <footer>
+        <div class="Footer">
+            <img src="photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage">
+            <p>&copy; 2024 Frye Island Rentals. All rights reserved.</p>
+            <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms and Conditions</a> | <a href="faq.html">FAQ</a> | <a href="photos/waiver.pdf">Waiver</a></p>
+        </div>
+    </footer>
+    <script src="firentals.js"></script>
+ </body>
+</html>

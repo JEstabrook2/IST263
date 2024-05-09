@@ -18,6 +18,17 @@
   islandMap.addEventListener('mouseenter', showHoverInfo);
   islandMap.addEventListener('mouseleave', hideHoverInfo);
 
+// Improved with transition effects
+function showHoverInfo() {
+  hoverInfo.style.opacity = '0';
+  hoverInfo.style.display = 'block';
+  setTimeout(() => hoverInfo.style.opacity = '1', 10); // Smooth fade-in transition
+}
+
+function hideHoverInfo() {
+  hoverInfo.style.opacity = '0';
+  setTimeout(() => hoverInfo.style.display = 'none', 250); // Delay hide to allow fade-out
+}
 
 
 
@@ -25,69 +36,62 @@
 
 
 //golf cart rentals script//
-function PlanetsOff() {
-    // Hide all the planet images
-    document.getElementById('mercury').style.display = 'none';
-    document.getElementById('venus').style.display = 'none';
-    document.getElementById('earth').style.display = 'none';
-    document.getElementById('mars').style.display = 'none';
-    document.getElementById('jupiter').style.display = 'none';
-    document.getElementById('saturn').style.display = 'none';
-    document.getElementById('uranus').style.display = 'none';
-    document.getElementById('neptune').style.display = 'none';
+function optionsOff() {
+    // Hide all the images
+    document.getElementById('twoseatcart').style.display = 'none';
+    document.getElementById('fourseatcart').style.display = 'none';
+    document.getElementById('sixseatcart').style.display = 'none';
+    document.getElementById('bike').style.display = 'none';
+    document.getElementById('eletricbike').style.display = 'none';
+    document.getElementById('kyack').style.display = 'none';
+    document.getElementById('canoe').style.display = 'none';
 
-    // Hide all the planet information
-    document.getElementById('mercuryinfo').style.display = 'none';
-    document.getElementById('venusinfo').style.display = 'none';
-    document.getElementById('earthinfo').style.display = 'none';
-    document.getElementById('marsinfo').style.display = 'none';
-    document.getElementById('jupiterinfo').style.display = 'none';
-    document.getElementById('saturninfo').style.display = 'none';
-    document.getElementById('uranusinfo').style.display = 'none';
-    document.getElementById('neptuneinfo').style.display = 'none';
+    // Hide all theinformation
+    document.getElementById('twoseatcartinfo').style.display = 'none';
+    document.getElementById('fourseatcartinfo').style.display = 'none';
+    document.getElementById('sixseatcartinfo').style.display = 'none';
+    document.getElementById('bikeinfo').style.display = 'none';
+    document.getElementById('eletricbikeinfo').style.display = 'none';
+    document.getElementById('kyackinfo').style.display = 'none';
+    document.getElementById('canoeinfo').style.display = 'none';
 }
-function mercuryOn() {
-document.getElementById('mercury').style.display = 'block';
-document.getElementById('mercuryinfo').style.display = 'block';
+function twoseatcartOn() {
+document.getElementById('2seatcart').style.display = 'block';
+document.getElementById('2seatcartinfo').style.display = 'block';
 }
 
-function venusOn() {
-document.getElementById('venus').style.display = 'block';
-document.getElementById('venusinfo').style.display = 'block';
+function fourseatcartOn() {
+document.getElementById('4seatcart').style.display = 'block';
+document.getElementById('4seatcartinfo').style.display = 'block';
 }
 
-function earthOn() {
-document.getElementById('earth').style.display = 'block';
-document.getElementById('earthinfo').style.display = 'block';
+function sixseatcartOn() {
+document.getElementById('6seatcart').style.display = 'block';
+document.getElementById('6seatcartinfo').style.display = 'block';
 }
 
-function marsOn() {
-document.getElementById('mars').style.display = 'block';
-document.getElementById('marsinfo').style.display = 'block';
+function bikeOn() {
+document.getElementById('bike').style.display = 'block';
+document.getElementById('bikeinfo').style.display = 'block';
 }
 
-function jupiterOn() {
-document.getElementById('jupiter').style.display = 'block';
-document.getElementById('jupiterinfo').style.display = 'block';
+function eletricbikeOn() {
+document.getElementById('eletricbike').style.display = 'block';
+document.getElementById('eletricbikeinfo').style.display = 'block';
 }
 
-function saturnOn() {
-document.getElementById('saturn').style.display = 'block';
-document.getElementById('saturninfo').style.display = 'block';
+function kyackOn() {
+document.getElementById('kyack').style.display = 'block';
+document.getElementById('kyackinfo').style.display = 'block';
 }
 
-function uranusOn() {
-document.getElementById('uranus').style.display = 'block';
-document.getElementById('uranusinfo').style.display = 'block';
-}
-
-function neptuneOn() {
-document.getElementById('neptune').style.display = 'block';
-document.getElementById('neptuneinfo').style.display = 'block';
+function canoeOn() {
+document.getElementById('canoe').style.display = 'block';
+document.getElementById('canoeinfo').style.display = 'block';
 }
 
 //hamburger// 
 document.querySelector('.hamburger').addEventListener('click', function() {
     var nav = document.querySelector('.nav');
-    nav.classList.toggle('is-visible'); // This toggles a class that controls the display
+    nav.classList.toggle('is-visible'); 
 });

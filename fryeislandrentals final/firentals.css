@@ -1,22 +1,40 @@
-/* General styles */
-html, body {
-    height: 100%; 
+/* General Reset and Box Sizing */
+*,
+*:before,
+*:after {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Root Font and Color Definitions */
+:root {
+    --primary-color: #02435F;
+    --accent-color: #1c5b84;
+    --background-color: #f3f6f9;
+    --text-color: #333;
+    --link-color: #1c5b84;
+    --hover-color: #0056b3;
+}
+
+/* HTML and Body Basic Styles */
+html {
+    font-size: 16px; /* Base font size for rem calculations */
 }
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f3f6f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    height: 100%;
 }
-/* @font-face declarations */
+
+/* Font Faces */
 @font-face {
     font-family: 'Extra Bold Italic';
-    src: url('fonts/prozalibre-extrabolditalic-webfont.woff') format('woff2');
+    src: url('fonts/prozalibre-extrabolditalic-webfont.woff2') format('woff2'),
+         url('fonts/prozalibre-extrabolditalic-webfont.woff') format('woff');
 }
 
 @font-face {
@@ -29,74 +47,101 @@ body {
     src: url('fonts/ProzaLibre-Medium.woff') format('woff2');
 }
 
-/* Heading styles */
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
 h1, h2 {
     font-family: 'Extra Bold Italic', sans-serif;
-    font-weight: bold; /* Extra bold style, assuming the font itself is extra bold */
+    font-weight: bold; 
     font-style: italic;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 h1 {
-    color: #02435F; /* White text for h1 */
-    -webkit-text-stroke: 0.25px white;  
+    color: var(--primary-color);
+    -webkit-text-stroke: 0.25px white;
 }
 
-
 h2 {
-    color: rgb(255, 255, 255); /* Black text for h2 */
+    color: #fff; /* Light text for darker backgrounds */
 }
 
 h3, h4 {
     font-family: 'Semi Bold Italic', sans-serif;
-    font-weight: bold; /* Semi bold style */
+    font-weight: bold;
     font-style: italic;
 }
 
 h3 {
-    color: #02435F; /* White text for h3 */
+    color: var(--primary-color);
 }
 
 h4 {
-    color: rgb(255, 255, 255); /* Black text for h4 */
+    color: #fff;
 }
 
 h5, h6 {
     font-family: 'Medium', sans-serif;
-    font-weight: normal; /* Medium style */
+    font-weight: normal;
     font-style: normal;
-    padding: 10px;    
 }
 
 h5 {
-    color: #02435F; /* White text for h5 */
+    color: var(--primary-color);
 }
 
 h6 {
-    color: rgb(255, 255, 255); /* Black text for h6 */
+    color: #fff;
 }
 
-
+/* Link Styling */
 a {
-    color: #1c5b84;
+    color: var(--link-color);
     text-decoration: none;
 }
 
-a:hover {
+a:hover, a:focus {
     text-decoration: underline;
+    color: var(--hover-color);
+}
+
+/* Accessibility */
+a:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Hover Information */
+#hover-info {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease-in-out, visibility 0.25s;
+}
+
+#hover-info.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 
-
+/*Navigation */
 .nav {
     list-style: none;  
     display: flex;
     align-items: center;
-    justify-content: space-around; 
+    font-family: Extra Bold;
+    justify-content: space-evenly; 
     margin: 0 auto; 
     padding: 10px 0; 
     background-color: #f2f2f2; 
     border-bottom: 2px solid #ccc; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.nav.is-visible {
+    display: flex;
 }
 
 .navlogoimage {
@@ -108,20 +153,23 @@ a:hover {
 .nav li {
     padding: 10px 10px; 
     transition: background-color 0.3s; 
+
 }
 
 .nav-link {
-    color: #333;
+    color: #02435F;
     font-weight: bold;
+    font-family: Extra Bold Italic;
     text-transform: uppercase; 
     text-decoration: none;
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: #0066cc; 
+    color: #02435F; 
     background-color: #e6f0ff; 
 }
 
+/* index page */ 
 .bannerlogoimage {
     display: block;
     margin: 0 auto;
@@ -184,26 +232,53 @@ a:hover {
 .introduction {
     display: flex;
     flex-direction: row; 
-    align-items: center;
+    align-items: flex-start;
+    justify-content: center;
     background-color: #ffffff;
     padding: 20px;
     margin: 20px 0;
-    text-align: center; /* Text alignment for the text content */
+    text-align: center; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     border-radius: 10px;
-    position: relative;
 }
 
 .text-content {
-    flex: 1; /* Allows text content to fill the available space */
-    margin-right: 20px; /* Spacing between the text content and the image */
+    flex: 1; 
+    text-align: left;
+    padding: 0 50px;
+    text-align: center;
 }
 
-.island-map-small {
-    width: 50%; /* Adjust width as necessary */
-    height: auto; /* Maintain aspect ratio */
-    position: relative;
+.indexmap-box {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    flex: 1; 
+    align-items: center; 
 }
+.island-map-small {
+    width: 700px; 
+    height: auto; 
+    margin-bottom: 10px;
+}
+
+.about-button {
+    width: 700px;
+    background-color: #008CBA; 
+    color: white;
+    font-family: 'Extra Bold Italic';
+    padding: 12px 24px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+    border: none;
+    border-radius: 5px; 
+}
+
+.about-button:hover {
+    background-color: #005f73; 
+}
+
 #hover-info {
     display: none;
     position: absolute;
@@ -212,17 +287,10 @@ a:hover {
     padding: 5px 10px;
     border: 1px solid #02435F;
     border-radius: 6px;
-    z-index: 10;  /* Position the tooltip - adjust 'top' and 'left' as needed */
-    top: 0; /* Position at the top of the container */
-    right: 15%; /* Center horizontally */
+    z-index: 10;  
+    top: 0; 
+    right: 15%; 
 }
-
-.island-map-small:hover + #hover-info,
-#hover-info:hover {
-    display: block;
-}
-
-
 /* Offerings section */
 .offerings {
     padding: 20px;
@@ -237,12 +305,12 @@ a:hover {
 }
 
 .offering img {
-    max-width: 150px;
+    max-width: 250px;
     height: auto;
     border-radius: 10px;
 }
 
-/* Rental Options */
+/* Rental Options section */
 .times {
     text-align: center;
     background-color: #e8eef1;
@@ -258,6 +326,7 @@ a:hover {
     padding: 5px 0;
 }
 
+/* Form Inputs, Button, and Text area */
 
 .rental-form {
     background-color: #f7f7f7; 
@@ -286,7 +355,6 @@ a:hover {
    padding: 5px;
 
 }
-/* Form Inputs, Button, and Textarea */
 .rental-form input[type='text'],
 .rental-form input[type='email'],
 .rental-form input[type='tel'],
@@ -342,11 +410,13 @@ a:hover {
 
 /* Footer */
 footer {
-    background-color: #2a2a2a;
-    color: #fff;
+    background-color: #f2f2f2;
+    color: #02435F;
     text-align: center;
+    padding: 10px;
+    margin-top: 20px; 
+    text-decoration: none;
 }
-
 .footer-content a {
     color: #fff;
     padding: 5px;
@@ -356,7 +426,7 @@ footer {
     text-decoration: underline;
 }
 
-/*contact info */ 
+/*contact Page */ 
 .maps-container {
     display: flex;  
     flex: 1;
@@ -376,25 +446,6 @@ footer {
     text-align: center; 
 }
 
-/* Contact Details Styles for Email and LinkedIn */
-.contact-details {
-    padding: 20px;
-    text-align: center;
-}
-
-.contact-details a {
-    display: block; 
-    margin-bottom: 10px; 
-    color: #1c5b84; 
-    text-decoration: none; 
-}
-
-.contact-details a:hover {
-    text-decoration: underline; 
-}
-
-
-
 /* Google Map Container Styles */
 .map-container iframe {
     flex-wrap: wrap; 
@@ -403,15 +454,6 @@ footer {
     margin-bottom: 20px; 
 }
 
-/* Footer Styles */
-footer {
-    background-color: #f2f2f2;
-    color: #02435F;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px; 
-    text-decoration: none;
-}
 
 /*FAQ*/ 
 .faq {
@@ -534,7 +576,10 @@ footer {
         height: auto;
         margin: 10px 0; /* Adds some spacing around the logo */
     }
-
+    h1, h2, h3 {
+        font-size: calc(100% - 1em); /* Scale down heading sizes slightly */
+    }
+    
     .fullscreen-banner, .introduction, .offerings, .times, .form-container, .image-container {
         padding: 10px; /* Reduces padding to better fit smaller screens */
         margin: 0; /* Removes margin to utilize the space more efficiently */
@@ -581,3 +626,5 @@ input, textarea, select, button {
     width: 100%; /* Makes form elements fully responsive */
     box-sizing: border-box; /* Includes padding and border in the element's total width */
 }
+
+
