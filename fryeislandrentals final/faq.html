@@ -88,49 +88,50 @@
                 </div>
             </section>
 
-        <div class="form-container">
-            <section class="rental-form">
-                <img src="photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="formlogoimage">
-                <h1>Rental Inquiry Form</h1>
-                <p>Fill out the form below to inquire about our rental options. We will get back to you shortly with availability as well as booking and payment details.</p>
-                <form action="https://formspree.io/f/mayrppyk" method="POST">
-                    <fieldset>
-                        <legend>Select Rental Dates</legend>
-                        <label for="date-start">Rental Start Date:</label>
-                        <input type="date" id="date-start" name="date-start" required>
-                        <label for="date-end">Rental End Date:</label>
-                        <input type="date" id="date-end" name="date-end" required>
-                        <label for="duration">Rental Duration:</label>
-                        <select id="duration" name="duration" required>
-                            <option value="weekend">Weekend</option>
-                            <option value="week">Week</option>
-                        </select>
-                        <label for="item">Item:</label>
-                        <select id="item" name="item" required>
-                            <option value="2 seater golf cart">2 seater golf cart</option>
-                            <option value="4 seater golf cart">4 seater golf cart</option>
-                            <option value="Bike">Bike</option>
-                            <option value="kyack">kyack</option>
-                        </select>
-                    </fieldset>
-                    <br>
-                    <fieldset>
-                        <legend>Personal Information</legend>
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                        <label for="phone">Phone Number:</label>
-                        <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number format: 123-456-7890" placeholder="123-456-7890">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="_replyto" required placeholder="jane.doe@example.com">
-                        <label for="comments">Additional Comments:</label>
-                        <textarea id="comments" name="comments" rows="4" placeholder="Enter any additional comments here (optional)"></textarea>
-                        <button type="submit" class="submit-btn">Submit Inquiry</button>
-                        <a href="photos/waiver.pdf" class="waiver-download" download="Liability_Waiver.pdf">Download Liability Waiver</a>
-                    </fieldset>
-                    
-                </form>
-                
-            </section>
+         
+    <div class="form-container">
+        <section class="rental-form">
+            <img src="photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="formlogoimage">
+            <h1>Rental Inquiry Form</h1>
+            <p>Fill out the form below to inquire about our rental options. We will get back to you shortly with availability as well as booking and payment details.</p>
+            <form action="https://formspree.io/f/mayrppyk" method="POST">
+                <fieldset>
+                    <legend>Select Rental Dates</legend>
+                    <label for="date-start">Rental Start Date:</label>
+                    <input type="date" id="date-start" name="date-start" required>
+                    <label for="date-end">Rental End Date:</label>
+                    <input type="date" id="date-end" name="date-end" required>
+                    <label for="duration">Rental Duration:</label>
+                    <select id="duration" name="duration" required>
+                        <option value="" disabled selected>Select duration</option>
+                        <option value="weekend">Weekend</option>
+                        <option value="week">Week</option>
+                    </select>
+                    <label for="item">Item:</label>
+                    <select id="item" name="item" required>
+                        <option value="" disabled selected>Select an item</option>
+                        <option value="2 seater golf cart">2 seater golf cart</option>
+                        <option value="4 seater golf cart">4 seater golf cart</option>
+                        <option value="Bike">Bike</option>
+                        <option value="kyack">Kayak</option> 
+                    </select>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number format: 123-456-7890" placeholder="123-456-7890">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="jane.doe@example.com">
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Enter any additional comments here (optional)"></textarea>
+                    <button type="submit" class="submit-btn">Submit Inquiry</button>
+                    <a href="photos/waiver.pdf" class="waiver-download" download="Liability_Waiver.pdf">Download Liability Waiver</a>
+                </fieldset>
+            </form>
+        </section>
     </div>
         </main>
         
