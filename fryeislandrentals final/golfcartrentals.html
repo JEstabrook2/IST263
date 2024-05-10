@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Affordable golf cart rentals on Frye Island, Maine. Explore our wide selection of carts and book your rental today!">
     <meta name="author" content="Frye Island Golf Cart Rentals">
-    <title>Frye Island Golf Cart Rentals</title>
+    <title> Contact Frye Island Golf Cart Rentals</title>
     <link rel="stylesheet" type="text/css" href="firentals.css">
     <link rel="icon" type="image/png" href="../photos/fryeislandrentals.png">
 </head>
@@ -23,13 +23,54 @@
                 <li><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
         </nav>
+    
 
-
-
-
-
-
-
+  
+        <!-- Form Section -->
+        <div class="form-container">
+            <section class="rental-form">
+                <img src="photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="formlogoimage">
+                <h1>Rental Inquiry Form</h1>
+                <p>Fill out the form below to inquire about our rental options. We will get back to you shortly with availability as well as booking and payment details.</p>
+                <form action="https://formspree.io/f/mayrppyk" method="POST">
+                    <fieldset>
+                        <legend>Select Rental Dates</legend>
+                        <label for="date-start">Rental Start Date:</label>
+                        <input type="date" id="date-start" name="date-start" required>
+                        <label for="date-end">Rental End Date:</label>
+                        <input type="date" id="date-end" name="date-end" required>
+                        <label for="duration">Rental Duration:</label>
+                        <select id="duration" name="duration" required>
+                            <option value="weekend">Weekend</option>
+                            <option value="week">Week</option>
+                        </select>
+                        <label for="item">Item:</label>
+                        <select id="item" name="item" required>
+                            <option value="2 seater golf cart">2 seater golf cart</option>
+                            <option value="4 seater golf cart">4 seater golf cart</option>
+                            <option value="Bike">Bike</option>
+                            <option value="kyack">kyack</option>
+                        </select>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number format: 123-456-7890" placeholder="123-456-7890">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="_replyto" required placeholder="jane.doe@example.com">
+                        <label for="comments">Additional Comments:</label>
+                        <textarea id="comments" name="comments" rows="4" placeholder="Enter any additional comments here (optional)"></textarea>
+                        <button type="submit" class="submit-btn">Submit Inquiry</button>
+                        <a href="photos/waiver.pdf" class="waiver-download" download="Liability_Waiver.pdf">Download Liability Waiver</a>
+                    </fieldset>
+                    
+                </form>
+                
+            </section>
+   
     <footer>
         <div class="Footer">
             <img src="photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage">
@@ -37,6 +78,5 @@
             <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms and Conditions</a> | <a href="FAQ.html">FAQ</a> | <a href="photos/waiver.pdf"> Waiver</a> </p>
         </div>
     </footer>
-    <script src="firentals.js"></script>
 </body>
 </html>

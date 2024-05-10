@@ -1,4 +1,4 @@
-/* General Reset and Box Sizing */
+
 *,
 *:before,
 *:after {
@@ -6,20 +6,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-/* Root Font and Color Definitions */
 :root {
     --primary-color: #02435F;
-    --accent-color: #1c5b84;
+    --accent-color: #ffffff;
     --background-color: #f3f6f9;
     --text-color: #333;
-    --link-color: #1c5b84;
-    --hover-color: #0056b3;
+    --link-color: #02435F;
+    --hover-color: #015fc4;
 }
 
-/* HTML and Body Basic Styles */
 html {
-    font-size: 16px; /* Base font size for rem calculations */
+    font-size: 16px; 
 }
 
 body {
@@ -66,36 +63,24 @@ h1 {
 }
 
 h2 {
-    color: #fff; /* Light text for darker backgrounds */
+    color: #fff; 
 }
 
 h3, h4 {
     font-family: 'Semi Bold Italic', sans-serif;
     font-weight: bold;
     font-style: italic;
-}
-
-h3 {
     color: var(--primary-color);
 }
 
-h4 {
-    color: #fff;
-}
 
 h5, h6 {
     font-family: 'Medium', sans-serif;
     font-weight: normal;
     font-style: normal;
-}
-
-h5 {
     color: var(--primary-color);
 }
 
-h6 {
-    color: #fff;
-}
 
 /* Link Styling */
 a {
@@ -108,13 +93,11 @@ a:hover, a:focus {
     color: var(--hover-color);
 }
 
-/* Accessibility */
 a:focus {
     outline: 3px solid var(--accent-color);
     outline-offset: 2px;
 }
 
-/* Hover Information */
 #hover-info {
     opacity: 0;
     visibility: hidden;
@@ -126,7 +109,6 @@ a:focus {
     visibility: visible;
 }
 
-
 /*Navigation */
 .nav {
     list-style: none;  
@@ -136,7 +118,7 @@ a:focus {
     justify-content: space-evenly; 
     margin: 0 auto; 
     padding: 10px 0; 
-    background-color: #f2f2f2; 
+    background-color: var(--background-color); 
     border-bottom: 2px solid #ccc; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -153,20 +135,33 @@ a:focus {
 .nav li {
     padding: 10px 10px; 
     transition: background-color 0.3s; 
-
+    color: var(--primary-color)
 }
 
 .nav-link {
-    color: #02435F;
+    color: var(--link-color);
     font-weight: bold;
-    font-family: Extra Bold Italic;
-    text-transform: uppercase; 
     text-decoration: none;
 }
 
 .nav-link:hover, .nav-link:focus {
     color: #02435F; 
     background-color: #e6f0ff; 
+}
+
+.button { 
+    font-family: "Extra Bold Italic"; 
+    text-align: center; 
+    color: #02435F; 
+    background-color: white;
+    border: 2px solid #02435F; 
+    padding: 15px 30px; 
+    margin-top: 10px; 
+    display: inline-block; 
+    text-decoration: none; 
+    cursor: pointer; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
 /* index page */ 
@@ -198,23 +193,6 @@ a:focus {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.5); 
     border-radius: 10px;
-}
-
-.cta-button {
-    background-color: #008CBA; 
-    color: white;
-    font-family: 'Extra Bold Italic';
-    padding: 12px 24px;
-    display: inline-block;
-    font-size: 18px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-    border: none;
-    border-radius: 5px;
-}
-
-.cta-button:hover {
-    background-color: #005f73; 
 }
 
 
@@ -383,9 +361,7 @@ a:focus {
 
 }
 .waiver-download {
-    font-family: Arial, sans-serif; 
-    font-weight: bold; 
-    font-style: italic; 
+    font-family: "Extra Bold Italic"; 
     text-align: center; 
     color: #02435F; 
     background-color: white;
