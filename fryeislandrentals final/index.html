@@ -8,21 +8,42 @@
     <title>Frye Island Golf Cart Rentals</title>
     <link rel="stylesheet" type="text/css" href="firentals.css">
     <link rel="icon" type="image/png" href="../photos/fryeislandrentals.png">
+
+   <script>
+        function showNav() {
+            document.getElementById("nav").style.display = "block";
+        }
+        function hideNav() {
+            document.getElementById("nav").style.display = "none";
+        }
+        function showClose() {
+            document.getElementById("close").style.display = "block";
+        }
+        function hideClose() {
+            document.getElementById("close").style.display = "none";
+        }
+    </script>
 </head>
 
 <body>
-        <nav>
-            <span class="hamburger">&#9776;</span>
-            <ul class="nav">
-                <li><img src="../photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage"></li>
-                <li><a class="nav-link" href="index.html">Home</a></li>
-                <li><a class="nav-link" href="golfcartrentals.html">Golf Cart Rentals</a></li>
-                <li><a class="nav-link" href="morerentals.html">More Rentals</a></li>
-                <li><a class="nav-link" href="faq.html">FAQ</a></li>
-                <li><a class="nav-link" href="aboutfryeisland.html">About Frye Island</a></li>
-                <li><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <div class="firstrow">
+        <img id="hamicon" src="http://laferger.github.io/ist263/images/hamburger.png" alt="hamburgericon" onclick="showNav(); showClose();">
+        <p id="close" onclick="hideNav();">X</p>
+    </div>
+
+
+    <nav id="nav" onclick="hideClose();">
+        <span class="hamburger">&#9776;</span>
+        <ul class="nav">
+            <li><img src="../photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage"></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="golfcartrentals.html">Golf Cart Rentals</a></li>
+            <li><a href="morerentals.html">More Rentals</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="aboutfryeisland.html">About Frye Island</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
     <main>
 
         <section class="fullscreen-banner">
@@ -30,21 +51,26 @@
                 <img src="photos/fryeislandrentalswhitetext.png" alt="Frye Island Rentals Logo" class="bannerlogoimage">
                 <h1>Welcome to Island Time</h1>
                 <p>Whether you're visiting the island for the day, the weekend, or the week, there's no better way to explore the island than how the locals do!<p>
-                <a href="golf-cart-rentals.html" class="button"> Book A Golf Cart</a>
+                <a href="golfcartrentals.html" class="button"> Book A Golf Cart</a>
             </div>
         </section> 
 
         <div class="introduction">
-            <div class="text-content">
+            <div class="home1">
                 <h1>Welcome to Frye Island Golf Cart Rentals</h1>
                 <p>Frye Island is one of the few communities where golf carts are the main method of transportation. Whether your visiting one of the islands 13 beaches, 9 Hole golf course, general store or 22 miles of dirt roads theres no better way to get around than by golf cart! Just remeber to wave to fellow islanders!</p>
             </div>
-            <div class="indexmapbox"> 
+            <div class="home2"> 
+                <div class="home3">
                 <img src="photos/fryeislandmap.png" alt="Frye Island Rentals Road Map" class="island-map-small">
+                </div>
+                <div class="home4">
                 <a href="aboutfryeisland.html" class="button"> About The Island</a>
                 <span id="hover-info">The island has 22 miles of dirt road.</span>
+                </div>
              </div> 
         </div>
+         
          
         
         <br>

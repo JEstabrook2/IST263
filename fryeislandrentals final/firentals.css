@@ -1,4 +1,3 @@
-
 *,
 *:before,
 *:after {
@@ -138,13 +137,13 @@ a:focus {
     color: var(--primary-color)
 }
 
-.nav-link {
+.nav {
     color: var(--link-color);
     font-weight: bold;
     text-decoration: none;
 }
 
-.nav-link:hover, .nav-link:focus {
+.nav:hover, .nav:focus {
     color: #02435F; 
     background-color: #e6f0ff; 
 }
@@ -210,15 +209,28 @@ a:focus {
 .introduction {
     display: flex;
     flex-direction: row; 
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
     justify-content: center;
     background-color: #ffffff;
-    padding: 20px;
     margin: 20px 0;
     text-align: center; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     border-radius: 10px;
 }
+
+.home1{
+    padding: 50px;
+}
+.home2{
+    padding: 70px;
+}
+.home4 {
+    margin-top: 20px; /* Adjust the margin-top to move the button higher */
+    margin-bottom: 100px;
+}
+
 
 .text-content {
     flex: 1; 
@@ -288,6 +300,7 @@ a:focus {
     border-radius: 10px;
 }
 
+
 /* Rental Options section */
 .times {
     text-align: center;
@@ -304,6 +317,38 @@ a:focus {
     padding: 5px 0;
 }
 
+
+    #slideshow-container {
+        background-color: #000000;
+        width: 1200px;
+        margin: auto;        
+    }
+    #bigimages {
+        margin-right: 100px;
+        float: left;
+        max-width: 50%;
+    }
+    
+
+    #cartinfo {
+       padding: 100px;
+       float: right;
+    }
+    #thumbnails {
+       width: 840px; 
+       margin: auto; 
+       padding-top: 20px;
+       clear: both;
+    }
+    .thumbnail-img {
+       width: 100px;
+       cursor: pointer;
+    }
+    #fourseatcart, #sixseatcart, #bike, #electricbike, #kayak, #canoe,
+    #fourseatcartinfo, #bikeinfo, #electricbikeinfo, #kayakinfo, #sixseatcartinfo, #canoeinfo {
+       display: none;
+    }
+
 /* Form Inputs, Button, and Text area */
 
 .rental-form {
@@ -319,7 +364,9 @@ a:focus {
     margin: 40px auto 20px; 
     width: 70%; 
     max-width: 1200px; 
-    .navlogoimage position: right;
+}
+.navlogoimage {
+    position: right;
 }
 .form-container {
     background-color: #4c5e6b; 
@@ -520,87 +567,45 @@ footer {
 
 
 /* Media Queries  */
-@media screen and (max-width: 800px) {
-    .hamburger {
-        display: block;
-        position: absolute;
-        right: 10px; /* Adjust based on your design */
-        top: 10px;
-    }
 
-    .nav {
-        flex-direction: column;
+
+#hamicon {width:40px;}
+#close {
+    cursor:pointer;
+}
+
+.firstrow{display:flex; justify-content: space-between;}
+@media only screen and (max-width: 1000px) {
+    #nav {
         display: none;
-        width: 100%;
-        position: absolute;
-        background-color: #fff; /* Change to match your color scheme */
-        z-index: 1000;
-        top: 48px; /* Adjust based on the size of your hamburger icon */
-        left: 0;
-        border-bottom: 1px solid #ccc;
     }
-
-    .nav li {
+    #close {
+        display:none;
+    }
+    #nav a {
         display: block;
-        text-align: center;
-        width: 100%;
-        padding: 10px;
-    }
-
-    .navlogoimage {
-        width: 100%; /* Makes sure the logo image is responsive */
-        height: auto;
-        margin: 10px 0; /* Adds some spacing around the logo */
-    }
-    h1, h2, h3 {
-        font-size: calc(100% - 1em); /* Scale down heading sizes slightly */
-    }
+        padding: 5px;
+        border: 1px solid #f9f7f7}
     
-    .fullscreen-banner, .introduction, .offerings, .times, .form-container, .image-container {
-        padding: 10px; /* Reduces padding to better fit smaller screens */
-        margin: 0; /* Removes margin to utilize the space more efficiently */
-    }
-
-    .fullscreen-banner {
-        height: auto; /* Adjusts banner height for mobile devices */
-        background-size: contain; /* Makes sure the background image fits the container */
-    }
-
-    .banner-text {
-        width: 100%; /* Ensures text doesn't overflow off the screen */
-        padding: 20px; /* Increases padding for readability */
-        transform: none; /* Resets transformations applied on desktop */
-        position: relative; /* Keeps text within the banner */
-        top: auto;
-        left: auto;
-    }
-
-    .introduction {
-        flex-direction: column; /* Stacks the elements vertically */
-    }
-
-    .island-map-small {
-        width: 100%; /* Full width for the map on mobile */
-    }
-
-    .offerings-list {
-        flex-direction: column; /* Stacks offerings vertically on mobile */
-    }
-
-    .footer-content, .maps-container, .contact-info {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .map {
-        width: 100%; /* Adjust map width to prevent overflow */
-    }
+}
+@media only screen and (min-width:800px) {
+    #hamicon, #close {display: none;}
 }
 
-/* Ensure form elements fit within the view */
-input, textarea, select, button {
-    width: 100%; /* Makes form elements fully responsive */
-    box-sizing: border-box; /* Includes padding and border in the element's total width */
+/*accessibilit*/
+.skip {
+    background-color: #cac3c3;
+    padding: 5px;
+    border: 1px solid #000000;
+    text-decoration: none; /*removes the underline*/
+    position: absolute; /*positions an element relative to the top left of the viewport*/
+    top: 10px;
+    left: -999px; /*-999 pushes off the left side of the screen*/
 }
+.skip:focus {
+    left: 10px; /* bring it back when its been tabbed to */
+}
+
+
 
 

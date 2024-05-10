@@ -8,50 +8,109 @@
     <title>Frye Island Golf Cart Rentals</title>
     <link rel="stylesheet" type="text/css" href="firentals.css">
     <link rel="icon" type="image/png" href="../photos/fryeislandrentals.png">
+
+    <script>
+        function showNav() {
+            document.getElementById("nav").style.display = "block";
+        }
+        function hideNav() {
+            document.getElementById("nav").style.display = "none";
+        }
+        function showClose() {
+            document.getElementById("close").style.display = "block";
+        }
+        function hideClose() {
+            document.getElementById("close").style.display = "none";
+        }
+
+    function optionsOff() {
+        // Hide all the cart images
+        document.getElementById('twoseatcart').style.display = 'none';
+        document.getElementById('fourseatcart').style.display = 'none';
+        document.getElementById('sixseatcart').style.display = 'none';
+        document.getElementById('bike').style.display = 'none';
+        document.getElementById('electricbike').style.display = 'none';
+        document.getElementById('kayak').style.display = 'none';
+        document.getElementById('canoe').style.display = 'none';
+
+        // Hide all the cart information
+        document.getElementById('twoseatcartinfo').style.display = 'none';
+        document.getElementById('fourseatcartinfo').style.display = 'none';
+        document.getElementById('sixseatcartinfo').style.display = 'none';
+        document.getElementById('bikeinfo').style.display = 'none';
+        document.getElementById('electricbikeinfo').style.display = 'none';
+        document.getElementById('kayakinfo').style.display = 'none';
+        document.getElementById('canoeinfo').style.display = 'none';
+    }
+
+    function twoseatcartOn() {
+        optionsOff(); // Hide all other cart images and information
+        document.getElementById('twoseatcart').style.display = 'block';
+        document.getElementById('twoseatcartinfo').style.display = 'block';
+    }
+
+    function fourseatcartOn() {
+        optionsOff(); // Hide all other cart images and information
+        document.getElementById('fourseatcart').style.display = 'block';
+        document.getElementById('fourseatcartinfo').style.display = 'block';
+    }
+
+    function sixseatcartOn() {
+        optionsOff(); // Hide all other cart images and information
+        document.getElementById('sixseatcart').style.display = 'block';
+        document.getElementById('sixseatcartinfo').style.display = 'block';
+    }
+
+    function bikeOn() {
+        optionsOff(); // Hide all other cart images and information
+        document.getElementById('bike').style.display = 'block';
+        document.getElementById('bikeinfo').style.display = 'block';
+    }
+
+    function electricbikeOn() {
+        optionsOff(); // Hide all other cart images and information
+        document.getElementById('electricbike').style.display = 'block';
+        document.getElementById('electricbikeinfo').style.display = 'block';
+    }
+
+    function kayakOn() {
+        optionsOff(); // Hide all other cart images and information
+        document.getElementById('kayak').style.display = 'block';
+        document.getElementById('kayakinfo').style.display = 'block';
+    }
+
+    function canoeOn() {
+        optionsOff(); // Hide all other cart images and information
+        document.getElementById('canoe').style.display = 'block';
+        document.getElementById('canoeinfo').style.display = 'block';
+    }
+
+    // Repeat the above pattern for other cart types
+
+</script>
+
 </head>
-<style>
-    #slideshow-container {
-        background-color: #000000;
-        width: 1200px;
-        margin: auto;        
-    }
-    #bigimages {
-       margin-right: 100px;
-       float: left;
-       max-width: 50%;
-    }
-    #cartinfo {
-       padding: 100px;
-       float: right;
-    }
-    #thumbnails {
-       width: 840px; 
-       margin: auto; 
-       padding-top: 20px;
-       clear: both;
-    }
-    .thumbnail-img {
-       width: 100px;
-       cursor: pointer;
-    }
-    #fourseatcart, #sixseatcart, #bike, #electricbike, #kayak, #canoe,
-    #fourseatcartinfo, #bikeinfo, #electricbikeinfo, #kayakinfo, #sixseatcartinfo, #canoeinfo {
-       display: none;
-    }
-    </style>
+
+
 <body>
-        <nav>
-            <span class="hamburger">&#9776;</span>
-            <ul class="nav">
-                <li><img src="../photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage"></li>
-                <li><a class="nav-link" href="index.html">Home</a></li>
-                <li><a class="nav-link" href="golfcartrentals.html">Golf Cart Rentals</a></li>
-                <li><a class="nav-link" href="morerentals.html">More Rentals</a></li>
-                <li><a class="nav-link" href="faq.html">FAQ</a></li>
-                <li><a class="nav-link" href="aboutfryeisland.html">About Frye Island</a></li>
-                <li><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <div class="firstrow">
+        <img id="hamicon" src="http://laferger.github.io/ist263/images/hamburger.png" alt="hamburgericon" onclick="showNav(); showClose();">
+        <p id="close" onclick="hideNav();">X</p>
+    </div>
+
+
+    <nav id="nav" onclick="hideClose();">
+        <span class="hamburger">&#9776;</span>
+        <ul class="nav">
+            <li><img src="../photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage"></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="golfcartrentals.html">Golf Cart Rentals</a></li>
+            <li><a href="morerentals.html">More Rentals</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="aboutfryeisland.html">About Frye Island</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <div id="slideshow-container">
         <div id="bigimages">

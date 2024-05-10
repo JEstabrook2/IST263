@@ -9,20 +9,42 @@
     <title>Frye Island Golf Cart Rentals</title>
     <link rel="stylesheet" type="text/css" href="firentals.css">
     <link rel="icon" type="image/png" href="../photos/fryeislandrentals.png">
+
+    <script>
+        function showNav() {
+            document.getElementById("nav").style.display = "block";
+        }
+        function hideNav() {
+            document.getElementById("nav").style.display = "none";
+        }
+        function showClose() {
+            document.getElementById("close").style.display = "block";
+        }
+        function hideClose() {
+            document.getElementById("close").style.display = "none";
+        }
+    </script>
 </head>
 
 <body>
-        <nav>
-            <ul class="nav">
-                <li><img src="../photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage"></li>
-                <li><a class="nav-link" href="index.html">Home</a></li>
-                <li><a class="nav-link" href="morerentals.html">Golf Cart Rentals</a></li>
-                <li><a class="nav-link" href="more-rentals.html">More Rentals</a></li>
-                <li><a class="nav-link" href="faq.html">FAQ</a></li>
-                <li><a class="nav-link" href="aboutfrye-island.html">About Frye Island</a></li>
-                <li><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <div class="firstrow">
+        <img id="hamicon" src="http://laferger.github.io/ist263/images/hamburger.png" alt="hamburgericon" onclick="showNav(); showClose();">
+        <p id="close" onclick="hideNav();">X</p>
+    </div>
+
+
+    <nav id="nav" onclick="hideClose();">
+        <span class="hamburger">&#9776;</span>
+        <ul class="nav">
+            <li><img src="../photos/fryeislandrentals.png" alt="Frye Island Rentals Logo" class="navlogoimage"></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="golfcartrentals.html">Golf Cart Rentals</a></li>
+            <li><a href="morerentals.html">More Rentals</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="aboutfryeisland.html">About Frye Island</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
     <main>
             <section class="intro">
                 <h1>Discover Frye Island</h1>
