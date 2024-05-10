@@ -120,15 +120,17 @@
                         <input type="date" id="date-end" name="date-end" required>
                         <label for="duration">Rental Duration:</label>
                         <select id="duration" name="duration" required>
+                            <option value="" disabled selected>Select duration</option>
                             <option value="weekend">Weekend</option>
                             <option value="week">Week</option>
                         </select>
                         <label for="item">Item:</label>
                         <select id="item" name="item" required>
+                            <option value="" disabled selected>Select an item</option>
                             <option value="2 seater golf cart">2 seater golf cart</option>
                             <option value="4 seater golf cart">4 seater golf cart</option>
                             <option value="Bike">Bike</option>
-                            <option value="kyack">kyack</option>
+                            <option value="kyack">Kayak</option> <!-- Corrected spelling from "kyack" to "Kayak" -->
                         </select>
                     </fieldset>
                     <br>
@@ -145,8 +147,10 @@
                         <button type="submit" class="submit-btn">Submit Inquiry</button>
                         <a href="photos/waiver.pdf" class="waiver-download" download="Liability_Waiver.pdf">Download Liability Waiver</a>
                     </fieldset>
-                    
                 </form>
+            </section>
+        </div>
+        
                 
             </section>
     </div>
