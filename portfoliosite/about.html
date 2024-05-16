@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about James Estabrook, his education, and his background.">
+    <title>James Estabrook - About</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        #hamicon {width:40px;}
+        #close {cursor:pointer;}
+        .firstrow {display:flex; justify-content:space-between;}
+        @media only screen and (min-width:800px) {
+            #hamicon, #close {display: none;}
+        }
+        @media only screen and (max-width: 799px) {
+            a {
+                display: block;
+                padding: 5px;
+                border: 1px solid #333333;
+            }
+            #navlinks {display: none;}
+            .firstrow {display: block;}
+        }
+    </style>
+    <script>
+        function showNav() {
+            document.getElementById("navlinks").style.display = "block";
+        }
+        function hideNav() {
+            document.getElementById("navlinks").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <header class="firstrow">
+        <img id="hamicon" src="images/hamburger.png" alt="hamburger icon" onclick="showNav();">
+        <p id="close" onclick="hideNav();">X</p>
+    </header>
+
+    <nav id="navlinks">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="right"><a href="https://www.linkedin.com/in/james-estabrook/" target="_blank">Let's Connect</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="intro1">
+            <div class="leftintro">
+                <h1><strong>James Estabrook</strong></h1>
+                <h2>some more about me</h2>
+            </div>
+            <div class="rightintro">
+                <p>
+                    Thanks for checking out my site heres some more about me 
+                </p>
+            </div>
+        </section>
+
+        <section class="profile">
+            <h2>Education</h2>
+            <p>
+                <strong>Syracuse University</strong>, Bachelor of Science Degree<br>
+                Martin J. Whitman School of Management, Entrepreneurship and Emerging Enterprises<br>
+                School of Information Studies, Minor Information Technology, Design, and Startups<br>
+                Maxwell School of Citizenship and Public Affairs, Minor Global Security Studies<br>
+                Cranberry Chamber of Commerce Scholar | 2021, 2023 IBEW 2322 Scholarship Recipient<br>
+                <strong>Tabor Academy ‘20</strong>, Edward E. Ford Foundation Scholarship Recipient<br>
+            </p>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <p>
+                <strong>Signarama - Graphic Design Intern</strong><br>
+                Utilized vector-based software to produce custom graphics for 50 clients. Operated UV printers, plotters, CNC, and laser engravers to service clients' advertising needs.<br><br>
+
+                <strong>Peer Educator - Barnes Center at The Arch</strong><br>
+                Facilitated university wellness presentations and disciplinary sanction education for AOD. Collaborated with a team of ten to inform students about the potential health effects of substance use.<br><br>
+
+                <strong>Resident Hall Advisor - Syracuse University</strong><br>
+                Highly adaptive role requiring quick decision-making and community engagement skills.<br><br>
+
+                <strong>Theta Chi Alpha Chi Fraternity</strong> - Secretary, Alumni Relations (2x), Historian, Steward, House Furniture Chair<br>
+                Curated a $60k budget, alumni database, alumni LinkedIn, attendance policies, and purchasing orders log.<br><br>
+
+                <strong>Cuse Spot Eboard</strong><br>
+                After school community learning program for underprivileged local youth.<br><br>
+
+                <strong>Entrepreneurial Deal Making Intensive</strong><br>
+                Extensive negotiation course taught through an entrepreneurial perspective in NYC during winterlude.<br><br>
+
+                <strong>Director of Administration and Finance - Mount Resident Hall Association Council</strong><br>
+                Oversaw budgeting, planning, and fund distribution for over 1,100 Syracuse students living in Mount Complex.<br><br>
+
+                <strong>Estabrook Industries L.L.C. - Founder/President</strong><br>
+                Transformed a $120 miter saw purchase into over $9,500 worth of equipment bootstrapping a successful business. Administered brand creation, website design, marketing, social media management, and online stores. As sales increased, restructured to outsource customization to a local sign shop, optimizing production efficiency. Distributed hundreds of boards seen at breweries and backyards across the East Coast and internationally.<br><br>
+
+                <strong>Marion Beverage Co.</strong><br>
+                Worked with competitors to understand fulfillment and distribution strategies relating to the soda industry. Developed a lemon-lime soda with cherry and pomegranate accents, showcasing creativity and product innovation. Distributed over 100 cases. Discontinuation due to legal, financial, and collegiate barriers to large-scale distribution.
+            </p>
+        </section>
+
+        <section class="skills">
+            <h2>Skills & Interests</h2>
+            <p>
+                <strong>Skills:</strong><br>
+                Zoom Info, Engage, QuickBooks, GA4, GTM, Adobe Creative Suite, Monday CRM, Amazon Seller Central, Meta Ad Manager, R studio, Office 365<br><br>
+                <strong>Interests:</strong><br>
+                AI Productivity & Automation, Problem Solving, Renovation and Woodworking projects, Graphic Design, Pottery, How things work, Soccer, Skiing
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="index.html">Home</a> | 
+            <a href="about.html">About</a> | 
+            <a href="contact.html">Contact</a>
+        </p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/jamesestabrook" target="_blank">LinkedIn</a> | 
+            <a href="https://www.instagram.com/jamesestabrook" target="_blank">Instagram</a>
+        </div>
+        <p>&copy; 2024 James Estabrook. All rights reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
